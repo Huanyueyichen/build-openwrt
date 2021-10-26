@@ -41,6 +41,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
+    - name: 电报机器人信息通知
+      run: |
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 Action OpenWrt 编译 Lede 仓库的 x86_64 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -53,10 +57,6 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-
-    - name: 电报机器人信息通知
-      run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 Action OpenWrt 编译 Lede 仓库的 x86_64 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
     - name: Clone source code
       working-directory: /workdir
