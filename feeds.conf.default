@@ -6,3 +6,4 @@ src-git telephony https://git.openwrt.org/feed/telephony.git
 src-git kenzo https://github.com/kenzok8/openwrt-packages
 src-git small https://github.com/kenzok8/small
 src-git OpenAppFilter https://github.com/destan19/OpenAppFilter
+src-git AutoBuild https://github.com/Hyy2001X/AutoBuild-Packages
