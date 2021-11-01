@@ -18,7 +18,7 @@ env:
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 23 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30 * *
+    - cron: 0 23 1,4,7,10,13,16,19,22,25,28 * *
 jobs:
   check:
     runs-on: ubuntu-latest
