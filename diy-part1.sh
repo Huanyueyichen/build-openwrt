@@ -11,8 +11,6 @@
 #
 
 
-##拉取autoupdate插件
-git clone https://github.com/281677160/luci-app-autoupdate package/luci-app-autoupdate
 
 
 ## x86机型,默认内核5.4，修改内核为5.10
