@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build R2C OpenWrt
+name: R2C
 
 on:
   repository_dispatch:
