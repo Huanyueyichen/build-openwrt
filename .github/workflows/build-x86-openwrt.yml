@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build x86 OpenWrt
+name: R2C with Dockerman
 
 on:
   repository_dispatch:
@@ -23,9 +23,9 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: x86/x86_64.config
+  CONFIG_FILE: NanoPi-R2C-DOCKER/r2c-dockerman.config
   DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: x86/diy-part2.sh
+  DIY_P2_SH: NanoPi-R2C-DOCKER/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
