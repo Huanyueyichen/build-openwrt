@@ -2,8 +2,6 @@ src-git packages https://github.com/coolsnowwolf/packages
 src-git luci https://github.com/coolsnowwolf/luci
 src-git routing https://git.openwrt.org/feed/routing.git
 src-git telephony https://git.openwrt.org/feed/telephony.git
-#src-git Boos https://github.com/Boos4721/OpenWrt-Packages.git
 src-git kenzo https://github.com/kenzok8/openwrt-packages
 src-git small https://github.com/kenzok8/small
 src-git OpenAppFilter https://github.com/destan19/OpenAppFilter
-src-git dockerman https://github.com/lisaac/luci-app-dockerman
