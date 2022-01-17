@@ -13,8 +13,8 @@
 
 
 
-## x86机型,默认内核5.4，修改内核为5.10
-sed -i 's/PATCHVER:=5.4/PATCHVER:=5.15/g' target/linux/x86/Makefile
+## x86机型,默认内核5.10，修改内核为5.15
+sed -i 's/PATCHVER:=5.10/PATCHVER:=5.15/g' target/linux/x86/Makefile
 
 
 ## 修改R4A千兆版闪存布局为Breed直刷版
