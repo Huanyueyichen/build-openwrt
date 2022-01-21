@@ -17,6 +17,10 @@
 sed -i 's/PATCHVER:=5.10/PATCHVER:=5.15/g' target/linux/x86/Makefile
 
 
+## R2C WAN口退回之前的驱动
+rm -rf target/linux/rockchip/patches-5.4/600-net-phy-Add-driver-for-Motorcomm-YT85xx-PHYs.patch
+wget -P target/linux/rockchip/patches-5.4 https://github.com/coolsnowwolf/lede/blob/master/target/linux/rockchip/patches-5.4/600-net-phy-Add-driver-for-Motorcomm-YT85xx-PHYs.patch
+
 ## 修改R4A千兆版闪存布局为Breed直刷版
 # 1.修改 mt7621_xiaomi_mir3g-v2.dts
 export shanchu1=$(grep  -a -n -e '&spi0 {' target/linux/ramips/dts/mt7621_xiaomi_mi-router-4a-3g-v2.dtsi|cut -d ":" -f 1)
