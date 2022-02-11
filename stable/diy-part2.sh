@@ -17,6 +17,7 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 #rm -rf package/lean/luci-theme-material
 #rm -rf package/lean/luci-theme-netgear
 #rm -rf package/lean/luci-theme-ifit
+#rm -rf package/lean/luci-theme-neobird
 
 #下载主题luci-theme-argon
 #git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
@@ -24,6 +25,7 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 #git clone https://github.com/XXKDB/luci-theme-argon_armygreen.git package/lean/luci-theme-argon_armygreen
 #git clone https://github.com/icaruspring/luci-theme-argon_armygreen.git package/lean/luci-theme-argon_armygreen
 #git clone https://github.com/YL2209/luci-theme-ifit.git package/lean/luci-theme-ifit
+git clone https://github.com/thinktip/luci-theme-neobird.git package/lean/luci-theme-neobird
 
 
 #取消原主题luci-theme-bootstrap为默认主题
@@ -33,6 +35,7 @@ sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 #sed -i 's/luci-theme-bootstrap/luci-theme-edge/g' ./feeds/luci/collections/luci/Makefile
 sed -i 's/luci-theme-bootstrap/luci-theme-argonne/g' feeds/luci/collections/luci/Makefile
+#sed -i 's/luci-theme-bootstrap/luci-theme-neobird/g' feeds/luci/collections/luci/Makefile
 
 # 设置密码为空（安装固件时无需密码登陆，然后自己修改想要的密码）
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
