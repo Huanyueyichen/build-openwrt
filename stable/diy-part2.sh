@@ -25,7 +25,7 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 #git clone https://github.com/XXKDB/luci-theme-argon_armygreen.git package/lean/luci-theme-argon_armygreen
 #git clone https://github.com/icaruspring/luci-theme-argon_armygreen.git package/lean/luci-theme-argon_armygreen
 #git clone https://github.com/YL2209/luci-theme-ifit.git package/lean/luci-theme-ifit
-git clone https://github.com/thinktip/luci-theme-neobird.git package/lean/luci-theme-neobird
+#git clone https://github.com/thinktip/luci-theme-neobird.git package/lean/luci-theme-neobird
 
 
 #取消原主题luci-theme-bootstrap为默认主题
