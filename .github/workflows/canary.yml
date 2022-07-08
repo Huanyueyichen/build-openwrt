@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: x86_64-beta
+name: x86_64-canary
 
 on:
   repository_dispatch:
