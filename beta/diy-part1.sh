@@ -19,4 +19,4 @@
 
 ## 修改Alist支持
 rm -rf feeds/packages/lang/golang
-svn export https://github.com/sbwml/packages_lang_golang/trunk feeds/packages/lang/golang
+svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
