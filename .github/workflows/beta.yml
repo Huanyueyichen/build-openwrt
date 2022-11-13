@@ -22,7 +22,7 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: master
-  FEEDS_CONF: beta/feeds.conf.default
+  FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: beta/x86_64-beta.config
   DIY_P1_SH: beta/diy-part1.sh
   DIY_P2_SH: beta/diy-part2.sh
