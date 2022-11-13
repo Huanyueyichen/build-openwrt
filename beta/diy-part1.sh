@@ -17,6 +17,3 @@
 #sed -i 's/PATCHVER:=5.15/PATCHVER:=5.15/g' target/linux/x86/Makefile
 
 
-## 修改Alist支持
-rm -rf feeds/packages/lang/golang
-svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
