@@ -30,6 +30,9 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/l
 #git clone https://github.com/YL2209/luci-theme-ifit.git package/lean/luci-theme-ifit
 #git clone https://github.com/thinktip/luci-theme-neobird.git package/lean/luci-theme-neobird
 
+#修改背景图片
+rm -rf package/lean/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+cp -f $GITHUB_WORKSPACE/bg1.jpg package/lean/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 #取消原主题luci-theme-bootstrap为默认主题
 sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
