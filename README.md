@@ -1,5 +1,10 @@
-1.stable_稳定版为5.10内核+稳定版插件
+基本设置：
 
-2.beta_测试版为5.15内核+最新插件
+    默认ip：192.168.2.1
 
-3.添加telegram推送
+    账号 ：root
+
+    密码：password
+
+
+下载地址：https://github.com/Huanyueyichen/x86_64/releases
