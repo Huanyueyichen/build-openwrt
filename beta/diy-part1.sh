@@ -13,7 +13,9 @@
 
 
 
-## x86机型,默认内核5.15，修改内核为5.15
-#sed -i 's/PATCHVER:=5.15/PATCHVER:=5.15/g' target/linux/x86/Makefile
+## x86机型,默认内核5.15，修改内核为6.1
+sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/x86/Makefile
 
 
+## arm机型,默认内核5.15，修改内核为6.1
+sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/rockchip/Makefile
