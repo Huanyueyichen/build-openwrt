@@ -8,14 +8,14 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: r2c-beta
+name: r2c-stable
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: beta/r2c-beta.config
@@ -177,4 +177,4 @@ jobs:
     - name: 电报机器人信息通知
       if: steps.compile.outputs.status == 'success'
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译 的 nanopi-r2c beta 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译的 nanopi-r2c beta 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
