@@ -116,6 +116,14 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
+        rm -rf config.buildinfo
+        rm -rf feeds.buildinfo
+        rm -rf profiles.json
+        rm -rf sha256sums
+        rm -rf version.buildinfo
+        rm -rf openwrt-rockchip-armv8-friendlyarm_nanopi-r2c-rootfs.tar.gz
+        rm -rf openwrt-rockchip-armv8-friendlyarm_nanopi-r2c.manifest
+        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz beta-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 
@@ -130,7 +138,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-beta"
+        echo "::set-output name=release_tag::$(date +"%Y.%m.%d")"
         echo "::set-output name=release_date::$(date +"%Y.%m.%d")"
         touch release.txt
         echo "后台地址：192.168.11.1
