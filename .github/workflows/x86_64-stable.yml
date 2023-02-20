@@ -120,6 +120,12 @@ jobs:
         rm -rf feeds.buildinfo
         rm -rf profiles.json
         rm -rf sha256sums
+        rm -rf version.buildinfo
+        rm -rf openwrt-x86-64-generic.manifest
+        rm -rf openwrt-x86-64-generic-squashfs-rootfs.img.gz
+        rm -rf openwrt-x86-64-generic-kernel.bin
+        rm -rf openwrt-x86-64-generic-rootfs.tar.gz
+        mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz stable-openwrt-x86-64-generic-squashfs-combined-efi.img.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 
@@ -134,7 +140,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-stable"
+        echo "::set-output name=release_tag::$(date +"%Y.%m.%d")"
         echo "::set-output name=release_date::$(date +"%Y.%m.%d")"
         touch release.txt
         echo "后台地址：192.168.11.1
