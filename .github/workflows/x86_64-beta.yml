@@ -21,7 +21,6 @@ env:
   CONFIG_FILE: beta/x86-beta.config
   DIY_P1_SH: beta/diy-part1.sh
   DIY_P2_SH: beta/diy-part2.sh
-  UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
@@ -104,7 +103,6 @@ jobs:
 
     - name: Organize files
       id: organize
-      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
@@ -120,13 +118,6 @@ jobs:
         mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz beta-openwrt-x86-64-generic-squashfs-combined-efi.img.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
-
-    - name: Upload firmware directory
-      uses: actions/upload-artifact@main
-      if: steps.organize.outputs.status == 'success' && !cancelled()
-      with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: ${{ env.FIRMWARE }}
 
     - name: Generate release tag
       id: tag
