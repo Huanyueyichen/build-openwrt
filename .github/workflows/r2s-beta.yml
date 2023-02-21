@@ -21,6 +21,7 @@ env:
   CONFIG_FILE: beta/r2s-beta.config
   DIY_P1_SH: beta/diy-part1.sh
   DIY_P2_SH: beta/diy-part2.sh
+  UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
