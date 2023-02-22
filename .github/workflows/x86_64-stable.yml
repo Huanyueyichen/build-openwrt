@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: x86-beta
+name: x86-stable
 
 on:
   repository_dispatch:
