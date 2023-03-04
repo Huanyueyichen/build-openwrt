@@ -13,6 +13,10 @@ name: x86-stable
 on:
   repository_dispatch:
   workflow_dispatch:
+  schedule:
+    - cron: 0 17 * * *
+  watch:
+     types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
