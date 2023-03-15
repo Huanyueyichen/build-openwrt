@@ -22,7 +22,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: beta/r2s-stable.config
+  CONFIG_FILE: stable/r2s-stable.config
   DIY_P1_SH: stable/diy-part1.sh
   DIY_P2_SH: stable/diy-part2.sh
   UPLOAD_RELEASE: true
