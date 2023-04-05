@@ -112,9 +112,13 @@ index 0000000000..adf91a0306
 
 +			reg = <3>;
 
-+     motorcomm,clk-out-frequency-hz = <125000000>;
-+     motorcomm,keep-pll-enabled;
-+     motorcomm,auto-sleep-disabled;
+
++   motorcomm,clk-out-frequency-hz = <125000000>;
+
++   motorcomm,keep-pll-enabled;
+
++   motorcomm,auto-sleep-disabled;
+
 
 +			pinctrl-0 = <&eth_phy_reset_pin>;
 
