@@ -34,11 +34,11 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/l
 rm -rf package/lean/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/bg1.jpg package/lean/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
-#rm -rf target/linux/rockchip/patches-6.1/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
-#cp -f $GITHUB_WORKSPACE/patches/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch target/linux/rockchip/patches-6.1/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
+rm -rf target/linux/rockchip/patches-6.1/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
+cp -f $GITHUB_WORKSPACE/patches/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch target/linux/rockchip/patches-6.1/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
 
-rm -rf package/boot/uboot-rockchip/patches/304-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
-cp -f $GITHUB_WORKSPACE/patches/304-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch package/boot/uboot-rockchip/patches/304-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
+#rm -rf package/boot/uboot-rockchip/patches/304-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
+#cp -f $GITHUB_WORKSPACE/patches/304-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch package/boot/uboot-rockchip/patches/304-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
 
 
 #取消原主题luci-theme-bootstrap为默认主题
