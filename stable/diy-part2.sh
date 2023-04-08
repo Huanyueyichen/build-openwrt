@@ -34,9 +34,6 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/l
 rm -rf package/lean/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/bg1.jpg package/lean/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
-rm -rf target/linux/rockchip/patches-5.15/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
-cp -f $GITHUB_WORKSPACE/patches/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch target/linux/rockchip/patches-5.15/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
-
 #取消原主题luci-theme-bootstrap为默认主题
 sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 
