@@ -21,5 +21,5 @@ sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/x86/Makefile
 sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/rockchip/Makefile
 
 ## r2c修复wan口
-rm -rf target/linux/rockchip/patches-6.1/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
-cp -f $GITHUB_WORKSPACE/patches/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch target/linux/rockchip/patches-6.1/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
+#rm -rf target/linux/rockchip/patches-6.1/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
+#cp -f $GITHUB_WORKSPACE/patches/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch target/linux/rockchip/patches-6.1/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
