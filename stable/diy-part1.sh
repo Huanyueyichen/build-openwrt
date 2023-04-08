@@ -19,3 +19,7 @@
 
 ## arm机型,默认内核5.15，修改内核为5.15
 # sed -i 's/PATCHVER:=5.15/PATCHVER:=5.15/g' target/linux/rockchip/Makefile
+
+## r2c修复wan口
+rm -rf target/linux/rockchip/patches-5.15/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
+cp -f $GITHUB_WORKSPACE/patches/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch target/linux/rockchip/patches-5.15/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
