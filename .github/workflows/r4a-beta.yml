@@ -129,9 +129,7 @@ jobs:
         echo "release_date=$(date +"%Y.%m.%d")" >> $GITHUB_OUTPUT
         touch release.txt
         echo "后台地址：192.168.11.1
-              默认密码：password
-              beta   = 5.10内核
-              stable = 5.4内核" >> release.txt
+              默认密码：password" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware to release
@@ -140,7 +138,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: ${{ steps.tag.outputs.release_date }} xiaomi-router-4a-gigabit
+        name: ${{ steps.tag.outputs.release_date }} openwrt-beta
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
