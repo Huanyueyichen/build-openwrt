@@ -38,7 +38,7 @@ jobs:
 
     - name: 电报机器人信息通知
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 xiaomi-router-4a-gigabit 编译的 xiaomi-router-4a-gigabit stable 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 build-openwrt 编译的 xiaomi-router-4a-gigabit stable 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
     - name: Initialization environment
       env:
@@ -117,7 +117,7 @@ jobs:
         rm -rf version.buildinfo
         rm -rf openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-initramfs-kernel.bin
         rm -rf openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit.manifest
-        mv openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin stable-openwrt-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin
+        mv openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin kernel-5.4-openwrt-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
@@ -140,7 +140,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: ${{ steps.tag.outputs.release_date }} xiaomi-router-4a-gigabit
+        name: ${{ steps.tag.outputs.release_date }} openwrt-stable
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
@@ -163,4 +163,4 @@ jobs:
     - name: 电报机器人信息通知
       if: steps.compile.outputs.status == 'success'
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 xiaomi-router-4a-gigabit 编译 的 xiaomi-router-4a-gigabit stable 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 build-openwrt 编译 的 xiaomi-router-4a-gigabit stable 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
