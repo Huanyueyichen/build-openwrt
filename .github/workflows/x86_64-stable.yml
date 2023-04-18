@@ -119,7 +119,7 @@ jobs:
         rm -rf openwrt-x86-64-generic-squashfs-rootfs.img.gz
         rm -rf openwrt-x86-64-generic-kernel.bin
         rm -rf openwrt-x86-64-generic-rootfs.tar.gz
-        mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz stable-openwrt-x86-64-generic-squashfs-combined-efi.img.gz
+        mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz kernel-5.15-openwrt-x86-64-generic-squashfs-combined-efi.img.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
@@ -131,9 +131,7 @@ jobs:
         echo "release_date=$(date +"%Y.%m.%d")" >> $GITHUB_OUTPUT
         touch release.txt
         echo "后台地址：192.168.11.1
-              默认密码：password
-              beta   = 6.1内核
-              stable = 5.15内核" >> release.txt
+              默认密码：password" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware to release
