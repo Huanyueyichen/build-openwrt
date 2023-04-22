@@ -14,7 +14,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 0 21 ? * 2,4,6
+    - cron: 0 21 ? * 1,3，5
   watch:
      types: started
 
@@ -128,7 +128,7 @@ jobs:
         rm -rf version.buildinfo
         rm -rf openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-initramfs-kernel.bin
         rm -rf openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit.manifest
-        mv openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin kernel-5.10-openwrt-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin
+        mv openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin kernel-5.4-openwrt-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
