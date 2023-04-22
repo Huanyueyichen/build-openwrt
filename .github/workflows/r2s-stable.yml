@@ -14,7 +14,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 0 17 ? * 1,3,5
+    - cron: 0 17 ? * 2,4,6
   watch:
      types: started
 
@@ -128,8 +128,8 @@ jobs:
         rm -rf version.buildinfo
         rm -rf openwrt-rockchip-armv8-friendlyarm_nanopi-r2s-rootfs.tar.gz
         rm -rf openwrt-rockchip-armv8-friendlyarm_nanopi-r2s.manifest
-        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz kernel-6.1-openwrt-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz
-        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz kernel-6.1-openwrt-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz
+        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz kernel-5.15-openwrt-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz
+        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz kernel-5.15-openwrt-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
