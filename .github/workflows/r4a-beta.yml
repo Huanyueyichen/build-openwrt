@@ -14,11 +14,13 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 0 21 ? * 1,3,5
+    - cron: 0 17 ? * 1,3,5
   watch:
      types: started
 
 env:
+  PPPOE_USERNAME: ${{ secrets.PPPOE_USERNAME }}
+  PPPOE_PASSWD: ${{ secrets.PPPOE_PASSWD }}
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
@@ -36,9 +38,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
-    - name: 电报机器人信息通知
+    - name: Telegram notification
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 build-openwrt 编译的 xiaomi-router-4a-gigabit beta 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit beta 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
     - name: Initialization environment
       env:
@@ -66,6 +68,15 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+        
+    - name: Default PPPOE Setting
+      if: env.PPPOE_USERNAME && env.PPPOE_PASSWD
+      run: |
+        # 修改wan口默认pppoe
+        sed -i 's/2:-dhcp/2:-pppoe/g' openwrt/package/base-files/files/lib/functions/uci-defaults.sh
+        # 设置pppoe拨号账户密码
+        sed -i "s/username='username'/username='${{ env.PPPOE_USERNAME }}'/g" openwrt/package/base-files/files/bin/config_generate
+        sed -i "s/password='password'/password='${{ env.PPPOE_PASSWD }}'/g" openwrt/package/base-files/files/bin/config_generate
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -146,8 +157,8 @@ jobs:
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@v2
       with:
-        retain_days: 1
-        keep_minimum_runs: 1
+          retain_days: 1
+          keep_minimum_runs: 1
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.2.1
@@ -158,7 +169,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: 电报机器人信息通知
+    - name: Telegram notification
       if: steps.compile.outputs.status == 'success'
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 build-openwrt 编译 的 xiaomi-router-4a-gigabit beta 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit beta 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
