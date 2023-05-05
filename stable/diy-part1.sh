@@ -21,8 +21,8 @@
 # sed -i 's/PATCHVER:=5.15/PATCHVER:=5.15/g' target/linux/rockchip/Makefile
 
 
-## ramips机型,默认内核5.4，修改内核为5.10
-#sed -i 's/PATCHVER:=5.4/PATCHVER:=5.10/g' target/linux/ramips/Makefile
+## ramips机型,默认内核5.10，修改内核为5.4
+sed -i 's/PATCHVER:=5.10/PATCHVER:=5.4/g' target/linux/ramips/Makefile
 
 
 ## r2c修复wan口
