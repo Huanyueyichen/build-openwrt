@@ -22,7 +22,7 @@
 
 
 ## ramips机型,默认内核5.10，修改内核为5.4
-#sed -i 's/PATCHVER:=5.10/PATCHVER:=5.4/g' target/linux/ramips/Makefile
+sed -i 's/PATCHVER:=5.10/PATCHVER:=5.4/g' target/linux/ramips/Makefile
 
 
 ## r2c修复wan口
