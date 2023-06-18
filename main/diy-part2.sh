@@ -17,3 +17,7 @@ wget -P target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/fr
 wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/blob/master-v22.03/target/linux/rockchip/armv8/base-files/usr/bin/cputemp.sh
 wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/blob/master-v22.03/target/linux/rockchip/armv8/base-files/usr/bin/fa-fancontrol-direct.sh
 wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/blob/master-v22.03/target/linux/rockchip/armv8/base-files/usr/bin/fa-fancontrol.sh
+
+## 修改Alist支持
+rm -rf feeds/packages/lang/golang
+svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
