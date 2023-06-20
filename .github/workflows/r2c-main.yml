@@ -21,7 +21,7 @@ on:
 env:
   PPPOE_USERNAME: ${{ secrets.PPPOE_USERNAME }}
   PPPOE_PASSWD: ${{ secrets.PPPOE_PASSWD }}
-  REPO_URL: https://github.com/opemnwrt/openwrt
+  REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: main
   FEEDS_CONF: main/feeds.conf.default
   CONFIG_FILE: main/r2c.config
