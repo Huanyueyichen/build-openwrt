@@ -16,7 +16,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-ap
 ## alist
 # git clone https://github.com/sbwml/luci-app-alist package/luci-app-alist
 
-## Add ServerChan
+## Add wechatpush
 git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/luci-app-wechatpush
 
 ## autoreboot
@@ -32,7 +32,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wolplus pa
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner package/luci-app-onliner
 
 ## Add luci-app-irqbalance by QiuSimons https://github.com/QiuSimons/OpenWrt-Add
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-irqbalance package/luci-app-irqbalance
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-irqbalance package/luci-app-irqbalance
 
 ## AdguardHome
 svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/adguardhome
@@ -43,8 +43,8 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/lucky package/lucky
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-lucky package/luci-app-lucky
 
 ## qbittorrent
-svn export https://github.com/kiddin9/openwrt-packages/trunk/qBittorrent-Enhanced-Edition package/qBittorrent-Enhanced-Edition
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-qbittorrent package/luci-app-qbittorrent
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/qBittorrent-Enhanced-Edition package/qBittorrent-Enhanced-Edition
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-qbittorrent package/luci-app-qbittorrent
 
 ## file
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant package/luci-app-fileassistant
@@ -62,5 +62,5 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ramfree pa
 
 ## 依赖
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-fs package/luci-lib-fs
-svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6tools package/qt6tools
-svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6base package/qt6base
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6tools package/qt6tools
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6base package/qt6base
