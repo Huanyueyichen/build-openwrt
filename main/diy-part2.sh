@@ -60,7 +60,11 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/wr
 ## ramfree
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ramfree package/luci-app-ramfree
 
-## 依赖
+## luci-app-fileassistant依赖
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-fs package/luci-lib-fs
+
+## ssr passwall vssr bypass依赖
+git clone https://github.com/kenzok8/small package/new/small
+
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6tools package/qt6tools
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6base package/qt6base
