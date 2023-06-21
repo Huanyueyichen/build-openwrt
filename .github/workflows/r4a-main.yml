@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: r2c-main
+name: r4a-main
 
 on:
   repository_dispatch:
