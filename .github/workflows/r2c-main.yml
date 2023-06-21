@@ -123,7 +123,7 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
-        #rm -rf config.buildinfo
+        rm -rf config.buildinfo
         rm -rf feeds.buildinfo
         rm -rf profiles.json
         rm -rf sha256sums
