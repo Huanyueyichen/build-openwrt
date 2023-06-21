@@ -27,7 +27,6 @@ env:
   CONFIG_FILE: main/r2c.config
   DIY_P1_SH: main/diy-part1.sh
   DIY_P2_SH: main/diy-part2.sh
-  TERMINAL_TOOLS: scripts/preset-terminal-tools.sh
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
@@ -90,10 +89,8 @@ jobs:
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
-        chmod +x $TERMINAL_TOOLS
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        $GITHUB_WORKSPACE/$TERMINAL_TOOLS
 
     - name: Download package
       id: package
