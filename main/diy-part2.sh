@@ -11,12 +11,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-
 
 #############################################################################################################
 
-## 删除自定义插件
-rm -rf package/new
-
-## 创建new文件夹
-mkdir -p package/new
-
 ## 下载主题luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
@@ -54,9 +48,16 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-lucky pack
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/qBittorrent-Enhanced-Edition package/qBittorrent-Enhanced-Edition
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-qbittorrent package/luci-app-qbittorrent
 
+## qbittorrent依赖
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6tools package/qt6tools
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6base package/qt6base
+
 ## file
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant package/new/luci-app-fileassistant
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-filetransfer package/new/luci-app-filetransfer
+
+## fileassistant依赖
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-fs package/new/luci-lib-fs
 
 ## cpufreq
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq package/new/luci-app-cpufreq
@@ -77,15 +78,6 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat pack
 ## ssr-plus
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ssr-plus package/new/luci-app-ssr-plus
 
-## ddns
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ddns package/new/luci-app-ddns
-svn export https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts package/new/ddns-scripts
-
-#####################################################################################################################
-
-## fileassistant依赖
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-fs package/new/luci-lib-fs
-
 ## ssr-plus依赖
 svn export https://github.com/kiddin9/openwrt-packages/trunk/dns2socks package/new/dns2socks
 svn export https://github.com/kiddin9/openwrt-packages/trunk/dns2tcp package/new/dns2tcp
@@ -103,5 +95,14 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/v2ray-plugin packag
 svn export https://github.com/kiddin9/openwrt-packages/trunk/trojan package/new/trojan
 svn export https://github.com/kiddin9/openwrt-packages/trunk/gn package/new/gn
 
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6tools package/qt6tools
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6base package/qt6base
+## openclash
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-openclash package/new/luci-app-openclash
+
+## ddns
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ddns package/new/luci-app-ddns
+svn export https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts package/new/ddns-scripts
+
+## adbyby-plus
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adbyby-plus package/new/luci-app-adbyby-plus
+svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/adbyby
+
