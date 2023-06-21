@@ -27,8 +27,8 @@ env:
   CONFIG_FILE: main/r2c.config
   DIY_P1_SH: main/diy-part1.sh
   DIY_P2_SH: main/diy-part2.sh
-  CLASH_CORE: scripts/preset-clash-core.sh
-  TERMINAL_TOOLS: scripts/preset-terminal-tools.sh
+  #CLASH_CORE: scripts/preset-clash-core.sh
+  #TERMINAL_TOOLS: scripts/preset-terminal-tools.sh
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
@@ -43,6 +43,7 @@ jobs:
     - name: Telegram notification
       run: |
         curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 bulid-openwrt 编译的 nanopi-r2c openwrt源码 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -55,12 +56,14 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
+
     - name: Clone source code
       working-directory: /workdir
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
@@ -76,6 +79,7 @@ jobs:
         # 设置pppoe拨号账户密码
         sed -i "s/username='username'/username='${{ env.PPPOE_USERNAME }}'/g" openwrt/package/base-files/files/bin/config_generate
         sed -i "s/password='password'/password='${{ env.PPPOE_PASSWD }}'/g" openwrt/package/base-files/files/bin/config_generate
+
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
@@ -87,12 +91,11 @@ jobs:
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
-        chmod +x $CLASH_CORE
-        chmod +x $TERMINAL_TOOLS
+        chmod +x scripts/*.sh
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        $GITHUB_WORKSPACE/$CLASH_CORE arm64
-        $GITHUB_WORKSPACE/$TERMINAL_TOOLS
+        ../scripts/preset-clash-core.sh arm64
+        ../scripts/preset-terminal-tools.sh
 
     - name: Download package
       id: package
