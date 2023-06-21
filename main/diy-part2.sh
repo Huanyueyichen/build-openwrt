@@ -45,12 +45,12 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/lucky package/new/l
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-lucky package/new/luci-app-lucky
 
 ## qbittorrent
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/qBittorrent-Enhanced-Edition package/qBittorrent-Enhanced-Edition
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-qbittorrent package/luci-app-qbittorrent
+svn export https://github.com/kiddin9/openwrt-packages/trunk/qBittorrent-Enhanced-Edition package/qBittorrent-Enhanced-Edition
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-qbittorrent package/luci-app-qbittorrent
 
 ## qbittorrent依赖
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6tools package/qt6tools
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6base package/qt6base
+svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6tools package/qt6tools
+svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6base package/qt6base
 
 ## file
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant package/new/luci-app-fileassistant
