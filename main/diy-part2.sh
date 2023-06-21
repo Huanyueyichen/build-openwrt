@@ -34,7 +34,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wolplus pa
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner package/new/luci-app-onliner
 
 ## Add luci-app-irqbalance by QiuSimons https://github.com/QiuSimons/OpenWrt-Add
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-irqbalance package/new/luci-app-irqbalance
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-irqbalance package/new/luci-app-irqbalance
 
 ## AdguardHome
 svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/new/adguardhome
