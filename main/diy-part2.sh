@@ -15,6 +15,10 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
 
+## 修改argon背景图片
+rm -rf package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+
 ## alist
 # git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
 
