@@ -14,7 +14,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 0 17 ? * 0
+    - cron: 0 21 ? * 0,2,4
   watch:
      types: started
 
@@ -40,7 +40,7 @@ jobs:
 
     - name: Telegram notification
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit openwrt源码 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit openwrt-源码 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
     - name: Initialization environment
       env:
@@ -49,7 +49,6 @@ jobs:
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install $(curl -fsSL https://raw.githubusercontent.com/Huanyueyichen/openwrt-list/master/openwrt-ubuntu-2204)
-        sudo -E apt-get -qq install $(curl -fsSL https://raw.githubusercontent.com/Huanyueyichen/openwrt-list/master/lede-ubuntu-2204)
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
@@ -129,7 +128,7 @@ jobs:
         rm -rf version.buildinfo
         rm -rf openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-initramfs-kernel.bin
         rm -rf openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit.manifest
-        #mv openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin kernel-5.10-openwrt-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin
+        mv openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin openwrt-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
@@ -150,7 +149,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: ${{ steps.tag.outputs.release_date }} openwrt源码
+        name: ${{ steps.tag.outputs.release_date }} openwrt-源码
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
@@ -173,4 +172,4 @@ jobs:
     - name: Telegram notification
       if: steps.compile.outputs.status == 'success'
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit openwrt源码 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit openwrt-源码 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
