@@ -23,10 +23,10 @@ env:
   PPPOE_PASSWD: ${{ secrets.PPPOE_PASSWD }}
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: beta/r4a-beta.config
-  DIY_P1_SH: beta/diy-part1.sh
-  DIY_P2_SH: beta/diy-part2.sh
+  FEEDS_CONF: lede/feeds.conf.default
+  CONFIG_FILE: lede/r4a-beta.config
+  DIY_P1_SH: lede/diy-part1.sh
+  DIY_P2_SH: lede/diy-part2.sh
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
@@ -40,7 +40,7 @@ jobs:
 
     - name: Telegram notification
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit beta 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit lede 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
     - name: Initialization environment
       env:
@@ -128,7 +128,7 @@ jobs:
         rm -rf version.buildinfo
         rm -rf openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-initramfs-kernel.bin
         rm -rf openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit.manifest
-        mv openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin kernel-5.10-openwrt-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin
+        mv openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin lede-xiaomi_mi-router-4a-gigabit-squashfs-sysupgrade.bin
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
@@ -136,7 +136,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d")-beta" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d")-lede" >> $GITHUB_OUTPUT
         echo "release_date=$(date +"%Y.%m.%d")" >> $GITHUB_OUTPUT
         touch release.txt
         echo "后台地址：192.168.11.1
@@ -149,7 +149,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: ${{ steps.tag.outputs.release_date }} openwrt-beta
+        name: ${{ steps.tag.outputs.release_date }} openwrt-lede
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
@@ -172,4 +172,4 @@ jobs:
     - name: Telegram notification
       if: steps.compile.outputs.status == 'success'
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit beta 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit lede 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
