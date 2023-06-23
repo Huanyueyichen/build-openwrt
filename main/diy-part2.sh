@@ -92,6 +92,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
 
 ## Add luci-app-socat
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat package/new/luci-app-socat
+svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat package/new/luci-app-socat
 
 ## Add luci-app-ssr-plus
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ssr-plus package/new/luci-app-ssr-plus
