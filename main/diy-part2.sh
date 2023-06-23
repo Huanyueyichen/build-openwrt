@@ -130,3 +130,6 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/ddnsgo package/new/
 svn export https://github.com/kiddin9/openwrt-packages/trunk/automount package/new/automount
 svn export https://github.com/kiddin9/openwrt-packages/trunk/ntfs3-mount package/new/ntfs3-mount
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/lua-neturl package/new/lua-neturl
+
+## wireguard
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
