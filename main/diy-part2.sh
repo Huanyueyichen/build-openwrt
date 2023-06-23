@@ -9,7 +9,18 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 sed -i '/+luci-light/d;s/+luci-app-opkg/+luci-light/' ./feeds/luci/collections/luci/Makefile
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-light/Makefile
 
-#############################################################################################################
+## r2s r2c风扇脚本
+sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
+# wget -P target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3328/base-files/etc/init.d/fa-rk3328-pwmfan
+# wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3328/base-files/usr/bin/start-rk3328-pwm-fan.sh
+mkdir -p target/linux/rockchip/armv8/base-files/etc/init.d
+mkdir -p target/linux/rockchip/armv8/base-files/usr/bin
+chmod +x $GITHUB_WORKSPACE/patches/fa-rk3328-pwmfan
+chmod +x $GITHUB_WORKSPACE/patches/start-rk3328-pwm-fan.sh
+cp -f -p $GITHUB_WORKSPACE/patches/fa-rk3328-pwmfan target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3328-pwmfan
+cp -f -p $GITHUB_WORKSPACE/patches/start-rk3328-pwm-fan.sh target/linux/rockchip/armv8/base-files/usr/bin/start-rk3328-pwm-fan.sh
+
+#################################################################################################################################################
 
 ## 下载主题luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
