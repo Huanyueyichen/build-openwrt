@@ -134,5 +134,8 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/automount package/n
 svn export https://github.com/kiddin9/openwrt-packages/trunk/ntfs3-mount package/new/ntfs3-mount
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/lua-neturl package/new/lua-neturl
 
+## Add autocore
+svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/new/autocore
+
 ## Add luci-app-wireguard
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
