@@ -24,7 +24,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: lede/feeds.conf.default
-  CONFIG_FILE: lede/r4a-beta.config
+  CONFIG_FILE: lede/r4a.config
   DIY_P1_SH: lede/diy-part1.sh
   DIY_P2_SH: lede/diy-part2.sh
   UPLOAD_RELEASE: true
