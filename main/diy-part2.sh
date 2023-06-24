@@ -140,3 +140,6 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/ne
 
 ## Add luci-app-wireguard
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
+
+# ShellClash
+bash $GITHUB_WORKSPACE/paches/ShellClash.sh
