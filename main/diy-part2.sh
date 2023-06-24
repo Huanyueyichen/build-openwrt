@@ -142,4 +142,4 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/ne
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
 # ShellClash
-bash $GITHUB_WORKSPACE/paches/ShellClash.sh
+bash $GITHUB_WORKSPACE/patches/ShellClash.sh
