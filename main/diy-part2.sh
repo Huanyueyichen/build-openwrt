@@ -79,6 +79,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-fs package
 
 ## Add luci-app-cpufreq
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq package/new/luci-app-cpufreq
+sed -i 's/1512000/1200000/g' package/new/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
 
 ## Add luci-app-wrtbwmon
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/new/luci-app-wrtbwmon
