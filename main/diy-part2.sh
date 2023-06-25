@@ -139,4 +139,4 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/gn package/new/gn
 svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/new/luci-app-openclash
 
 # ShellClash
-bash $GITHUB_WORKSPACE/patches/ShellClash.sh
+# bash $GITHUB_WORKSPACE/patches/ShellClash.sh
