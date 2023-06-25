@@ -127,8 +127,8 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adbyby-plu
 svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/adbyby
 
 ## Add luci-app-ddns-go
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
-svn export https://github.com/kiddin9/openwrt-packages/trunk/ddnsgo package/new/ddnsgo
+svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
+svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/new/ddns-go
 
 ## Add automount
 svn export https://github.com/kiddin9/openwrt-packages/trunk/automount package/new/automount
