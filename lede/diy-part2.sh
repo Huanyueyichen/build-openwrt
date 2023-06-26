@@ -12,9 +12,10 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 #sed -i "s/OpenWrt /星新课代表/g" package/lean/default-settings/files/zzz-default-settings
 
 #删除原默认主题
-rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/small8/luci-theme-argon
-rm -rf feeds/small8/luci-app-argon-config
+rm -rf package/feeds/luci/themes/luci-theme-argon
+rm -rf package/feeds/luci/luci-app-argon-config
+rm -rf package/feeds/small8/luci-theme-argon
+rm -rf package/feeds/small8/luci-app-argon-config
 #rm -rf feeds/luci/luci-theme-bootstrap
 #rm -rf feeds/luci/luci-theme-material
 #rm -rf feeds/luci/luci-theme-netgear
