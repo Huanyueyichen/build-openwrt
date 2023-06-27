@@ -23,7 +23,7 @@ mkdir -p package/new
 
 ## 修改argon背景图片
 rm -rf package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
-cp -f ~/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 ## Add luci-app-alist
 # git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
