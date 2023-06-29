@@ -57,6 +57,10 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-irqbalance
 svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/new/adguardhome
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome package/new/luci-app-adguardhome
 sed -i '1,2d' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
+# sed -i 's/6h/1h/g' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
+sed -i 's/4194304/8388608/g' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
+sed -i "/  upstream_dns_file: ""/i\  - 114.114.114.114" package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
+sed -i "/  upstream_dns_file: ""/i\  - 119.29.29.29" package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 
 ## Add luci-app-lucky
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/lucky package/new/lucky
