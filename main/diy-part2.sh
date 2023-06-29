@@ -56,7 +56,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-irqbalance
 ## Add luci-app-AdguardHome
 svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/new/adguardhome
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome package/new/luci-app-adguardhome
-sed '1,2d' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
+sed -i '1,2d' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
 
 ## Add luci-app-lucky
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/lucky package/new/lucky
