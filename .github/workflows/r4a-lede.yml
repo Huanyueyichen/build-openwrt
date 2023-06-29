@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: r4a-beta
+name: r4a-lede
 
 on:
   repository_dispatch:
