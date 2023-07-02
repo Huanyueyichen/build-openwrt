@@ -3,10 +3,6 @@
 ## 修改openwrt登陆地址,把下面的192.168.11.1修改成你想要的就可以了
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
-## 调整 LuCI 依赖，去除 luci-app-opkg，替换主题 bootstrap 为 argon
-sed -i '/+luci-light/d;s/+luci-app-opkg/+luci-light/' ./feeds/luci/collections/luci/Makefile
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-light/Makefile
-
 ## alist编译环境
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
@@ -27,6 +23,10 @@ cp -f -p $GITHUB_WORKSPACE/patches/start-rk3328-pwm-fan.sh target/linux/rockchip
 ## 下载主题luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
+
+## 调整 LuCI 依赖，去除 luci-app-opkg，替换主题 bootstrap 为 argon
+sed -i '/+luci-light/d;s/+luci-app-opkg/+luci-light/' ./feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-light/Makefile
 
 ## 修改argon背景图片
 rm -rf package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
