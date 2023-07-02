@@ -4,14 +4,6 @@
 ## 修改openwrt登陆地址,把下面的192.168.11.1修改成你想要的就可以了
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
-## 下载主题luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
-
-## 调整 LuCI 依赖，去除 luci-app-opkg，替换主题 bootstrap 为 argon
-sed -i '/+luci-light/d;s/+luci-app-opkg/+luci-light/' ./feeds/luci/collections/luci/Makefile
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-light/Makefile
-
 ## requires golang 1.19.x or latest version 
 # rm -rf feeds/packages/lang/golang
 # git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
@@ -20,6 +12,14 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-
 
 # rm -rf package/new
 mkdir -p package/new
+
+## 下载主题luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
+
+## 调整 LuCI 依赖，去除 luci-app-opkg，替换主题 bootstrap 为 argon
+sed -i '/+luci-light/d;s/+luci-app-opkg/+luci-light/' ./feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-light/Makefile
 
 ## 修改argon背景图片
 rm -rf package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
@@ -64,7 +64,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner pa
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/libdouble-conversion package/new/libdouble-conversion
 
 ## Add luci-app-fileassistant luci-app-filetransfer
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant package/new/luci-app-fileassistant
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant package/new/luci-app-fileassistant
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-filetransfer package/new/luci-app-filetransfer
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-fs package/new/luci-lib-fs
 
