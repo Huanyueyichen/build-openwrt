@@ -71,7 +71,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/libdouble-conversio
 
 ## 修改Alist支持
 rm -rf feeds/packages/lang/golang
-svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
 
 ## r2s r2c风扇脚本
 sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
