@@ -23,10 +23,10 @@ env:
   PPPOE_PASSWD: ${{ secrets.PPPOE_PASSWD }}
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: main
-  FEEDS_CONF: main/feeds.conf.default
+  #FEEDS_CONF: main/feeds.conf.default
   CONFIG_FILE: main/r2c.config
   DIY_P1_SH: main/diy-part1.sh
-  DIY_P2_SH: main/diy-part2.sh
+  DIY_P2_SH: main/diy-rockchip.sh
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
@@ -64,7 +64,7 @@ jobs:
 
     - name: Load custom feeds
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        #[ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
