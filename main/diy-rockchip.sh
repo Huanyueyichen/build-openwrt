@@ -101,6 +101,11 @@ svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat p
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ddns package/new/luci-app-ddns
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts package/new/ddns-scripts
 
+## Add luci-app-mosdns
+rm -rf feeds/packages/net/v2ray-geodata
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/luci-app-mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
+
 ## Add luci-app-adbyby-plus
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adbyby-plus package/new/luci-app-adbyby-plus
 svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/adbyby
