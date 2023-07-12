@@ -120,7 +120,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/fullconenat package
 svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
 
 ## openclash
-# bash $GITHUB_WORKSPACE/patches/openclash.sh arm64
+# bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## luci-app-ssr-plus
-bash $GITHUB_WORKSPACE/patches/ssrp.sh
+bash $GITHUB_WORKSPACE/scripts/ssrp.sh
