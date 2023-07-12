@@ -122,10 +122,10 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/fullconenat-nft pac
 svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
 
 ## openclash
-bash $GITHUB_WORKSPACE/patches/openclash.sh amd64
+bash $GITHUB_WORKSPACE/scripts/openclash.sh amd64
 
 ## luci-app-ssr-plus
-# bash $GITHUB_WORKSPACE/patches/ssrp.sh
+# bash $GITHUB_WORKSPACE/scripts/ssrp.sh
 
 ## ShellClash
-# bash $GITHUB_WORKSPACE/patches/ShellClash.sh
+# bash $GITHUB_WORKSPACE/scripts/ShellClash.sh
