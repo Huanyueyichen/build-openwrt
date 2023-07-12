@@ -112,34 +112,15 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/
 ## Add luci-app-wireguard
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
-## Add luci-app-ssr-plus
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ssr-plus package/new/luci-app-ssr-plus
-## ssr-plus依赖
-svn export https://github.com/kiddin9/openwrt-packages/trunk/dns2socks package/new/dns2socks
-svn export https://github.com/kiddin9/openwrt-packages/trunk/dns2tcp package/new/dns2tcp
-svn export https://github.com//kenzok8/small/trunk/lua-neturl package/new/lua-neturl
-svn export https://github.com/kiddin9/openwrt-packages/trunk/tcping package/new/tcping
-svn export https://github.com/kiddin9/openwrt-packages/trunk/shadowsocksr-libev package/new/shadowsocksr-libev
-svn export https://github.com/kiddin9/openwrt-packages/trunk/chinadns-ng package/new/chinadns-ng
-svn export https://github.com/kiddin9/openwrt-packages/trunk/hysteria package/new/hysteria
-svn export https://github.com/kiddin9/openwrt-packages/trunk/ipt2socks package/new/ipt2socks
-svn export https://github.com/kiddin9/openwrt-packages/trunk/naiveproxy package/new/naiveproxy
-svn export https://github.com/kiddin9/openwrt-packages/trunk/redsocks2 package/new/redsocks2
-svn export https://github.com/kiddin9/openwrt-packages/trunk/shadowsocks-rust package/new/shadowsocks-rust
-svn export https://github.com/kiddin9/openwrt-packages/trunk/simple-obfs package/new/simple-obfs
-svn export https://github.com/kiddin9/openwrt-packages/trunk/v2ray-plugin package/new/v2ray-plugin
-svn export https://github.com/kiddin9/openwrt-packages/trunk/trojan package/new/trojan
-svn export https://github.com/kiddin9/openwrt-packages/trunk/gn package/new/gn
-svn export https://github.com/kiddin9/openwrt-packages/trunk/microsocks package/new/microsocks
-svn export https://github.com/kiddin9/openwrt-packages/trunk/v2ray-core package/new/v2ray-core
+## Add luci-app-turboacc
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-turboacc package/new/luci-app-turboacc
+svn export https://github.com/kiddin9/openwrt-packages/trunk/dnsforwarder package/new/dnsforwarder
+svn export https://github.com/kiddin9/openwrt-packages/trunk/shortcut-fe package/new/shortcut-fe
+svn export https://github.com/kiddin9/openwrt-packages/trunk/fullconenat package/new/fullconenat
+svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
 
-# ssr passwall
-# git clone --depth=1 https://github.com/kenzok8/small package/new/small
+## openclash
+# bash $GITHUB_WORKSPACE/patches/openclash.sh arm64
 
-## Add luci-app-openclash
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-openclash package/new/luci-app-openclash
-
-## Add passwall
-# git clone https://github.com/xiaorouji/openwrt-passwall package/new/passwall
-# svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 package/new/luci-app-passwall2
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-passwall package/new/luci-app-passwall
+## luci-app-ssr-plus
+bash $GITHUB_WORKSPACE/patches/ssrp.sh
