@@ -125,43 +125,18 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/ne
 ## Add luci-app-wireguard
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
-## Add luci-app-ssr-plus
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ssr-plus package/new/luci-app-ssr-plus
-## ssr-plus依赖
-svn export https://github.com/kiddin9/openwrt-packages/trunk/dns2socks package/new/dns2socks
-svn export https://github.com/kiddin9/openwrt-packages/trunk/dns2tcp package/new/dns2tcp
-svn export https://github.com/kiddin9/openwrt-packages/trunk/lua-neturl package/new/lua-neturl
-svn export https://github.com/kiddin9/openwrt-packages/trunk/tcping package/new/tcping
-svn export https://github.com/kiddin9/openwrt-packages/trunk/shadowsocksr-libev package/new/shadowsocksr-libev
-svn export https://github.com/kiddin9/openwrt-packages/trunk/chinadns-ng package/new/chinadns-ng
-svn export https://github.com/kiddin9/openwrt-packages/trunk/hysteria package/new/hysteria
-svn export https://github.com/kiddin9/openwrt-packages/trunk/ipt2socks package/new/ipt2socks
-svn export https://github.com/kiddin9/openwrt-packages/trunk/naiveproxy package/new/naiveproxy
-svn export https://github.com/kiddin9/openwrt-packages/trunk/redsocks2 package/new/redsocks2
-svn export https://github.com/kiddin9/openwrt-packages/trunk/shadowsocks-rust package/new/shadowsocks-rust
-svn export https://github.com/kiddin9/openwrt-packages/trunk/simple-obfs package/new/simple-obfs
-svn export https://github.com/kiddin9/openwrt-packages/trunk/v2ray-plugin package/new/v2ray-plugin
-svn export https://github.com/kiddin9/openwrt-packages/trunk/trojan package/new/trojan
-svn export https://github.com/kiddin9/openwrt-packages/trunk/gn package/new/gn
+## Add luci-app-turboacc
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-turboacc package/new/luci-app-turboacc
+svn export https://github.com/kiddin9/openwrt-packages/trunk/dnsforwarder package/new/dnsforwarder
+svn export https://github.com/kiddin9/openwrt-packages/trunk/shortcut-fe package/new/shortcut-fe
+svn export https://github.com/kiddin9/openwrt-packages/trunk/fullconenat-nft package/new/fullconenat-nft
+svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
 
-## Add luci-app-openclash
-svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/new/luci-app-openclash
+## openclash
+bash $GITHUB_WORKSPACE/patches/openclash.sh arm64
 
-mkdir -p package/new/luci-app-openclash/root/etc/openclash/core
-
-CLASH_DEV_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/dev/clash-linux-arm64.tar.gz"
-CLASH_TUN_URL=$(curl -fsSL https://api.github.com/repos/vernesong/OpenClash/contents/master/premium\?ref\=core | grep download_url | grep arm64 | awk -F '"' '{print $4}' | grep -v "v3" )
-CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
-GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
-GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
-
-wget -qO- $CLASH_DEV_URL | tar xOvz > package/new/luci-app-openclash/root/etc/openclash/core/clash
-wget -qO- $CLASH_TUN_URL | gunzip -c > package/new/luci-app-openclash/root/etc/openclash/core/clash_tun
-wget -qO- $CLASH_META_URL | tar xOvz > package/new/luci-app-openclash/root/etc/openclash/core/clash_meta
-wget -qO- $GEOIP_URL > package/new/luci-app-openclash/root/etc/openclash/GeoIP.dat
-wget -qO- $GEOSITE_URL > package/new/luci-app-openclash/root/etc/openclash/GeoSite.dat
-
-chmod +x package/new/luci-app-openclash/root/etc/openclash/core/clash*
+## luci-app-ssr-plus
+# bash $GITHUB_WORKSPACE/patches/ssrp.sh
 
 ## ShellClash
 # bash $GITHUB_WORKSPACE/patches/ShellClash.sh
