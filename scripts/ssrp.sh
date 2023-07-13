@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo 'ssrp'
-
 ## Add luci-app-ssr-plus
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ssr-plus package/new/luci-app-ssr-plus
 ## ssr-plus依赖
@@ -20,3 +18,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/simple-obfs package
 svn export https://github.com/kiddin9/openwrt-packages/trunk/v2ray-plugin package/new/v2ray-plugin
 svn export https://github.com/kiddin9/openwrt-packages/trunk/trojan package/new/trojan
 svn export https://github.com/kiddin9/openwrt-packages/trunk/gn package/new/gn
+svn export https://github.com/kiddin9/openwrt-packages/trunk/microsocks package/new/microsocks
+svn export https://github.com/kiddin9/openwrt-packages/trunk/v2ray-core package/new/v2ray-core
+svn export https://github.com/kiddin9/openwrt-packages/trunk/tuic-client package/new/tuic-client
+svn export https://github.com/kiddin9/openwrt-packages/trunk/dnsproxy package/new/dnsproxy
