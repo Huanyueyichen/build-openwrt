@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo 'ShellClash'
-
 pushd package/base-files/files
   mkdir -p etc/clash
   mkdir -p etc/clash/ui
