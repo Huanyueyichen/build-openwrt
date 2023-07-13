@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo 'openclash'
-
 ## Add luci-app-openclash
 svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/new/luci-app-openclash
 
