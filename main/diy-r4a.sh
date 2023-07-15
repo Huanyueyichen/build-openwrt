@@ -124,3 +124,6 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/n
 
 ## luci-app-ssr-plus
 bash $GITHUB_WORKSPACE/scripts/ssrp.sh
+
+## zsh
+bash $GITHUB_WORKSPACE/scripts/zsh.sh
