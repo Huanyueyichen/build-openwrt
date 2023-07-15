@@ -141,5 +141,5 @@ bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 ## ShellClash
 # bash $GITHUB_WORKSPACE/scripts/ShellClash.sh
 
-## ShellClash
+## zsh
 bash $GITHUB_WORKSPACE/scripts/zsh.sh
