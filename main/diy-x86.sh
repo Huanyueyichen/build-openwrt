@@ -129,3 +129,6 @@ bash $GITHUB_WORKSPACE/scripts/openclash.sh amd64
 
 ## ShellClash
 # bash $GITHUB_WORKSPACE/scripts/ShellClash.sh
+
+## zsh
+bash $GITHUB_WORKSPACE/scripts/zsh.sh
