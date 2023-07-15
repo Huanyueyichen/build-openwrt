@@ -18,6 +18,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ./.oh-my-zsh/
 git clone https://github.com/zsh-users/zsh-completions ./.oh-my-zsh/custom/plugins/zsh-completions
 
 # Get .zshrc dotfile
-cp $GITHUB_WORKSPACE/scripts/.zshrc .
+cp $GITHUB_WORKSPACE/patches/.zshrc .
 
 popd
