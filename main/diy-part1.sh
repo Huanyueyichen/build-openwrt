@@ -19,3 +19,6 @@
 # rm -rf target/linux/rockchip/patches-6.1/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
 # cp -f $GITHUB_WORKSPACE/patches/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch target/linux/rockchip/patches-6.1/204-rockchip-rk3328-Add-support-for-FriendlyARM-NanoPi-R.patch
 
+# 移除 SNAPSHOT 标签
+sed -i 's,-SNAPSHOT,,g' include/version.mk
+sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
