@@ -19,4 +19,4 @@ sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/rockchip/Makefile
 # sed -i 's/PATCHVER:=5.4/PATCHVER:=5.10/g' target/linux/ramips/Makefile
 
 ##  修改R4A千兆版闪存布局为Breed直刷版
-# bash $GITHUB_WORKSPACE/scripts/r4a_breed.sh
+bash $GITHUB_WORKSPACE/scripts/r4a_breed.sh
