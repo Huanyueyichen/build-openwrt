@@ -37,5 +37,9 @@ svn export https://github.com/kenzok8/small-package/trunk/luci-app-onliner packa
 rm -rf package/feeds/luci/luci-app-socat
 svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat package/new/luci-app-socat
 
+## Add luci-app-ddns-go
+svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
+svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/new/ddns-go
+
 ## ssr passwall vssr bypass依赖
 git clone https://github.com/kenzok8/small package/new/small
