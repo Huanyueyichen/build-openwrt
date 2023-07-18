@@ -31,8 +31,8 @@ cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/
 ## Add luci-app-wechatpush
 git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
 
-## Add autoreboot
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-autoreboot package/new/luci-app-autoreboot
+## Add luci-app-accesscontrol
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-accesscontrol package/new/luci-app-accesscontrol
 
 ## Add luci-app-poweroff
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-poweroff package/new/luci-app-poweroff
@@ -72,8 +72,8 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner pa
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq package/new/luci-app-cpufreq
 
 ## Add luci-app-wrtbwmon
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/new/luci-app-wrtbwmon
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/new/wrtbwmon
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/new/luci-app-wrtbwmon
+svn export https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/new/wrtbwmon
 
 ## Add luci-app-ramfree
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ramfree package/new/luci-app-ramfree
@@ -89,16 +89,18 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
 svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat package/new/luci-app-socat
 
 ## Add luci-app-ddns
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ddns package/new/luci-app-ddns
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts package/new/ddns-scripts
+rm -rf feeds/luci/applications/luci-app-ddns
+rm -rf feeds/packages/net/ddns-scripts
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ddns package/new/luci-app-ddns
+svn export https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts package/new/ddns-scripts
 
 ## Add luci-app-adbyby-plus
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adbyby-plus package/new/luci-app-adbyby-plus
 svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/adbyby
 
 ## Add luci-app-ddns-go
-svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
-svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/new/ddns-go
+# svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
+# svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/new/ddns-go
 
 ## Add automount
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/automount package/new/automount
@@ -110,7 +112,7 @@ svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/ne
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/mhz package/new/mhz
 
 ## Add luci-app-wireguard
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
 ## Add luci-app-turboacc
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-turboacc package/new/luci-app-turboacc
@@ -119,11 +121,14 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard 
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/fullconenat package/new/fullconenat
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
 
+## ssr passwall vssr bypass依赖
+git clone https://github.com/kenzok8/small package/new/small
+
 ## openclash
 # bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## luci-app-ssr-plus
-bash $GITHUB_WORKSPACE/scripts/ssrp.sh
+# bash $GITHUB_WORKSPACE/scripts/ssrp.sh
 
 ## zsh
 # bash $GITHUB_WORKSPACE/scripts/zsh.sh
