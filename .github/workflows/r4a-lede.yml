@@ -23,10 +23,10 @@ env:
   PPPOE_PASSWD: ${{ secrets.PPPOE_PASSWD }}
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  FEEDS_CONF: lede/feeds.conf.default
+  #FEEDS_CONF: lede/feeds.conf.default
   CONFIG_FILE: lede/r4a.config
   DIY_P1_SH: lede/diy-part1.sh
-  DIY_P2_SH: lede/diy-part2.sh
+  DIY_P2_SH: lede/diy-r4a.sh
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
@@ -64,7 +64,7 @@ jobs:
 
     - name: Load custom feeds
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        #[ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
