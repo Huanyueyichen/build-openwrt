@@ -125,13 +125,6 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/ne
 ## Add luci-app-wireguard
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
-## Add luci-app-turboacc
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-turboacc package/new/luci-app-turboacc
-svn export https://github.com/kiddin9/openwrt-packages/trunk/dnsforwarder package/new/dnsforwarder
-svn export https://github.com/kiddin9/openwrt-packages/trunk/shortcut-fe package/new/shortcut-fe
-svn export https://github.com/kiddin9/openwrt-packages/trunk/fullconenat-nft package/new/fullconenat-nft
-svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
-
 ## openclash
 bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
@@ -143,3 +136,6 @@ bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## zsh
 bash $GITHUB_WORKSPACE/scripts/zsh.sh
+
+## turboacc
+bash $GITHUB_WORKSPACE/scripts/turboacc.sh
