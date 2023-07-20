@@ -122,13 +122,13 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
 
 ## ssr passwall vssr bypass依赖
-git clone https://github.com/kenzok8/small package/new/small
+#git clone https://github.com/kenzok8/small package/new/small
 
 ## openclash
 # bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## luci-app-ssr-plus
-# bash $GITHUB_WORKSPACE/scripts/ssrp.sh
+bash $GITHUB_WORKSPACE/scripts/ssrp.sh
 
 ## zsh
 # bash $GITHUB_WORKSPACE/scripts/zsh.sh
