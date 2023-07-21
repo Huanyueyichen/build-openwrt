@@ -125,6 +125,3 @@ bash $GITHUB_WORKSPACE/scripts/openclash.sh amd64
 
 ## zsh
 bash $GITHUB_WORKSPACE/scripts/zsh.sh
-
-## turboacc
-bash $GITHUB_WORKSPACE/scripts/turboacc.sh
