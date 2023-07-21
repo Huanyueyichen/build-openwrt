@@ -134,4 +134,4 @@ bash $GITHUB_WORKSPACE/scripts/ssrp.sh
 # bash $GITHUB_WORKSPACE/scripts/zsh.sh
 
 ## fullconenat
-bash $GITHUB_WORKSPACE/scripts/fullconenat.sh
+# bash $GITHUB_WORKSPACE/scripts/fullconenat.sh
