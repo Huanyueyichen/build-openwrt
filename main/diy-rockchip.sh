@@ -40,6 +40,9 @@ git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/lu
 ## Add autoreboot
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-autoreboot package/new/luci-app-autoreboot
 
+## Add luci-app-accesscontrol
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-accesscontrol package/new/luci-app-accesscontrol
+
 ## Add luci-app-poweroff
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-poweroff package/new/luci-app-poweroff
 
