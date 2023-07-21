@@ -1,5 +1,12 @@
 #!/bin/bash
 
+## x86机型,默认内核5.15，修改内核为6.1
+# sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/x86/Makefile
+
+# 移除 SNAPSHOT 标签
+sed -i 's,-SNAPSHOT,,g' include/version.mk
+sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
+
 ## 修改openwrt登陆地址,把下面的192.168.11.1修改成你想要的就可以了
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
@@ -7,7 +14,6 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
 
-#################################################################################################################################################
 
 ## 下载主题luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
@@ -128,3 +134,6 @@ bash $GITHUB_WORKSPACE/scripts/openclash.sh amd64
 
 ## zsh
 bash $GITHUB_WORKSPACE/scripts/zsh.sh
+
+## turboacc
+bash $GITHUB_WORKSPACE/scripts/turboacc.sh
