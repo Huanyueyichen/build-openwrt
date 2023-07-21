@@ -22,3 +22,6 @@
 # 移除 SNAPSHOT 标签
 sed -i 's,-SNAPSHOT,,g' include/version.mk
 sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
+
+## turboacc
+bash $GITHUB_WORKSPACE/scripts/turboacc.sh
