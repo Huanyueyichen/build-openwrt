@@ -25,7 +25,7 @@ env:
   REPO_BRANCH: openwrt-22.03
   #FEEDS_CONF: main/feeds.conf.default
   CONFIG_FILE: main/r4a_2203.config
-  DIY_P1_SH: main/diy-part1.sh
+  DIY_P1_SH: main/diy-r4a-part1.sh
   DIY_P2_SH: main/diy-r4a.sh
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
