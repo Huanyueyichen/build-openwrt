@@ -8,4 +8,4 @@ mkdir package/network/config/firewall/patches
 wget -P package/network/config/firewall/patches/ https://github.com/Paull/openwrt-fullconenat/raw/master/files/fullconenat-fw3.patch
 
 # Clone this repo
-git clone -b master --single-branch https://github.com/Paull/openwrt-fullconenat package/new/fullconenat
+# git clone -b master --single-branch https://github.com/Paull/openwrt-fullconenat package/new/fullconenat
