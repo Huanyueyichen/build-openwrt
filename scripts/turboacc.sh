@@ -9,7 +9,7 @@ git clone https://github.com/chenmozhijin/turboacc
 mv ./turboacc/luci-app-turboacc ./luci-app-turboacc
 rm -rf ./turboacc
 cd ../..
-cp -f turboacc_tmp/turboacc/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch ./target/linux/generic/hack-5.15/613-netfilter_optional_tcp_window_check.patch
+cp -f turboacc_tmp/turboacc/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch ./target/linux/generic/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch
 cp -f turboacc_tmp/turboacc/hack-5.15/953-net-patch-linux-kernel-to-support-shortcut-fe.patch ./target/linux/generic/hack-5.15/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
 cp -f turboacc_tmp/turboacc/pending-5.15/613-netfilter_optional_tcp_window_check.patch ./target/linux/generic/pending-5.15/613-netfilter_optional_tcp_window_check.patch
 rm -rf ./package/libs/libnftnl ./package/network/config/firewall4 ./package/network/utils/nftables
