@@ -89,7 +89,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner pa
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi package/new/luci-app-guest-wifi
 
 ## Add luci-app-easymesh
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-easymesh package/new/luci-app-easymesh
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-easymesh package/new/luci-app-easymesh
 
 ## Add luci-app-socat
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat package/new/luci-app-socat
