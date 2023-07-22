@@ -124,6 +124,13 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/
 ## luci-app-turboacc
 bash $GITHUB_WORKSPACE/scripts/turboacc2203.sh
 
+## Add luci-app-turboacc
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-turboacc package/new/luci-app-turboacc
+svn export https://github.com/kiddin9/openwrt-packages/trunk/dnsforwarder package/new/dnsforwarder
+svn export https://github.com/kiddin9/openwrt-packages/trunk/shortcut-fe package/new/shortcut-fe
+svn export https://github.com/kiddin9/openwrt-packages/trunk/fullconenat-nft package/new/fullconenat-nft
+svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
+
 ## ssr passwall vssr bypass依赖
 #git clone https://github.com/kenzok8/small package/new/small
 
