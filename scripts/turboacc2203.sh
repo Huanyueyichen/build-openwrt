@@ -20,5 +20,5 @@ cp -f turboacc_tmp/pending-5.10/613-netfilter_optional_tcp_window_check.patch ./
 # cp -RT ./turboacc_tmp/turboacc/libnftnl-1.2.5/libnftnl ./package/libs/libnftnl
 # cp -RT ./turboacc_tmp/turboacc/nftables-1.0.7/nftables ./package/network/utils/nftables
 rm -rf turboacc_tmp
-# echo "# CONFIG_NF_CONNTRACK_CHAIN_EVENTS is not set" >> target/linux/generic/config-5.10
-# echo "# CONFIG_SHORTCUT_FE is not set" >> target/linux/generic/config-5.10
+echo "# CONFIG_NF_CONNTRACK_CHAIN_EVENTS is not set" >> target/linux/generic/config-5.10
+echo "# CONFIG_SHORTCUT_FE is not set" >> target/linux/generic/config-5.10
