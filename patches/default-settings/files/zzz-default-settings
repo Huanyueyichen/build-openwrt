@@ -3,8 +3,7 @@
 # timezone
 uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
-# zram-swap
-uci set system.@system[0].zram_priority=100
+
 # ntp server
 uci -q delete system.ntp.server
 uci add_list system.ntp.server="ntp.aliyun.com"
@@ -13,33 +12,10 @@ uci add_list system.ntp.server="time.ustc.edu.cn"
 uci add_list system.ntp.server="cn.pool.ntp.org"
 uci commit system && service sysntpd reload
 
-# uhttpd
-uci set uhttpd.main.rfc1918_filter=0
-uci set uhttpd.main.redirect_https=0
-uci commit uhttpd && service uhttpd reload
-
-# dnsmasq
-uci set dhcp.lan.ra_management='1'
-uci del dhcp.@dnsmasq[0].rebind_protection='1'
-sed -i '/log-facility/d' /etc/dnsmasq.conf
-echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
-uci commit dhcp
-
-# firewall
-sed -i '/REDIRECT --to-ports 53/d' /etc/firewall.user
-echo 'iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53' >> /etc/firewall.user
-echo 'iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53' >> /etc/firewall.user
-echo '[ -n "$(command -v ip6tables)" ] && ip6tables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53' >> /etc/firewall.user
-echo '[ -n "$(command -v ip6tables)" ] && ip6tables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53' >> /etc/firewall.user
-
 # feed
 sed -i 's,downloads.openwrt.org,mirror.sjtu.edu.cn/openwrt,g' /etc/opkg/distfeeds.conf
 
 ln -sf /sbin/ip /usr/bin/ip
-
-opkg flag hold luci-app-firewall
-opkg flag hold firewall
-opkg flag hold dnsmasq-full
 
 # luci cache
 rm -rf /tmp/luci-modulecache/
