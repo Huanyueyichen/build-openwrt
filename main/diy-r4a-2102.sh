@@ -20,7 +20,7 @@ sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 mkdir -p package/new
 
 # default settings
-cp -f $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
+cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
 
 ## 下载主题luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
