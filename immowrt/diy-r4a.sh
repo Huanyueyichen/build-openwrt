@@ -4,6 +4,10 @@
 ## 修改openwrt登陆地址,把下面的192.168.11.1修改成你想要的就可以了
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
+# 移除 SNAPSHOT 标签
+sed -i 's,-SNAPSHOT,,g' include/version.mk
+sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
+
 ## requires golang 1.19.x or latest version 
 # rm -rf feeds/packages/lang/golang
 # git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
