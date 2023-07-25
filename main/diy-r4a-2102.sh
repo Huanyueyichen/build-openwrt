@@ -19,6 +19,9 @@ sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 # rm -rf package/new
 mkdir -p package/new
 
+# default settings
+cp -f $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
+
 ## 下载主题luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
