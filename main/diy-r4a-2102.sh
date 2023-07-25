@@ -128,7 +128,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/shortcut-fe package
 svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
 
 ## fullconenat
-# bash $GITHUB_WORKSPACE/scripts/fullconenat.sh
+bash $GITHUB_WORKSPACE/scripts/fullconenat.sh
 
 ## ssr passwall vssr bypass依赖
 #git clone https://github.com/kenzok8/small package/new/small
