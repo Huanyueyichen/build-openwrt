@@ -16,7 +16,9 @@ rm -rf package/new
 mkdir -p package/new
 
 ## 下载主题luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf package/feeds/luci/luci-theme-argon
+rm -rf feeds/luci/applications/luci-app-argon-config
 rm -rf package/feeds/luci/luci-app-argon-config
 
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
@@ -37,6 +39,7 @@ svn export https://github.com/kenzok8/small-package/trunk/luci-app-onliner packa
 
 ## Add luci-app-socat
 rm -rf package/feeds/luci/luci-app-socat
+rm -rf feeds/luci/applications/luci-app-socat
 svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat package/new/luci-app-socat
 
 ## Add luci-app-ddns-go
