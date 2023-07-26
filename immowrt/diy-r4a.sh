@@ -50,8 +50,8 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner pa
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-irqbalance package/new/luci-app-irqbalance
 
 ## Add luci-app-wrtbwmon
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/new/luci-app-wrtbwmon
-svn export https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/new/wrtbwmon
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/new/luci-app-wrtbwmon
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/new/wrtbwmon
 
 ## Add luci-app-socat
 rm -rf package/feeds/luci/luci-app-socat
