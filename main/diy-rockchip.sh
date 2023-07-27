@@ -27,6 +27,8 @@ cp -f -p $GITHUB_WORKSPACE/patches/start-rk3328-pwm-fan.sh target/linux/rockchip
 ## 添加rtl8821cu驱动
 svn export https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl8821cu package/kernel/rtl8821cu
 
+# rm -rf package/new
+mkdir -p package/new
 
 ## 下载主题luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
@@ -94,8 +96,8 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq pa
 sed -i 's/1512000/1200000/g' package/new/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
 
 ## Add luci-app-wrtbwmon
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/new/luci-app-wrtbwmon
-svn export https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/new/wrtbwmon
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/new/luci-app-wrtbwmon
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/new/wrtbwmon
 
 ## Add luci-app-ramfree
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ramfree package/new/luci-app-ramfree
@@ -134,6 +136,9 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/ne
 
 ## Add luci-app-wireguard
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
+
+## ssr passwall vssr bypass依赖
+git clone https://github.com/kenzok8/small package/new/small
 
 ## openclash
 bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
