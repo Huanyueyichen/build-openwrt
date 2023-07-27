@@ -1,10 +1,10 @@
 #!/bin/bash
 
 ## rockchip机型,默认内核5.15，修改内核为6.1
-sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/rockchip/Makefile
+# sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/rockchip/Makefile
 
 ## 移除 SNAPSHOT 标签
-sed -i 's,-SNAPSHOT,,g' include/version.mk
+sed -i 's,SNAPSHOT,,g' include/version.mk
 sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 
 ## 修改openwrt登陆地址,把下面的192.168.11.1修改成你想要的就可以了
