@@ -57,3 +57,8 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner pa
 rm -rf package/feeds/luci/luci-app-socat
 rm -rf feeds/luci/applications/luci-app-socat
 svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat package/new/luci-app-socat
+
+## Add luci-app-wechatpush
+rm -rf package/feeds/luci/luci-app-wechatpush
+rm -rf feeds/luci/applications/luci-app-wechatpush
+git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
