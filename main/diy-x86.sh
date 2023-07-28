@@ -121,7 +121,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/ntfs3-mount package
 svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/new/autocore
 
 ## Add luci-app-wireguard
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
 ## openclash
 bash $GITHUB_WORKSPACE/scripts/openclash.sh amd64
@@ -136,4 +136,4 @@ bash $GITHUB_WORKSPACE/scripts/openclash.sh amd64
 bash $GITHUB_WORKSPACE/scripts/zsh.sh
 
 ## turboacc
-bash $GITHUB_WORKSPACE/scripts/turboacc.sh
+bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
