@@ -127,7 +127,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/
 # bash $GITHUB_WORKSPACE/scripts/upnp.sh
 
 ## luci-app-turboacc
-bash $GITHUB_WORKSPACE/scripts/turboacc2203.sh
+bash $GITHUB_WORKSPACE/scripts/turboacc_5_10.sh
 
 ## Add luci-app-turboacc
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-turboacc package/new/luci-app-turboacc
