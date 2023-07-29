@@ -23,10 +23,8 @@ env:
   PPPOE_PASSWD: ${{ secrets.PPPOE_PASSWD }}
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  #FEEDS_CONF: lede/feeds.conf.default
   CONFIG_FILE: lede/r4a.config
-  DIY_P1_SH: lede/diy-part1.sh
-  DIY_P2_SH: lede/diy-r4a.sh
+  DIY_SH: lede/diy-r4a.sh
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
@@ -61,13 +59,6 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-
-    - name: Load custom feeds
-      run: |
-        #[ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
         
     - name: Default PPPOE Setting
       if: env.PPPOE_USERNAME && env.PPPOE_PASSWD
@@ -88,9 +79,9 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P2_SH
+        chmod +x $DIY_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH  
+        $GITHUB_WORKSPACE/$DIY_SH  
 
     - name: Download package
       id: package
