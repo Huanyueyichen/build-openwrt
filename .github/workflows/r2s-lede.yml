@@ -25,8 +25,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: lede/feeds.conf.default
   CONFIG_FILE: lede/r2s.config
-  DIY_P1_SH: lede/diy-part1.sh
-  DIY_P2_SH: lede/diy-part2.sh
+  DIY_SH: lede/diy-rockchip.sh
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
@@ -65,9 +64,6 @@ jobs:
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
         
     - name: Default PPPOE Setting
       if: env.PPPOE_USERNAME && env.PPPOE_PASSWD
