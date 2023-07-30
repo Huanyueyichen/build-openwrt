@@ -23,10 +23,10 @@ rm -rf package/feeds/luci/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
 rm -rf package/feeds/luci/luci-app-argon-config
 
-# git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
-# git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
+# git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
+# git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
 
 ## 调整 LuCI 依赖，去除 luci-app-opkg，替换主题 bootstrap 为 argon
 sed -i '/+luci-light/d;s/+luci-app-opkg/+luci-light/' ./feeds/luci/collections/luci/Makefile
