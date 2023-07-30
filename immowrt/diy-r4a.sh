@@ -63,5 +63,4 @@ svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat p
 ## Add luci-app-wechatpush
 rm -rf package/feeds/luci/luci-app-wechatpush
 rm -rf feeds/luci/applications/luci-app-wechatpush
-# git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
-git clone -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush.git package/new/luci-app-wechatpush
+git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
