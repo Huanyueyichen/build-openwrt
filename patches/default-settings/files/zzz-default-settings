@@ -1,5 +1,8 @@
 #!/bin/sh
 
+uci set luci.main.lang=zh_cn
+uci commit luci
+
 # timezone
 uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
@@ -14,5 +17,8 @@ uci commit system && service sysntpd reload
 
 # feed
 sed -i 's,downloads.openwrt.org,mirror.sjtu.edu.cn/openwrt,g' /etc/opkg/distfeeds.conf
+
+rm -rf /tmp/luci-modulecache/
+rm -f /tmp/luci-indexcache
 
 exit 0
