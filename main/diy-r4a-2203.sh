@@ -124,7 +124,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
 ## set default-setting
-cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
+# cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
 
 ## fix upnp
 # bash $GITHUB_WORKSPACE/scripts/upnp.sh
