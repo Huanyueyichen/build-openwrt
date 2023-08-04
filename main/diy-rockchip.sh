@@ -27,6 +27,9 @@ cp -f -p $GITHUB_WORKSPACE/patches/start-rk3328-pwm-fan.sh target/linux/rockchip
 ## 添加rtl8821cu驱动
 svn export https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl8821cu package/kernel/rtl8821cu
 
+## set default-setting
+cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
+
 # rm -rf package/new
 mkdir -p package/new
 
