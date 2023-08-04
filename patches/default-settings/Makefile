@@ -30,23 +30,7 @@ define Package/default-settings
 	CATEGORY:=LuCI
 	TITLE:=LuCI support for Default Settings
 	PKGARCH:=all
-	DEPENDS:=+ip6tables \
-		+iptables-mod-fullconenat \
-		+kmod-ipsec \
-		+kmod-ipsec4 \
-		+kmod-ipsec6 \
-		+kmod-ipt-ipsec \
-		+kmod-macvlan \
-		+kmod-pppol2tp \
-		+kmod-wireguard \
-		+libustream-wolfssl \
-		+luci \
-		+luci-compat \
-		+luci-proto-ipv6 \
-		+odhcp6c \
-		+odhcpd-ipv6only \
-		+zram-swap \
-		+@LUCI_LANG_zh_Hans
+	DEPENDS:=+@LUCI_LANG_zh_Hans
 endef
 
 define Build/Compile
