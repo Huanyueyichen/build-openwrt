@@ -159,4 +159,4 @@ bash $GITHUB_WORKSPACE/scripts/zsh.sh
 bash $GITHUB_WORKSPACE/scripts/turboacc_6_1.sh
 
 ## bbrv2
-bash $GITHUB_WORKSPACE/scripts/bbrv2.sh
+bash $GITHUB_WORKSPACE/scripts/bbrv2_2305.sh
