@@ -132,6 +132,9 @@ cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
 ## luci-app-turboacc
 bash $GITHUB_WORKSPACE/scripts/turboacc_5_10.sh
 
+## bbrv2
+bash $GITHUB_WORKSPACE/scripts/bbrv2_2203.sh
+
 ## Add luci-app-turboacc
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-turboacc package/new/luci-app-turboacc
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/dnsforwarder package/new/dnsforwarder
