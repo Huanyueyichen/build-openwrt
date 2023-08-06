@@ -6,6 +6,10 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 ## 修改openwrt登陆地址,把下面的192.168.11.1修改成你想要的就可以了
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
+## small_flash.patch
+sed -i '/2591/s/$/ wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/' target/linux/ramips/image/mt7621.mk
+cat target/linux/ramips/image/mt7621.mk | tail -n +2584 | head -n 10
+
 # 移除 SNAPSHOT 标签
 sed -i 's,-SNAPSHOT,,g' include/version.mk
 sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
@@ -124,8 +128,8 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
 ## small_flash.patch
-patch -d './' -p1 -i $GITHUB_WORKSPACE/patches/01-small_flash.patch
-cat target/linux/ramips/image/mt7621.mk
+# patch -d './' -p1 -i $GITHUB_WORKSPACE/patches/01-small_flash.patch
+# cat target/linux/ramips/image/mt7621.mk
 
 ## set default-setting
 cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
