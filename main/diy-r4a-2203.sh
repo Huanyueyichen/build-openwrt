@@ -8,7 +8,7 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 
 ## small_flash.patch
 sed -i '/2591/s/$/ wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/' target/linux/ramips/image/mt7621.mk
-cat target/linux/ramips/image/mt7621.mk | tail -n +2584 | head -n 10
+cat target/linux/ramips/image/mt7621.mk
 
 # 移除 SNAPSHOT 标签
 sed -i 's,-SNAPSHOT,,g' include/version.mk
