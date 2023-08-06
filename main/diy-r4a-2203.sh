@@ -133,7 +133,7 @@ cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
 bash $GITHUB_WORKSPACE/scripts/turboacc_5_10.sh
 
 ## bbrv2
-bash $GITHUB_WORKSPACE/scripts/bbrv2_2203.sh
+# bash $GITHUB_WORKSPACE/scripts/bbrv2_2203.sh
 
 ## Add luci-app-turboacc
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-turboacc package/new/luci-app-turboacc
@@ -143,7 +143,7 @@ bash $GITHUB_WORKSPACE/scripts/bbrv2_2203.sh
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
 
 ## ssr passwall vssr bypass依赖
-#git clone https://github.com/kenzok8/small package/new/small
+# git clone https://github.com/kenzok8/small package/new/small
 
 ## openclash
 # bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
