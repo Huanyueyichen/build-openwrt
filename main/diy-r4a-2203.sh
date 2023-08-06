@@ -8,7 +8,7 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 
 ## small_flash.patch
 # sed -i '/2075/s/$/ -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/' target/linux/ramips/image/mt7621.mk
-sed -i 's/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/g' target/linux/ramips/image/mt7621.mk
+# sed -i 's/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/g' target/linux/ramips/image/mt7621.mk
 # cat target/linux/ramips/image/mt7621.mk | tail -n +2068 | head -n 10
 
 # 移除 SNAPSHOT 标签
