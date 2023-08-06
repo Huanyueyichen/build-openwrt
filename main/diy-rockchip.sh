@@ -140,6 +140,10 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/ne
 ## Add luci-app-wireguard
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
+# Boost 通用即插即用
+rm -rf feeds/packages/net/miniupnpd
+svn export https://github.com/immortalwrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
+
 ## ssr passwall vssr bypass依赖
 git clone https://github.com/kenzok8/small package/new/small
 
