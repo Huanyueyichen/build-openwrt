@@ -123,6 +123,10 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/
 ## Add luci-app-wireguard
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
+## small_flash.patch
+patch -d './' -p1 -i $GITHUB_WORKSPACE/patches/01-small_flash.patch
+cat target/linux/ramips/image/mt7621.mk
+
 ## set default-setting
 cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
 
