@@ -161,6 +161,3 @@ bash $GITHUB_WORKSPACE/scripts/zsh.sh
 
 ## turboacc
 bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
-
-## bbrv2
-# bash $GITHUB_WORKSPACE/scripts/bbrv2_2305.sh
