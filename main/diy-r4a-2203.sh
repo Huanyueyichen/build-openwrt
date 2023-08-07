@@ -6,11 +6,6 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 ## 修改openwrt登陆地址,把下面的192.168.11.1修改成你想要的就可以了
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
-## small_flash.patch
-# sed -i '/2075/s/$/ -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/' target/linux/ramips/image/mt7621.mk
-# sed -i 's/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/g' target/linux/ramips/image/mt7621.mk
-# cat target/linux/ramips/image/mt7621.mk | tail -n +2068 | head -n 10
-
 # 移除 SNAPSHOT 标签
 sed -i 's,-SNAPSHOT,,g' include/version.mk
 sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
@@ -57,37 +52,10 @@ svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-autor
 ## Add luci-app-onliner
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner package/new/luci-app-onliner
 
-## Add luci-app-irqbalance
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-irqbalance package/new/luci-app-irqbalance
-
-## Add luci-app-AdguardHome
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/new/adguardhome
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome package/new/luci-app-adguardhome
-
-## Add luci-app-lucky
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/lucky package/new/lucky
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-lucky package/new/luci-app-lucky
-
-## Add luci-app-qbittorrent
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/qBittorrent-Enhanced-Edition package/new/qBittorrent-Enhanced-Edition
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-qbittorrent package/new/luci-app-qbittorrent
-
-## qbittorrent依赖
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6tools package/new/qt6tools
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6base package/new/qt6base
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/libdouble-conversion package/new/libdouble-conversion
-
 ## Add luci-app-fileassistant luci-app-filetransfer
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant package/new/luci-app-fileassistant
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-filetransfer package/new/luci-app-filetransfer
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-fs package/new/luci-lib-fs
-
-## Add luci-app-cpufreq
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq package/new/luci-app-cpufreq
-
-## Add luci-app-wrtbwmon
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/new/luci-app-wrtbwmon
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/new/wrtbwmon
 
 ## Add luci-app-ramfree
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ramfree package/new/luci-app-ramfree
@@ -102,54 +70,18 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat package/new/luci-app-socat
 svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat package/new/luci-app-socat
 
-## Add luci-app-ddns
-# rm -rf feeds/luci/applications/luci-app-ddns
-# rm -rf feeds/packages/net/ddns-scripts
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ddns package/new/luci-app-ddns
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts package/new/ddns-scripts
-
 ## Add luci-app-adbyby-plus
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adbyby-plus package/new/luci-app-adbyby-plus
 svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/adbyby
 
-## Add luci-app-ddns-go
-# svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
-# svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/new/ddns-go
-
-## Add automount
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/automount package/new/automount
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/ntfs3-mount package/new/ntfs3-mount
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/lua-neturl package/new/lua-neturl
-
-## Add autocore
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/new/autocore
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/mhz package/new/mhz
-
 ## Add luci-app-wireguard
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
-
-## small_flash.patch
-# patch -d './' -p1 -i $GITHUB_WORKSPACE/patches/01-small_flash.patch
-# cat target/linux/ramips/image/mt7621.mk
 
 ## set default-setting
 cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
 
-## fix upnp
-# bash $GITHUB_WORKSPACE/scripts/upnp.sh
-
 ## luci-app-turboacc
 bash $GITHUB_WORKSPACE/scripts/turboacc_5_10.sh
-
-## bbrv2
-# bash $GITHUB_WORKSPACE/scripts/bbrv2_2203.sh
-
-## Add luci-app-turboacc
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-turboacc package/new/luci-app-turboacc
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/dnsforwarder package/new/dnsforwarder
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/shortcut-fe package/new/shortcut-fe
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/fullconenat-nft package/new/fullconenat-nft
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
 
 ## ssr passwall vssr bypass依赖
 # git clone https://github.com/kenzok8/small package/new/small
