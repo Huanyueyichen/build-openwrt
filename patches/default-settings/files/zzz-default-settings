@@ -15,10 +15,6 @@ uci commit system && service sysntpd reload
 # feed
 sed -i 's,downloads.openwrt.org,mirror.sjtu.edu.cn/openwrt,g' /etc/opkg/distfeeds.conf
 
-# Dnsmasq
-sed -i '/log-facility/d' /etc/dnsmasq.conf
-echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
-
 rm -rf /tmp/luci-modulecache/
 rm -f /tmp/luci-indexcache
 
