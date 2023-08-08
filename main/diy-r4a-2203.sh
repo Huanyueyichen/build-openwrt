@@ -14,10 +14,17 @@ sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 # rm -rf feeds/packages/lang/golang
 # git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
 
+# Boost 通用即插即用
+rm -rf feeds/packages/net/miniupnpd
+svn export https://github.com/immortalwrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
+
 #############################################################################################################
 
 # rm -rf package/new
 mkdir -p package/new
+
+## set default-setting
+cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
 
 ## 下载主题luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
@@ -76,13 +83,6 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/
 
 ## Add luci-app-wireguard
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
-
-# Boost 通用即插即用
-rm -rf feeds/packages/net/miniupnpd
-svn export https://github.com/immortalwrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
-
-## set default-setting
-cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
 
 ## luci-app-turboacc
 bash $GITHUB_WORKSPACE/scripts/turboacc_5_10.sh
