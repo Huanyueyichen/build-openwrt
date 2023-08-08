@@ -7,6 +7,10 @@ cd ../package/turboacc
 git clone https://github.com/fullcone-nat-nftables/nft-fullcone
 git clone https://github.com/chenmozhijin/turboacc
 mv ./turboacc/luci-app-turboacc ./luci-app-turboacc
+
+sed -i '26d' luci-app-turboacc/Makefile
+cat luci-app-turboacc/Makefile | tail -n +24 | head -n 9
+
 rm -rf ./turboacc
 cd ../..
 cp -f turboacc_tmp/turboacc/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch ./target/linux/generic/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch
