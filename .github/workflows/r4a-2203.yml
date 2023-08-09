@@ -13,10 +13,10 @@ name: r4a-2203
 on:
   repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: 0 21 ? * 0,4
-  watch:
-     types: started
+  #schedule:
+    #- cron: 0 21 ? * 0,4
+  #watch:
+     #types: started
 
 env:
   PPPOE_USERNAME: ${{ secrets.PPPOE_USERNAME }}
