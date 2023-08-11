@@ -14,6 +14,9 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
 
+# rm -rf package/new
+mkdir -p package/new
+
 ## set default-setting
 cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
 
@@ -127,9 +130,6 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/ne
 
 ## openclash
 bash $GITHUB_WORKSPACE/scripts/openclash.sh amd64
-
-## luci-app-ssr-plus
-# bash $GITHUB_WORKSPACE/scripts/ssrp.sh
 
 ## ShellClash
 # bash $GITHUB_WORKSPACE/scripts/ShellClash.sh
