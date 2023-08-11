@@ -27,11 +27,11 @@ cp -f -p $GITHUB_WORKSPACE/patches/start-rk3328-pwm-fan.sh target/linux/rockchip
 ## 添加rtl8821cu驱动
 svn export https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl8821cu package/kernel/rtl8821cu
 
-## set default-setting
-cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
-
 # rm -rf package/new
 mkdir -p package/new
+
+## set default-setting
+cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
 
 ## 下载主题luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
@@ -149,9 +149,6 @@ git clone https://github.com/kenzok8/small package/new/small
 
 ## openclash
 bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
-
-## luci-app-ssr-plus
-# bash $GITHUB_WORKSPACE/scripts/ssrp.sh
 
 ## ShellClash
 # bash $GITHUB_WORKSPACE/scripts/ShellClash.sh
