@@ -83,7 +83,7 @@ return baseclass.extend({
 			_('Hostname'),         boardinfo.hostname,
 			_('Model'),            boardinfo.model + cpubench.cpubench,
 			_('Architecture'),     cpuinfo.cpuinfo || boardinfo.system,
-			_('Target Platform'),  (L.isObject(boardinfo.release) ? boardinfo.release.target : ''),
+			_('Target Platform'),  (L.isObject(boardinfo.release) ? boardinfo.release.target : '') + (tempinfo || ''),
 			_('Firmware Version'), (L.isObject(boardinfo.release) ? boardinfo.release.description + ' / ' : '') + (luciversion || ''),
 			_('Kernel Version'),   boardinfo.kernel,
 			_('Local Time'),       datestr,
