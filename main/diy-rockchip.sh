@@ -88,7 +88,7 @@ sed -i "/  upstream_dns_file: ""/i\  - 119.29.29.29" package/new/luci-app-adguar
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-lucky package/new/luci-app-lucky
 
 ## Add luci-app-qbittorrent
-svn export https://github.com/immortalwrt/luci/trunk/luci-app-qbittorrent package/new/luci-app-qbittorrent
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-qbittorrent package/new/luci-app-qbittorrent
 svn export https://github.com/immortalwrt/packages/trunk/net/qBittorrent-Enhanced-Edition package/new/qBittorrent-Enhanced-Edition
 ## qbittorrent依赖
 svn export https://github.com/immortalwrt/packages/trunk/utils/qt6tools package/new/qt6tools
