@@ -12,9 +12,6 @@ uci add_list system.ntp.server="time.ustc.edu.cn"
 uci add_list system.ntp.server="cn.pool.ntp.org"
 uci commit system && service sysntpd reload
 
-# feed
-sed -i 's,downloads.openwrt.org,mirror.sjtu.edu.cn/openwrt,g' /etc/opkg/distfeeds.conf
-
 # Dnsmasq
 sed -i '/log-facility/d' /etc/dnsmasq.conf
 echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
