@@ -30,9 +30,9 @@ svn export https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl88
 ## 添加 luci 界面 cpu 温度，cpu 使用率
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
 wget -P feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/ https://github.com/immortalwrt/luci/raw/master/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
-sed -i "/target : ''/target : '') + (tempinfo || ''/" feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.j
+sed -i "/target : ''/target : ''\) + \(tempinfo || ''/" feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.j
 sed -i "/description + ' /description/" feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.j
-sed -i "/\/ ' : '') + (luciversion || ''/ : ''/" feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.j
+sed -i "/\/ ' : ''\) + \(luciversion || ''/ : ''/" feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.j
 cat feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
 
 # rm -rf package/new
