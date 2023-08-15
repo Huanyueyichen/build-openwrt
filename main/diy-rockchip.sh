@@ -34,7 +34,7 @@ svn export https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl88
 # cat feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
 
 rm -rf feeds/luci/modules/luci-mod-status
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-mod-status feeds/luci/modules/luci-mod-status
+svn export https://github.com/immortalwrt/luci/trunk/luci-mod-status feeds/luci/modules/luci-mod-status
 
 # rm -rf package/new
 mkdir -p package/new
