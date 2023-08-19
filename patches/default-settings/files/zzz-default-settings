@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Default theme
+uci set luci.main.mediaurlbase='/luci-static/argon'
+uci commit luci
+
 # timezone
 uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
