@@ -13,10 +13,10 @@ name: x86_64-main
 on:
   repository_dispatch:
   workflow_dispatch:
-  #schedule:
-    #- cron: 0 23 ? * 2
-  #watch:
-     #types: started
+  schedule:
+    - cron: 0 17 ? * 2
+  watch:
+     types: started
 
 env:
   PPPOE_USERNAME: ${{ secrets.PPPOE_USERNAME }}
