@@ -15,13 +15,13 @@ sed -i "s/动态 DNS(DDNS)/动态 DNS/g" feeds/luci/applications/luci-app-ddns/p
 sed -i "s/动态 DNS(DDNS)/动态 DNS/g" package/feeds/luci/applications/luci-app-ddns/po/zh_Hans/ddns.po
 cat feeds/luci/applications/luci-app-ddns/po/zh_Hans/ddns.po | tail -n +207 | head -n 2
 
+## small_flash.patch
+sed -i "s/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 -uboot-envtools/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -openssh-sftp-server/g" target/linux/ramips/image/mt7621.mk
+cat target/linux/ramips/image/mt7621.mk
+
 # Boost 通用即插即用
 rm -rf feeds/packages/net/miniupnpd
 svn export https://github.com/immortalwrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
-
-## small_flash.patch
-sed -i "s/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 -uboot-envtools/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -openssh-sftp-server/g" target/linux/ramips/image/mt7621.mk
-cat target/linux/ramips/image/mt7621.mk | tail -n +2636 | head -n 10
 
 #############################################################################################################
 
