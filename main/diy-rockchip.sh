@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## rockchip机型,默认内核5.15，修改内核为6.1
-sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/rockchip/Makefile
+# sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/rockchip/Makefile
 
 ## 移除 SNAPSHOT 标签
 sed -i 's,-SNAPSHOT,,g' include/version.mk
@@ -158,4 +158,4 @@ bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 bash $GITHUB_WORKSPACE/scripts/zsh.sh
 
 ## turboacc
-bash $GITHUB_WORKSPACE/scripts/turboacc_6_1.sh
+bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
