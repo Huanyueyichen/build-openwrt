@@ -11,8 +11,6 @@
 name: r2c-lede
 
 on:
-  push:
-    branches: [lede]
   repository_dispatch:
   workflow_dispatch:
   #schedule:
