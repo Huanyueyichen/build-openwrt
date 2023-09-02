@@ -24,7 +24,7 @@ env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: openwrt-22.03
   #FEEDS_CONF: main/feeds.conf.default
-  CONFIG_FILE: main/r2c-2203.config
+  CONFIG_FILE: main/r2c_2203.config
   DIY_SH: main/diy-rockchip.sh
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
