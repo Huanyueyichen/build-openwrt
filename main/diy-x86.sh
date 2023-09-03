@@ -126,7 +126,14 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/ntfs3-mount package
 svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/new/autocore
 
 ## Add luci-app-wireguard
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
+
+## ssr passwall vssr bypass依赖
+# git clone https://github.com/kenzok8/small package/new/small
+
+## passwall
+svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall package/new/luci-app-passwall
+git clone -b packages https://github.com/xiaorouji/openwrt-passwall  package/new/passwall
 
 ## openclash
 bash $GITHUB_WORKSPACE/scripts/openclash.sh amd64
