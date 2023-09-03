@@ -15,18 +15,19 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
 
 ## r2s r2c风扇脚本
-# wget -P target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3328/base-files/etc/init.d/fa-rk3328-pwmfan
-# wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3328/base-files/usr/bin/start-rk3328-pwm-fan.sh
 mkdir -p target/linux/rockchip/armv8/base-files/etc/init.d
 mkdir -p target/linux/rockchip/armv8/base-files/usr/bin
-chmod +x $GITHUB_WORKSPACE/patches/fa-rk3328-pwmfan
-chmod +x $GITHUB_WORKSPACE/patches/start-rk3328-pwm-fan.sh
-cp -f -p $GITHUB_WORKSPACE/patches/fa-rk3328-pwmfan target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3328-pwmfan
-cp -f -p $GITHUB_WORKSPACE/patches/start-rk3328-pwm-fan.sh target/linux/rockchip/armv8/base-files/usr/bin/start-rk3328-pwm-fan.sh
+cp -f $GITHUB_WORKSPACE/patches/fa-rk3328-pwmfan target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3328-pwmfan
+cp -f $GITHUB_WORKSPACE/patches/start-rk3328-pwm-fan.sh target/linux/rockchip/armv8/base-files/usr/bin/start-rk3328-pwm-fan.sh
+chmod +x target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3328-pwmfan
+chmod +x target/linux/rockchip/armv8/base-files/usr/bin/start-rk3328-pwm-fan.sh
 
 ## 添加rtl8821cu驱动
 svn export https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl8821cu package/kernel/rtl8821cu
 
+# Boost 通用即插即用
+rm -rf feeds/packages/net/miniupnpd
+svn export https://github.com/immortalwrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
 
 # rm -rf package/new
 mkdir -p package/new
@@ -141,12 +142,12 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/ne
 ## Add luci-app-wireguard
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
-# Boost 通用即插即用
-rm -rf feeds/packages/net/miniupnpd
-svn export https://github.com/immortalwrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
-
 ## ssr passwall vssr bypass依赖
-git clone https://github.com/kenzok8/small package/new/small
+# git clone https://github.com/kenzok8/small package/new/small
+
+## passwall
+svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall package/new/luci-app-passwall
+git clone -b packages https://github.com/xiaorouji/openwrt-passwall  package/new/passwall
 
 ## openclash
 bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
