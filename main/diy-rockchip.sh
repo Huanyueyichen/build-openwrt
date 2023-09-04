@@ -26,7 +26,7 @@ chmod +x target/linux/rockchip/armv8/base-files/usr/bin/start-rk3328-pwm-fan.sh
 # svn export https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl8821cu package/kernel/rtl8821cu
 
 ## 添加rtw88-usb驱动
-svn export https://github.com/coolsnowwolf/lede/trunk/package/kernel/rtw88-usb package/kernel/rtw88-usb
+# svn export https://github.com/coolsnowwolf/lede/trunk/package/kernel/rtw88-usb package/kernel/rtw88-usb
 
 # Boost 通用即插即用
 rm -rf feeds/packages/net/miniupnpd
