@@ -10,10 +10,13 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 sed -i 's,-SNAPSHOT,,g' include/version.mk
 sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 
-# 修改插件名字
+# DDNS
 sed -i "s/动态 DNS(DDNS)/动态 DNS/g" feeds/luci/applications/luci-app-ddns/po/zh_Hans/ddns.po
 sed -i "s/动态 DNS(DDNS)/动态 DNS/g" package/feeds/luci/applications/luci-app-ddns/po/zh_Hans/ddns.po
 cat feeds/luci/applications/luci-app-ddns/po/zh_Hans/ddns.po | tail -n +207 | head -n 2
+sed -i '5,8d' feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
+sed -i '5,8d' package/feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
+cat feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
 
 ## small_flash.patch
 sed -i "s/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 -uboot-envtools/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -openssh-sftp-server/g" target/linux/ramips/image/mt7621.mk
