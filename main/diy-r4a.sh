@@ -50,10 +50,10 @@ cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/
 # git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
 
 ## Add luci-app-ddns-go
-svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
-svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/new/ddns-go
-# svn export https://github.com/kenzok8/small-package/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
-# svn export https://github.com/kenzok8/small-package/trunk/ddns-go package/new/ddns-go
+# svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
+# svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/new/ddns-go
+svn export https://github.com/kenzok8/small-package/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
+svn export https://github.com/kenzok8/small-package/trunk/ddns-go package/new/ddns-go
 
 ## Add luci-app-wechatpush
 git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
