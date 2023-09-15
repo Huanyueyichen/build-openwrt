@@ -44,7 +44,7 @@ jobs:
         # "false" if necessary for your workflow
         android: true
         dotnet: false
-        haskell: true
+        haskell: false
         large-packages: true
         swap-storage: true
 
