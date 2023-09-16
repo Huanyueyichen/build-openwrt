@@ -19,7 +19,7 @@ sed -i '5,8d' package/feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
 cat feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
 
 ## small_flash.patch
-sed -i "s/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 -uboot-envtools/DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -openssh-sftp-server/g" target/linux/ramips/image/mt7621.mk
+sed -i "s/kmod-mt7603 kmod-mt76x2 -uboot-envtools/kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/g" target/linux/ramips/image/mt7621.mk
 cat target/linux/ramips/image/mt7621.mk
 
 # Boost 通用即插即用
