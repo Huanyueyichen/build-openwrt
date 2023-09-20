@@ -29,17 +29,18 @@ env:
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
+
 jobs:
   build:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-22.04
     steps:
+    
     - name: Free Disk Space (Ubuntu)
       uses: jlumbroso/free-disk-space@main
       with:
         # this might remove tools that are actually needed,
         # if set to "true" but frees about 6 GB
-        tool-cache: false
+        tool-cache: true
         
         # all of these default to true, but feel free to set to
         # "false" if necessary for your workflow
