@@ -132,8 +132,8 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard 
 # git clone https://github.com/kenzok8/small package/new/small
 
 ## passwall
-svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall package/new/luci-app-passwall
-git clone -b packages https://github.com/xiaorouji/openwrt-passwall  package/new/passwall
+svn export https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/new/luci-app-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall-packages package/new/passwall
 
 ## openclash
 bash $GITHUB_WORKSPACE/scripts/openclash.sh amd64
