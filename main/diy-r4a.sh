@@ -23,8 +23,8 @@ sed -i "s/kmod-mt7603 kmod-mt76x2 -uboot-envtools/kmod-mt7603 kmod-mt76x2 -uboot
 cat target/linux/ramips/image/mt7621.mk
 
 # Boost 通用即插即用
-rm -rf feeds/packages/net/miniupnpd
-svn export https://github.com/immortalwrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
+# rm -rf feeds/packages/net/miniupnpd
+# svn export https://github.com/immortalwrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
 
 #############################################################################################################
 
