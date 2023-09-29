@@ -23,7 +23,7 @@ chmod +x target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3328-pwmfan
 chmod +x target/linux/rockchip/armv8/base-files/usr/bin/start-rk3328-pwm-fan.sh
 
 ## 添加rtl8821cu驱动
-svn export https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl8821cu package/kernel/rtl8821cu
+# svn export https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl8821cu package/kernel/rtl8821cu
 
 ## 添加rtw88-usb驱动
 # svn export https://github.com/coolsnowwolf/lede/trunk/package/kernel/rtw88-usb package/kernel/rtw88-usb
