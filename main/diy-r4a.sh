@@ -15,7 +15,7 @@ sed -i "s/动态 DNS(DDNS)/动态 DNS/g" feeds/luci/applications/luci-app-ddns/p
 sed -i "s/动态 DNS(DDNS)/动态 DNS/g" package/feeds/luci/luci-app-ddns/po/zh_Hans/ddns.po
 cat feeds/luci/applications/luci-app-ddns/po/zh_Hans/ddns.po | tail -n +207 | head -n 2
 sed -i '5,8d' feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
-sed -i '5,8d' package/feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
+sed -i '5,8d' package/feeds/packages/ddns-scripts/files/etc/init.d/ddns
 cat feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
 
 ## small_flash.patch
