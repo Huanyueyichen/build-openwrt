@@ -68,7 +68,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-autoreboot
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-poweroff package/new/luci-app-poweroff
 
 ## Add luci-app-wolplus
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wolplus package/new/luci-app-wolplus
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wolplus package/new/luci-app-wolplus
 
 ## Add luci-app-onliner
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner package/new/luci-app-onliner
