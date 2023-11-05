@@ -98,6 +98,8 @@ svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-qbitt
 svn export https://github.com/immortalwrt/packages/trunk/utils/qt6tools package/new/qt6tools
 svn export https://github.com/immortalwrt/packages/trunk/libs/qt6base package/new/qt6base
 svn export https://github.com/immortalwrt/packages/trunk/libs/libdouble-conversion package/new/libdouble-conversion
+rm -rf feeds/packages/libs/libtorrent-rasterbar
+svn export https://github.com/immortalwrt/packages/trunk/libs/libtorrent-rasterbar package/new/libtorrent-rasterbar
 
 ## Add luci-app-fileassistant luci-app-filetransfer
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant package/new/luci-app-fileassistant
