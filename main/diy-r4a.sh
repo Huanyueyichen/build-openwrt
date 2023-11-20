@@ -90,8 +90,6 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
 ## Add luci-app-socat
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat package/new/luci-app-socat
 svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat package/new/luci-app-socat
-sed -i "s/LUCI_DEPENDS:=+socat +luci +luci-compat/LUCI_DEPENDS:=+socat/g" package/new/luci-app-socat/Makefile
-cat package/new/luci-app-socat/Makefile
 
 ## Add luci-app-adbyby-plus
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adbyby-plus package/new/luci-app-adbyby-plus
