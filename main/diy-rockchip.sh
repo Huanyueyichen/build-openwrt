@@ -152,9 +152,6 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/ne
 ## Add luci-app-wireguard
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
-## Add luci-app-dockerman
-svn export https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman package/new/luci-app-dockerman
-
 ## ssr passwall vssr bypass依赖
 # git clone https://github.com/kenzok8/small package/new/small
 
