@@ -152,4 +152,5 @@ bash $GITHUB_WORKSPACE/scripts/openclash.sh amd64
 bash $GITHUB_WORKSPACE/scripts/zsh.sh
 
 ## turboacc
-bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
+# bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
