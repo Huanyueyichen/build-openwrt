@@ -99,7 +99,8 @@ svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat p
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
 
 ## luci-app-turboacc
-bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
+# bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 
 ## ssr passwall vssr bypass依赖
 # git clone https://github.com/kenzok8/small package/new/small
