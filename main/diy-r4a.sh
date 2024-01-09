@@ -20,11 +20,7 @@ cat feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
 
 ## small_flash.patch
 sed -i "s/kmod-mt7603 kmod-mt76x2 -uboot-envtools/kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/g" target/linux/ramips/image/mt7621.mk
-cat target/linux/ramips/image/mt7621.mk
-
-# Boost 通用即插即用
-# rm -rf feeds/packages/net/miniupnpd
-# svn export https://github.com/immortalwrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
+# cat target/linux/ramips/image/mt7621.mk
 
 #############################################################################################################
 
@@ -52,51 +48,27 @@ cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/
 ## Add luci-app-ddns-go
 # svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
 # svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/new/ddns-go
-svn export https://github.com/kenzok8/small-package/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
-svn export https://github.com/kenzok8/small-package/trunk/ddns-go package/new/ddns-go
+git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/*ddns-go package/new/; rm -rf package/new/ddnsgo
+
+## Add luci-app-socat
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat package/new/luci-app-socat
+git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/socat && mv -n package/new/socat/luci-app-socat package/new/; rm -rf package/new/socat
 
 ## Add luci-app-wechatpush
 git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
 
-## Add luci-app-accesscontrol
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-accesscontrol package/new/luci-app-accesscontrol
+## clone kiddin9/openwrt-packages仓库
+git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packages
 
-## Add luci-app-autoreboot
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-autoreboot package/new/luci-app-autoreboot
+## 添加包
+mv package/new/openwrt-packages/luci-app-accesscontrol package/new/luci-app-accesscontrol
+mv package/new/openwrt-packages/luci-app-autoreboot package/new/luci-app-autoreboot
+mv package/new/openwrt-packages/luci-app-wolplus package/new/luci-app-wolplus
+mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
+mv package/new/openwrt-packages/luci-app-guest-wifi package/new/luci-app-guest-wifi
+mv package/new/openwrt-packages/luci-app-wireguard package/new/luci-app-wireguard
 
-## Add luci-app-poweroff
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-poweroff package/new/luci-app-poweroff
-
-## Add luci-app-wolplus
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wolplus package/new/luci-app-wolplus
-
-## Add luci-app-onliner
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner package/new/luci-app-onliner
-
-## Add luci-app-fileassistant luci-app-filetransfer
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant package/new/luci-app-fileassistant
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-filetransfer package/new/luci-app-filetransfer
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-fs package/new/luci-lib-fs
-
-## Add luci-app-ramfree
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ramfree package/new/luci-app-ramfree
-
-## Add luci-app-guest-wifi
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi package/new/luci-app-guest-wifi
-
-## Add luci-app-easymesh
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-easymesh package/new/luci-app-easymesh
-
-## Add luci-app-socat
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat package/new/luci-app-socat
-svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat package/new/luci-app-socat
-
-## Add luci-app-adbyby-plus
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adbyby-plus package/new/luci-app-adbyby-plus
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/adbyby
-
-## Add luci-app-wireguard
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
+rm -rf package/new/openwrt-packages
 
 ## luci-app-turboacc
 # bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
