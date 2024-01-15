@@ -66,7 +66,7 @@ mv package/new/openwrt-packages/luci-app-autoreboot package/new/luci-app-autoreb
 mv package/new/openwrt-packages/luci-app-wolplus package/new/luci-app-wolplus
 mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 mv package/new/openwrt-packages/luci-app-guest-wifi package/new/luci-app-guest-wifi
-mv package/new/openwrt-packages/luci-app-wireguard package/new/luci-app-wireguard
+# mv package/new/openwrt-packages/luci-app-wireguard package/new/luci-app-wireguard
 
 rm -rf package/new/openwrt-packages
 
