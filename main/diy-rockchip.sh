@@ -29,8 +29,8 @@ chmod +x target/linux/rockchip/armv8/base-files/usr/bin/start-rk3328-pwm-fan.sh
 # svn export https://github.com/coolsnowwolf/lede/trunk/package/kernel/rtw88-usb package/kernel/rtw88-usb
 
 # Boost 通用即插即用
-rm -rf feeds/packages/net/miniupnpd
-svn export https://github.com/immortalwrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
+# rm -rf feeds/packages/net/miniupnpd
+# svn export https://github.com/immortalwrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
 
 # rm -rf package/new
 mkdir -p package/new
@@ -54,60 +54,83 @@ git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
 ## Add luci-app-wechatpush
 git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
 
-## Add autoreboot
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-autoreboot package/new/luci-app-autoreboot
+## Add luci-app-socat
+# svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat package/new/luci-app-socat
+git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/socat && mv -n package/new/socat/luci-app-socat package/new/; rm -rf package/new/socat
+
+## Add luci-app-ddns-go
+# svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
+# svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/new/ddns-go
+git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/*ddns-go package/new/; rm -rf package/new/ddnsgo
+
+## Add luci-app-mosdns
+rm -rf feeds/packages/net/v2ray-geodata
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/luci-app-mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
+
+
+
+## clone kiddin9/openwrt-packages仓库
+git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packages
+
+########## 添加包
 
 ## Add luci-app-accesscontrol
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-accesscontrol package/new/luci-app-accesscontrol
+mv package/new/openwrt-packages/luci-app-accesscontrol package/new/luci-app-accesscontrol
 
-## Add luci-app-poweroff
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-poweroff package/new/luci-app-poweroff
+## Add luci-app-autoreboot
+mv package/new/openwrt-packages/luci-app-autoreboot package/new/luci-app-autoreboot
 
 ## Add luci-app-wolplus
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wolplus package/new/luci-app-wolplus
+mv package/new/openwrt-packages/luci-app-wolplus package/new/luci-app-wolplus
 
 ## Add luci-app-onliner
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner package/new/luci-app-onliner
+mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
+
+## Add luci-app-guest-wifi
+mv package/new/openwrt-packages/luci-app-guest-wifi package/new/luci-app-guest-wifi
+
+## Add luci-app-wireguard
+# mv package/new/openwrt-packages/luci-app-wireguard package/new/luci-app-wireguard
 
 ## Add luci-app-irqbalance
+mv package/new/openwrt-packages/luci-app-poweroff package/new/luci-app-poweroff
+
+## Add 
 sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-irqbalance package/new/luci-app-irqbalance
+mv package/new/openwrt-packages/luci-app-irqbalance package/new/luci-app-irqbalance
 
 ## Add luci-app-AdguardHome
-svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/new/adguardhome
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome package/new/luci-app-adguardhome
+mv package/new/openwrt-packages/adguardhome package/new/adguardhome
+mv package/new/openwrt-packages/luci-app-adguardhome package/new/luci-app-adguardhome
 sed -i '1,2d' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
 # sed -i 's/6h/1h/g' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 sed -i 's/4194304/8388608/g' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 sed -i "/  upstream_dns_file: ""/i\  - 114.114.114.114" package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 sed -i "/  upstream_dns_file: ""/i\  - 119.29.29.29" package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 
-## Add luci-app-lucky
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/lucky package/new/lucky
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-lucky package/new/luci-app-lucky
-
 ## Add luci-app-qbittorrent
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/qBittorrent-Enhanced-Edition package/new/qBittorrent-Enhanced-Edition
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-qbittorrent package/new/luci-app-qbittorrent
-svn export https://github.com/immortalwrt/packages/trunk/net/qBittorrent-Enhanced-Edition package/new/qBittorrent-Enhanced-Edition
+mv package/new/openwrt-packages/qBittorrent-Enhanced-Edition package/new/qBittorrent-Enhanced-Edition
+mv package/new/openwrt-packages/luci-app-qbittorrent package/new/luci-app-qbittorrent
+# svn export https://github.com/immortalwrt/packages/trunk/net/qBittorrent-Enhanced-Edition package/new/qBittorrent-Enhanced-Edition
 # svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-qbittorrent package/new/luci-app-qbittorrent
 ## qbittorrent依赖
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6tools package/new/qt6tools
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/qt6base package/new/qt6base
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/libdouble-conversion package/new/libdouble-conversion
-svn export https://github.com/immortalwrt/packages/trunk/utils/qt6tools package/new/qt6tools
-svn export https://github.com/immortalwrt/packages/trunk/libs/qt6base package/new/qt6base
-svn export https://github.com/immortalwrt/packages/trunk/libs/libdouble-conversion package/new/libdouble-conversion
+mv package/new/openwrt-packages/qt6tools package/new/qt6tools
+mv package/new/openwrt-packages/qt6base package/new/qt6base
+mv package/new/openwrt-packages/libdouble-conversion package/new/libdouble-conversion
+# svn export https://github.com/immortalwrt/packages/trunk/utils/qt6tools package/new/qt6tools
+# svn export https://github.com/immortalwrt/packages/trunk/libs/qt6base package/new/qt6base
+# svn export https://github.com/immortalwrt/packages/trunk/libs/libdouble-conversion package/new/libdouble-conversion
 rm -rf feeds/packages/libs/libtorrent-rasterbar
-svn export https://github.com/immortalwrt/packages/trunk/libs/libtorrent-rasterbar package/new/libtorrent-rasterbar
+mv package/new/openwrt-packages/libtorrent-rasterbar package/new/libtorrent-rasterbar
 
 ## Add luci-app-fileassistant luci-app-filetransfer
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant package/new/luci-app-fileassistant
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-filetransfer package/new/luci-app-filetransfer
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-fs package/new/luci-lib-fs
+mv package/new/openwrt-packages/luci-app-fileassistant package/new/luci-app-fileassistant
+mv package/new/openwrt-packages/luci-app-filetransfer package/new/luci-app-filetransfer
+mv package/new/openwrt-packages/luci-lib-fs package/new/luci-lib-fs
 
 ## Add luci-app-cpufreq
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq package/new/luci-app-cpufreq
+mv package/new/openwrt-packages/luci-app-cpufreq package/new/luci-app-cpufreq
 sed -i 's/1512000/1200000/g' package/new/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
 
 ## Add luci-app-wrtbwmon
@@ -115,48 +138,27 @@ sed -i 's/1512000/1200000/g' package/new/luci-app-cpufreq/root/etc/uci-defaults/
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/new/wrtbwmon
 
 ## Add luci-app-ramfree
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ramfree package/new/luci-app-ramfree
-
-## Add luci-app-guest-wifi
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi package/new/luci-app-guest-wifi
-
-## Add luci-app-socat
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat package/new/luci-app-socat
-svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat package/new/luci-app-socat
-
-## Add luci-app-ddns
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ddns package/new/luci-app-ddns
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts package/new/ddns-scripts
-
-## Add luci-app-mosdns
-rm -rf feeds/packages/net/v2ray-geodata
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/luci-app-mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
+mv package/new/openwrt-packages/luci-app-ramfree package/new/luci-app-ramfree
 
 ## Add luci-app-adbyby-plus
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adbyby-plus package/new/luci-app-adbyby-plus
-svn export https://github.com/kiddin9/openwrt-packages/trunk/adbyby package/new/adbyby
-
-## Add luci-app-ddns-go
-svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
-svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/new/ddns-go
+mv package/new/openwrt-packages/luci-app-adbyby-plus package/new/luci-app-adbyby-plus
+mv package/new/openwrt-packages/adbyby package/new/adbyby
 
 ## Add automount
-svn export https://github.com/kiddin9/openwrt-packages/trunk/automount package/new/automount
-svn export https://github.com/kiddin9/openwrt-packages/trunk/ntfs3-mount package/new/ntfs3-mount
+mv package/new/openwrt-packages/automount package/new/automount
+mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/lua-neturl package/new/lua-neturl
 
 ## Add autocore
-svn export https://github.com/kiddin9/openwrt-packages/trunk/autocore package/new/autocore
+mv package/new/openwrt-packages/autocore package/new/autocore
 
-## Add luci-app-wireguard
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wireguard package/new/luci-app-wireguard
+rm -rf package/new/openwrt-packages
 
 ## ssr passwall vssr bypass依赖
 # git clone https://github.com/kenzok8/small package/new/small
 
 ## passwall
-svn export https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/new/luci-app-passwall
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/new/openwrt-passwall && mv -n package/new/openwrt-passwall/luci-app-passwall package/new/; rm -rf package/new/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall-packages package/new/passwall
 
 ## openclash
