@@ -34,7 +34,7 @@ jobs:
     steps:
     
     - name: Free Disk Space (Ubuntu)
-      uses: ywt114/free-disk-space@main
+      uses: jlumbroso/free-disk-space:main
       with:
         # this might remove tools that are actually needed,
         # if set to "true" but frees about 6 GB
