@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: r4a-2305
+name: r4a-main
 
 on:
   repository_dispatch:
@@ -54,7 +54,7 @@ jobs:
 
     - name: Telegram notification
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit_2305源码 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit_main源码 固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
     - name: Initialization environment
       env:
@@ -180,4 +180,4 @@ jobs:
     - name: Telegram notification
       if: steps.compile.outputs.status == 'success'
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit_2305源码 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译的 xiaomi-router-4a-gigabit_main源码 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
