@@ -135,15 +135,13 @@ jobs:
         cd openwrt/bin/targets/*/*
         rm -rf packages
         #rm -rf config.buildinfo
-        #rm -rf feeds.buildinfo
-        #rm -rf profiles.json
-        #rm -rf sha256sums
-        #rm -rf version.buildinfo
-        #rm -rf openwrt-rockchip-armv8-friendlyarm_nanopi-r2c-rootfs.tar.gz
-        #rm -rf openwrt-rockchip-armv8-friendlyarm_nanopi-r2c.manifest
-        #mv config.buildinfo r2c.buildinfo
-        #mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz openwrt-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz
-        #mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2c-ext4-sysupgrade.img.gz openwrt-friendlyarm_nanopi-r2c-ext4-sysupgrade.img.gz
+        rm -rf feeds.buildinfo
+        rm -rf sha256sums
+        rm -rf version.buildinfo
+        rm -rf immortalwrt-mediatek-mt7981-cmcc_rax3000m.manifest
+        rm -rf immortalwrt-mediatek-mt7981-cmcc_rax3000m-initramfs-kernel.bin
+        mv config.buildinfo rax3000m.buildinfo
+        #mv immortalwrt-mediatek-mt7981-cmcc_rax3000m-squashfs-sysupgrade.bin
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
