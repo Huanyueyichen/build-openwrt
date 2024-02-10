@@ -140,6 +140,7 @@ jobs:
         rm -rf version.buildinfo
         rm -rf immortalwrt-mediatek-mt7981-cmcc_rax3000m.manifest
         rm -rf immortalwrt-mediatek-mt7981-cmcc_rax3000m-initramfs-kernel.bin
+        rm -rf immortalwrt-mediatek-mt7981-cmcc_rax3000m-squashfs-factory.bin
         mv config.buildinfo rax3000m.buildinfo
         #mv immortalwrt-mediatek-mt7981-cmcc_rax3000m-squashfs-sysupgrade.bin
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
