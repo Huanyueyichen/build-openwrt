@@ -24,6 +24,7 @@ sed -i "s/kmod-mt7603 kmod-mt76x2 -uboot-envtools/kmod-mt7603 kmod-mt76x2 -uboot
 
 ## 修改miniupnpd
 sed -i "s/ipv6_disable 0/ipv6_disable 1/g" feeds/packages/net/miniupnpd/files/miniupnpd.init
+cat feeds/packages/net/miniupnpd/files/miniupnpd.init
 
 #############################################################################################################
 
