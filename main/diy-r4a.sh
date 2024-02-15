@@ -23,8 +23,8 @@ sed -i "s/kmod-mt7603 kmod-mt76x2 -uboot-envtools/kmod-mt7603 kmod-mt76x2 -uboot
 # cat target/linux/ramips/image/mt7621.mk
 
 ## 修改miniupnpd
-sed -i "s/ipv6_disable 0/ipv6_disable 1/g" feeds/packages/net/miniupnpd/files/miniupnpd.init
-cat feeds/packages/net/miniupnpd/files/miniupnpd.init
+# sed -i "s/ipv6_disable 0/ipv6_disable 1/g" feeds/packages/net/miniupnpd/files/miniupnpd.init
+# cat feeds/packages/net/miniupnpd/files/miniupnpd.init
 
 #############################################################################################################
 
