@@ -18,6 +18,9 @@ sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 # sed -i "s/ipv6_disable 0/ipv6_disable 1/g" feeds/packages/net/miniupnpd/files/miniupnpd.init
 # cat feeds/packages/net/miniupnpd/files/miniupnpd.init
 
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 21.x feeds/packages/lang/golang
+
 #############################################################################################################
 
 # rm -rf package/new
