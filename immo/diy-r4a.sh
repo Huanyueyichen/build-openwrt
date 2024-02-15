@@ -19,7 +19,7 @@ sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 # cat feeds/packages/net/miniupnpd/files/miniupnpd.init
 
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 #############################################################################################################
 
