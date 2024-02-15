@@ -22,6 +22,9 @@ cat feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
 sed -i "s/kmod-mt7603 kmod-mt76x2 -uboot-envtools/kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/g" target/linux/ramips/image/mt7621.mk
 # cat target/linux/ramips/image/mt7621.mk
 
+## 修改miniupnpd
+sed -i "s/ipv6_disable 0/ipv6_disable 1/g" feeds/packages/net/miniupnpd/files/miniupnpd.init
+
 #############################################################################################################
 
 # rm -rf package/new
