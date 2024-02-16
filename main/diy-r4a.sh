@@ -50,6 +50,8 @@ git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/s
 git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
 
 ## 修改miniupnpd
+rm -rf feeds/packages/net/miniupnpd
+rm -rf feeds/luci/applications/luci-app-upnp
 git clone -b openwrt-21.02 https://github.com/openwrt/luci package/new/luci-21.02
 mv package/new/luci-21.02/applications/luci-app-upnp package/new/luci-app-upnp
 rm -rf package/new/luci-21.02
