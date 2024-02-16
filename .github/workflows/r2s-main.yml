@@ -142,7 +142,7 @@ jobs:
         rm -rf openwrt-rockchip-armv8-friendlyarm_nanopi-r2s.manifest
         mv config.buildinfo r2s.buildinfo
         mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz openwrt-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz
-        #mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz openwrt-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz
+        #mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz openwrt-2305-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
@@ -163,10 +163,15 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: ${{ steps.tag.outputs.release_date }} openwrt-源码
+        name: ${{ steps.tag.outputs.release_date }} openwrt
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
+
+    - name: Telegram notification
+      if: steps.compile.outputs.status == 'success'
+      run: |
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译的 nanopi-r2s_源码 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@v2
@@ -183,7 +188,3 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Telegram notification
-      if: steps.compile.outputs.status == 'success'
-      run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译的 nanopi-r2s_源码 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
