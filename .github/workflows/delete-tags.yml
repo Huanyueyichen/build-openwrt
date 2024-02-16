@@ -24,4 +24,6 @@ jobs:
     steps:
     
     - name: Delete tags
-      uses: prompt/actions-delete-tag@v1
+      uses: fabriziocacicia/delete-tags-without-release-action@v0.1.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
