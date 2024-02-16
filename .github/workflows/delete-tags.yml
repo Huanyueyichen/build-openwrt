@@ -1,0 +1,31 @@
+#
+# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
+# https://github.com/P3TERX/Actions-OpenWrt
+# Description: Build OpenWrt using GitHub Actions
+#
+
+name: delete-tags
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 17 ? * 1,5
+  watch:
+     types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    
+    - name: Delete tags
+      uses: dev-drprasad/delete-tag-and-release@v1.0
+      with:
+          tag_name: ''
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          delete_release: false
