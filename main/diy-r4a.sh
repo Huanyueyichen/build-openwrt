@@ -14,10 +14,6 @@ sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 sed -i "s/kmod-mt7603 kmod-mt76x2 -uboot-envtools/kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/g" target/linux/ramips/image/mt7621.mk
 # cat target/linux/ramips/image/mt7621.mk
 
-## 修改miniupnpd
-# sed -i "s/ipv6_disable 0/ipv6_disable 1/g" feeds/packages/net/miniupnpd/files/miniupnpd.init
-# cat feeds/packages/net/miniupnpd/files/miniupnpd.init
-
 #############################################################################################################
 
 # rm -rf package/new
@@ -52,6 +48,14 @@ git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/s
 
 ## Add luci-app-wechatpush
 git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
+
+## 修改miniupnpd
+git clone -b openwrt-21.02 https://github.com/openwrt/luci package/new/luci-21.02
+mv package/new/luci-21.02/applications/luci-app-upnp package/new/luci-app-upnp
+rm -rf package/new/luci-21.02
+git clone -b openwrt-21.02 https://github.com/openwrt/packages package/new/packages-21.02
+mv package/new/packages-21.02/net/miniupnpd package/new/miniupnpd
+rm -rf package/new/packages-21.02
 
 ## clone kiddin9/openwrt-packages仓库
 git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packages
