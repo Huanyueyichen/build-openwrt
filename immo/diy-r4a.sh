@@ -19,7 +19,7 @@ sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 # cat feeds/packages/net/miniupnpd/files/miniupnpd.init
 
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 21.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
 
 #############################################################################################################
 
@@ -45,8 +45,8 @@ cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/
 # git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
 
 ## Add luci-app-ddns-go
-rm -rf feeds/luci/applications/luci-app-ddns-go
-git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/luci-app-ddns-go package/new/; rm -rf package/new/ddnsgo
+# rm -rf feeds/luci/applications/luci-app-ddns-go
+# git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/luci-app-ddns-go package/new/; rm -rf package/new/ddnsgo
 # rm -rf feeds/packages/net/ddns-go
 # git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/*ddns-go package/new/; rm -rf package/new/ddnsgo
 
