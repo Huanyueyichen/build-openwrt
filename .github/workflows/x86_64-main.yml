@@ -143,7 +143,7 @@ jobs:
         rm -rf openwrt-x86-64-generic-squashfs-rootfs.img.gz
         rm -rf openwrt-x86-64-generic.manifest
         mv config.buildinfo x86_64.buildinfo
-        #mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz openwrt-x86-64-generic-squashfs-combined-efi.img.gz
+        mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz openwrt-2305-x86-64-generic-squashfs-combined-efi.img.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
