@@ -179,6 +179,6 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 20
-        delete_tag_pattern: ''
+        delete_tag_pattern: ^*
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
