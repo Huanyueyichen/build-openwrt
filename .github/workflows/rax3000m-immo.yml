@@ -167,6 +167,11 @@ jobs:
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
+    - name: Telegram notification
+      if: steps.compile.outputs.status == 'success'
+      run: |
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译的 rax3000m_immo 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@v2
       with:
@@ -182,7 +187,3 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Telegram notification
-      if: steps.compile.outputs.status == 'success'
-      run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 bulid-openwrt 编译的 rax3000m_immo 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
