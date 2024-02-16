@@ -142,8 +142,8 @@ jobs:
         rm -rf openwrt-rockchip-armv8-friendlyarm_nanopi-r2c-rootfs.tar.gz
         rm -rf openwrt-rockchip-armv8-friendlyarm_nanopi-r2c.manifest
         mv config.buildinfo r2c.buildinfo
-        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz openwrt-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz
-        #mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2c-ext4-sysupgrade.img.gz openwrt-friendlyarm_nanopi-r2c-ext4-sysupgrade.img.gz
+        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz openwrt-2305-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz
+        #mv openwrt-rockchip-armv8-friendlyarm_nanopi-r2c-ext4-sysupgrade.img.gz openwrt-2305-friendlyarm_nanopi-r2c-ext4-sysupgrade.img.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
