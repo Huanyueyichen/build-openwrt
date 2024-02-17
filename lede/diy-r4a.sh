@@ -32,10 +32,10 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/socat && mv -n package/new/socat/luci-app-socat package/new/; rm -rf package/new/socat
 
 ## Add luci-app-ddns-go
-git clone https://github.com/immortalwrt/packages package/new/immortalwrt-packages
+git clone -b openwrt-21.02 https://github.com/immortalwrt/packages package/new/immortalwrt-packages
 mv package/new/immortalwrt-packages/net/ddns-go package/new/ddns-go
 rm -rf package/new/immortalwrt-packages
-git clone https://github.com/immortalwrt/luci package/new/immortalwrt-luci
+git clone -b openwrt-21.02 https://github.com/immortalwrt/luci package/new/immortalwrt-luci
 mv package/new/immortalwrt-luci/applications/luci-app-ddns-go package/new/luci-app-ddns-go
 rm -rf package/new/immortalwrt-luci
 
