@@ -8,8 +8,8 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 mkdir -p package/new
 
 #删除原默认主题
-rm -rf feeds/package/themes/luci-theme-argon
-rm -rf feeds/package/applications/luci-app-argon-config
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/luci/applications/luci-app-argon-config
 # rm -rf feeds/package/themes/luci-theme-bootstrap
 # rm -rf feeds/package/themes/luci-theme-material
 # rm -rf feeds/package/themes//luci-theme-netgear
