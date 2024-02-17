@@ -32,9 +32,11 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/socat && mv -n package/new/socat/luci-app-socat package/new/; rm -rf package/new/socat
 
 ## Add luci-app-ddns-go
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 21.x feeds/packages/lang/golang
-git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/*ddns-go package/new/; rm -rf package/new/ddnsgo
+# rm -rf feeds/packages/lang/golang
+# git clone https://github.com/sbwml/packages_lang_golang -b 21.x feeds/packages/lang/golang
+# git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/*ddns-go package/new/; rm -rf package/new/ddnsgo
+cp -rf $GITHUB_WORKSPACE/patches/ddns-go package/new/ddns-go
+cp -rf $GITHUB_WORKSPACE/patches/luci-app-ddns-go package/new/luci-app-ddns-go
 
 ## clone kiddin9/openwrt-packages仓库
 git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packages
