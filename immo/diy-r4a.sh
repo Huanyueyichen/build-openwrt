@@ -48,6 +48,8 @@ cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/
 rm -rf feeds/luci/applications/luci-app-ddns-go
 rm -rf feeds/packages/net/ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/*ddns-go package/new/; rm -rf package/new/ddnsgo
+sed -i 's/PKG_BUILD_FLAGS:=no-mips16/PKG_USE_MIPS16:=0/g' package/new/ddns-go/Makefile
+cat package/new/ddns-go/Makefile
 # sed -i 's/chown ddns-go/chmod 777/g' feeds/packages/net/ddns-go/files/ddns-go.init
 # cat feeds/packages/net/ddns-go/files/ddns-go.init
 
