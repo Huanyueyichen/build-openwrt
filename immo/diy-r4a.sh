@@ -45,8 +45,14 @@ cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/
 # git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
 
 ## Add luci-app-ddns-go
-# rm -rf feeds/luci/applications/luci-app-ddns-go
-# rm -rf feeds/packages/net/ddns-go
+rm -rf feeds/luci/applications/luci-app-ddns-go
+rm -rf feeds/packages/net/ddns-go
+git clone https://github.com/immortalwrt/packages package/new/packages
+mv package/new/packages/net/ddns-go package/new/ddns-go
+rm -rf package/new/packages
+git clone https://github.com/immortalwrt/luci package/new/luci
+mv package/new/luci/applications/luci-app-ddns-go package/new/luci-app-ddns-go
+rm -rf package/new/luci
 # git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/*ddns-go package/new/; rm -rf package/new/ddnsgo
 sed -i 's/PKG_BUILD_FLAGS:=no-mips16/PKG_USE_MIPS16:=0/g' package/new/ddns-go/Makefile
 # cat package/new/ddns-go/Makefile
