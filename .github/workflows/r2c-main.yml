@@ -52,7 +52,7 @@ jobs:
         swap-storage: true
 
     - name: Checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@v4
 
     - name: Telegram notification
       run: |
