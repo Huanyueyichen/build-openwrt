@@ -75,7 +75,7 @@ mv package/new/openwrt-packages/luci-app-guest-wifi package/new/luci-app-guest-w
 # mv package/new/openwrt-packages/luci-app-wireguard package/new/luci-app-wireguard
 
 ## Add luci-app-irqbalance
-mv package/new/openwrt-packages/luci-app-poweroff package/new/luci-app-poweroff
+# mv package/new/openwrt-packages/luci-app-poweroff package/new/luci-app-poweroff
 
 ## Add 
 sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
@@ -128,7 +128,6 @@ mv package/new/openwrt-packages/adbyby package/new/adbyby
 ## Add automount
 mv package/new/openwrt-packages/automount package/new/automount
 mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/lua-neturl package/new/lua-neturl
 
 ## Add autocore
 mv package/new/openwrt-packages/autocore package/new/autocore
