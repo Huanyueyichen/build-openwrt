@@ -130,8 +130,8 @@ mv package/new/openwrt-packages/luci-app-filetransfer package/new/luci-app-filet
 mv package/new/openwrt-packages/luci-lib-fs package/new/luci-lib-fs
 
 ## Add luci-app-cpufreq
-mv package/new/openwrt-packages/luci-app-cpufreq package/new/luci-app-cpufreq
-sed -i 's/1512000/1200000/g' package/new/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
+# mv package/new/openwrt-packages/luci-app-cpufreq package/new/luci-app-cpufreq
+# sed -i 's/1512000/1200000/g' package/new/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
 
 ## Add luci-app-wrtbwmon
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/new/luci-app-wrtbwmon
