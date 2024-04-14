@@ -93,12 +93,12 @@ mv package/new/openwrt-packages/luci-app-guest-wifi package/new/luci-app-guest-w
 ## Add luci-app-wireguard
 # mv package/new/openwrt-packages/luci-app-wireguard package/new/luci-app-wireguard
 
-## Add luci-app-irqbalance
-mv package/new/openwrt-packages/luci-app-poweroff package/new/luci-app-poweroff
+## Add luci-app-poweroff
+# mv package/new/openwrt-packages/luci-app-poweroff package/new/luci-app-poweroff
 
-## Add 
-sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
-mv package/new/openwrt-packages/luci-app-irqbalance package/new/luci-app-irqbalance
+## Add luci-app-irqbalance
+#　sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
+# mv package/new/openwrt-packages/luci-app-irqbalance package/new/luci-app-irqbalance
 
 ## Add luci-app-AdguardHome
 mv package/new/openwrt-packages/adguardhome package/new/adguardhome
