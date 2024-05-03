@@ -11,8 +11,8 @@ sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
 ## alist编译环境
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+# rm -rf feeds/packages/lang/golang
+# git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 # Boost 通用即插即用
 # rm -rf feeds/packages/net/miniupnpd
@@ -35,7 +35,7 @@ rm -rf package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 ## Add luci-app-alist
-git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
+# git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
 
 ## Add luci-app-wechatpush
 git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
@@ -60,6 +60,9 @@ git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
 git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packages
 
 ########## 添加包
+
+## Add wrtbwmon
+mv package/new/openwrt-packages/wrtbwmon package/new/wrtbwmon
 
 ## Add luci-app-accesscontrol
 mv package/new/openwrt-packages/luci-app-accesscontrol package/new/luci-app-accesscontrol
@@ -127,8 +130,8 @@ mv package/new/openwrt-packages/luci-lib-fs package/new/luci-lib-fs
 mv package/new/openwrt-packages/luci-app-ramfree package/new/luci-app-ramfree
 
 ## Add luci-app-adbyby-plus
-mv package/new/openwrt-packages/luci-app-adbyby-plus package/new/luci-app-adbyby-plus
-mv package/new/openwrt-packages/adbyby package/new/adbyby
+# mv package/new/openwrt-packages/luci-app-adbyby-plus package/new/luci-app-adbyby-plus
+# mv package/new/openwrt-packages/adbyby package/new/adbyby
 
 ## Add automount
 mv package/new/openwrt-packages/automount package/new/automount
