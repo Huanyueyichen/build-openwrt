@@ -12,7 +12,7 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 
 ## alist编译环境
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 19.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 
 # rm -rf package/new
@@ -36,7 +36,13 @@ cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/
 ## Add luci-app-alist
 rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/net/alist
-git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
+git clone https://github.com/immortalwrt/packages package/new/immortalwrt-packages
+mv package/new/immortalwrt-packages/net/alist package/new/alist
+rm -rf package/new/immortalwrt-packages
+git clone https://github.com/immortalwrt/luci package/new/immortalwrt-luci
+mv package/new/immortalwrt-luci/applications/luci-app-alist package/new/luci-app-alist
+rm -rf package/new/immortalwrt-luci
+# git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
 
 ## Add luci-app-wechatpush
 # git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
