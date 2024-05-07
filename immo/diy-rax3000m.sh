@@ -34,7 +34,9 @@ rm -rf package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 ## Add luci-app-alist
-# git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
+rm -rf feeds/luci/applications/luci-app-alist
+rm -rf feeds/packages/net/alist
+git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
 
 ## Add luci-app-wechatpush
 # git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
