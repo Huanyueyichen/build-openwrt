@@ -11,8 +11,8 @@ sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
 ## alist编译环境
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
+# rm -rf feeds/packages/lang/golang
+# git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
 
 
 # rm -rf package/new
@@ -47,14 +47,14 @@ git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/s
 ## Add luci-app-ddns-go
 # svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
 # svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/new/ddns-go
-rm -rf feeds/luci/applications/luci-app-ddns-go
-rm -rf feeds/packages/net/ddns-go
-git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/*ddns-go package/new/; rm -rf package/new/ddnsgo
+# rm -rf feeds/luci/applications/luci-app-ddns-go
+# rm -rf feeds/packages/net/ddns-go
+# git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/*ddns-go package/new/; rm -rf package/new/ddnsgo
 
 ## Add luci-app-mosdns
-rm -rf feeds/packages/net/v2ray-geodata
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/luci-app-mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
+# rm -rf feeds/packages/net/v2ray-geodata
+# git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/luci-app-mosdns
+# git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
 
 
 ## clone kiddin9/openwrt-packages仓库
