@@ -118,8 +118,8 @@ rm -rf package/new/openwrt-packages
 # git clone https://github.com/xiaorouji/openwrt-passwall-packages package/new/passwall
 
 ## openclash
-rm -rf feeds/luci/applications/luci-app-openclash
-bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
+# rm -rf feeds/luci/applications/luci-app-openclash
+# bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## ShellClash
 # bash $GITHUB_WORKSPACE/scripts/ShellClash.sh
