@@ -11,8 +11,8 @@ sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
 ## alist编译环境
-# rm -rf feeds/packages/lang/golang
-# git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 
 # rm -rf package/new
@@ -34,15 +34,15 @@ rm -rf feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 ## Add luci-app-alist
-# rm -rf feeds/luci/applications/luci-app-alist
-# rm -rf feeds/packages/net/alist
+rm -rf feeds/luci/applications/luci-app-alist
+rm -rf feeds/packages/net/alist
 # git clone https://github.com/immortalwrt/packages package/new/immortalwrt-packages
 # mv package/new/immortalwrt-packages/net/alist package/new/alist
 # rm -rf package/new/immortalwrt-packages
 # git clone https://github.com/immortalwrt/luci package/new/immortalwrt-luci
 # mv package/new/immortalwrt-luci/applications/luci-app-alist package/new/luci-app-alist
 # rm -rf package/new/immortalwrt-luci
-# git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
+git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
 
 ## Add luci-app-wechatpush
 # git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
@@ -128,8 +128,8 @@ ls -1 package/new/
 # git clone https://github.com/xiaorouji/openwrt-passwall-packages package/new/passwall
 
 ## openclash
-# rm -rf feeds/luci/applications/luci-app-openclash
-# bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
+rm -rf feeds/luci/applications/luci-app-openclash
+bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## ShellClash
 # bash $GITHUB_WORKSPACE/scripts/ShellClash.sh
