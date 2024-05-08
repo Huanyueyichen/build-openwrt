@@ -25,6 +25,8 @@ env:
   #FEEDS_CONF: immo/feeds.conf.default
   CONFIG_FILE: immo/rax3000m.config
   DIY_SH: immo/diy-rax3000m.sh
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
