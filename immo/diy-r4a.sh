@@ -30,7 +30,7 @@ mkdir -p package/new
 # cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
 
 ## 下载主题luci-theme-argon
-rm -rf feeds/luci/applications/luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
