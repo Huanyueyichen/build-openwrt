@@ -10,11 +10,6 @@ sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 ## 修改openwrt登陆地址,把下面的192.168.11.1修改成你想要的就可以了
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
-## alist编译环境
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
-
-
 # rm -rf package/new
 mkdir -p package/new
 
@@ -33,16 +28,24 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-
 rm -rf feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
+## alist编译环境
+rm -rf feeds/packages/lang/golang
+# git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+
+
 ## Add luci-app-alist
 rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/net/alist
-# git clone https://github.com/immortalwrt/packages package/new/immortalwrt-packages
-# mv package/new/immortalwrt-packages/net/alist package/new/alist
-# rm -rf package/new/immortalwrt-packages
-# git clone https://github.com/immortalwrt/luci package/new/immortalwrt-luci
-# mv package/new/immortalwrt-luci/applications/luci-app-alist package/new/luci-app-alist
-# rm -rf package/new/immortalwrt-luci
-git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
+git clone https://github.com/immortalwrt/packages package/new/immortalwrt-packages
+mv package/new/immortalwrt-packages/net/alist package/new/alist
+
+mv package/new/immortalwrt-packages/lang/golang feeds/packages/lang/golang
+
+rm -rf package/new/immortalwrt-packages
+git clone https://github.com/immortalwrt/luci package/new/immortalwrt-luci
+mv package/new/immortalwrt-luci/applications/luci-app-alist package/new/luci-app-alist
+rm -rf package/new/immortalwrt-luci
+# git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
 
 ## Add luci-app-wechatpush
 # git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
