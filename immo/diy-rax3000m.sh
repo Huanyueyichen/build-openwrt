@@ -36,13 +36,13 @@ rm -rf feeds/packages/lang/golang
 ## Add luci-app-alist
 rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/net/alist
-git clone https://github.com/immortalwrt/packages package/new/immortalwrt-packages
+git clone -b openwrt-23.05 https://github.com/immortalwrt/packages package/new/immortalwrt-packages
 mv package/new/immortalwrt-packages/net/alist package/new/alist
 
 mv package/new/immortalwrt-packages/lang/golang feeds/packages/lang/golang
 
 rm -rf package/new/immortalwrt-packages
-git clone https://github.com/immortalwrt/luci package/new/immortalwrt-luci
+git clone -b openwrt-23.05 https://github.com/immortalwrt/luci package/new/immortalwrt-luci
 mv package/new/immortalwrt-luci/applications/luci-app-alist package/new/luci-app-alist
 rm -rf package/new/immortalwrt-luci
 # git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
