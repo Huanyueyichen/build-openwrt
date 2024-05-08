@@ -161,14 +161,14 @@ jobs:
 
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
-      # if: steps.organize.outputs.status == 'success' && !cancelled()
+      if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v2
-      # if: steps.tag.outputs.status == 'success' && !cancelled()
+      if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
