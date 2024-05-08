@@ -45,4 +45,4 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 
 rm -rf package/new/openwrt-packages
 
-ls package/new
+ls -1 package/new
