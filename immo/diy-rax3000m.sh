@@ -92,6 +92,8 @@ sed -i "/  upstream_dns_file: ""/i\  - 119.29.29.29" package/new/luci-app-adguar
 
 rm -rf package/new/openwrt-packages
 
+ls -1 package/new/
+
 ## ssr passwall vssr bypass依赖
 # git clone https://github.com/kenzok8/small package/new/small
 
