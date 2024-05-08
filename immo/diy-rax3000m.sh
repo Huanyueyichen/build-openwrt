@@ -29,22 +29,22 @@ rm -rf feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 ## alist编译环境
-rm -rf feeds/packages/lang/golang
+# rm -rf feeds/packages/lang/golang
 # git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 
 ## Add luci-app-alist
-rm -rf feeds/luci/applications/luci-app-alist
-rm -rf feeds/packages/net/alist
-git clone -b openwrt-23.05 https://github.com/immortalwrt/packages package/new/immortalwrt-packages
-mv package/new/immortalwrt-packages/net/alist package/new/alist
+# rm -rf feeds/luci/applications/luci-app-alist
+# rm -rf feeds/packages/net/alist
+# git clone -b openwrt-23.05 https://github.com/immortalwrt/packages package/new/immortalwrt-packages
+# mv package/new/immortalwrt-packages/net/alist package/new/alist
 
-mv package/new/immortalwrt-packages/lang/golang feeds/packages/lang/golang
+# mv package/new/immortalwrt-packages/lang/golang feeds/packages/lang/golang
 
-rm -rf package/new/immortalwrt-packages
-git clone -b openwrt-23.05 https://github.com/immortalwrt/luci package/new/immortalwrt-luci
-mv package/new/immortalwrt-luci/applications/luci-app-alist package/new/luci-app-alist
-rm -rf package/new/immortalwrt-luci
+# rm -rf package/new/immortalwrt-packages
+# git clone -b openwrt-23.05 https://github.com/immortalwrt/luci package/new/immortalwrt-luci
+# mv package/new/immortalwrt-luci/applications/luci-app-alist package/new/luci-app-alist
+# rm -rf package/new/immortalwrt-luci
 # git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
 
 ## Add luci-app-wechatpush
