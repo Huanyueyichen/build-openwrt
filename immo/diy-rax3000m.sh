@@ -71,6 +71,12 @@ git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packag
 
 ########## 添加包
 
+## alist编译环境
+rm -rf feeds/packages/lang/golang
+mv package/new/openwrt-packages/golang feeds/packages/lang/golang
+mv package/new/openwrt-packages/net/alist package/new/alist
+mv package/new/openwrt-packages/net/luci-app-alist package/new/luci-app-alist
+
 ## Add luci-app-wolplus
 mv package/new/openwrt-packages/luci-app-wolplus package/new/luci-app-wolplus
 
