@@ -63,12 +63,13 @@ git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packag
 
 ## alist编译环境
 rm -rf feeds/packages/lang/golang
-# rm -rf feeds/luci/applications/luci-app-alist
-# rm -rf feeds/packages/net/alist
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+rm -rf feeds/luci/applications/luci-app-alist
+rm -rf feeds/packages/net/alist
+git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
 # mv package/new/openwrt-packages/golang feeds/packages/lang/golang
 # mv package/new/openwrt-packages/alist package/new/alist
 # mv package/new/openwrt-packages/luci-app-alist package/new/luci-app-alist
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 ## Add luci-app-wolplus
 mv package/new/openwrt-packages/luci-app-wolplus package/new/luci-app-wolplus
