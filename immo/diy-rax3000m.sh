@@ -97,13 +97,35 @@ sed -i "/  upstream_dns_file: ""/i\  - 119.29.29.29" package/new/luci-app-adguar
 
 rm -rf package/new/openwrt-packages
 
-ls -1 package/new/
+## passwall
+rm -rf feeds/luci/applications/luci-app-passwall
+rm -rf feeds/packages/net/brook
+rm -rf feeds/packages/net/chinadns-ng
+rm -rf feeds/packages/net/dns2socks
+rm -rf feeds/packages/net/dns2tcp
+rm -rf feeds/packages/net/hysteria
+rm -rf feeds/packages/net/ipt2socks
+rm -rf feeds/packages/net/microsocks
+rm -rf feeds/packages/net/naiveproxy
+rm -rf feeds/packages/net/pdnsd-alt
+rm -rf feeds/packages/net/shadowsocks-rust
+rm -rf feeds/packages/net/shadowsocksr-libev
+rm -rf feeds/packages/net/simple-obfs
+rm -rf feeds/packages/net/sing-box
+rm -rf feeds/packages/net/ssocks
+rm -rf feeds/packages/net/tcping
+rm -rf feeds/packages/net/trojan-go
+rm -rf feeds/packages/net/trojan-plus
+rm -rf feeds/packages/net/trojan
+rm -rf feeds/packages/net/tuic-client
+rm -rf feeds/packages/net/v2ray-core
+rm -rf feeds/packages/net/v2ray-geodata
+rm -rf feeds/packages/net/v2ray-plugin
+rm -rf feeds/packages/net/xray-core
+rm -rf feeds/packages/net/xray-plugin
 
-## ssr passwall vssr bypass依赖
-# git clone https://github.com/kenzok8/small package/new/small
-
-# git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/new/openwrt-passwall && mv -n package/new/openwrt-passwall/luci-app-passwall package/new/; rm -rf package/new/openwrt-passwall
-# git clone https://github.com/xiaorouji/openwrt-passwall-packages package/new/passwall
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/new/openwrt-passwall && mv -n package/new/openwrt-passwall/luci-app-passwall package/new/; rm -rf package/new/openwrt-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall-packages package/new/passwall
 
 ## openclash
 rm -rf feeds/luci/applications/luci-app-openclash
@@ -119,3 +141,4 @@ bash $GITHUB_WORKSPACE/scripts/zsh.sh
 ## turboacc
 # bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
 # curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+ls -1 package/new/
