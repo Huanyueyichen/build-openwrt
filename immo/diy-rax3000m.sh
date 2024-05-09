@@ -28,10 +28,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-
 rm -rf feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
-## alist编译环境
-# rm -rf feeds/packages/lang/golang
-# git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-
 
 # mv package/new/immortalwrt-packages/lang/golang feeds/packages/lang/golang
 
@@ -66,12 +62,13 @@ git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packag
 ########## 添加包
 
 ## alist编译环境
-# rm -rf feeds/packages/lang/golang
+rm -rf feeds/packages/lang/golang
 # rm -rf feeds/luci/applications/luci-app-alist
 # rm -rf feeds/packages/net/alist
 # mv package/new/openwrt-packages/golang feeds/packages/lang/golang
 # mv package/new/openwrt-packages/alist package/new/alist
 # mv package/new/openwrt-packages/luci-app-alist package/new/luci-app-alist
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 ## Add luci-app-wolplus
 mv package/new/openwrt-packages/luci-app-wolplus package/new/luci-app-wolplus
