@@ -107,7 +107,8 @@ ls -1 package/new/
 
 ## openclash
 rm -rf feeds/luci/applications/luci-app-openclash
-bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
+git clone --depth 1 https://github.com/vernesong/OpenClash package/new/OpenClash && mv -n package/new/OpenClash/luci-app-openclash package/new/; rm -rf package/new/OpenClash
+# bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## ShellClash
 # bash $GITHUB_WORKSPACE/scripts/ShellClash.sh
