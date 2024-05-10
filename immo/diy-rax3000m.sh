@@ -124,13 +124,13 @@ rm -rf feeds/packages/net/v2ray-plugin
 rm -rf feeds/packages/net/xray-core
 rm -rf feeds/packages/net/xray-plugin
 
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/new/openwrt-passwall && mv -n package/new/openwrt-passwall/luci-app-passwall package/new/; rm -rf package/new/openwrt-passwall
-git clone https://github.com/xiaorouji/openwrt-passwall-packages package/new/passwall
+# git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/new/openwrt-passwall && mv -n package/new/openwrt-passwall/luci-app-passwall package/new/; rm -rf package/new/openwrt-passwall
+# git clone https://github.com/xiaorouji/openwrt-passwall-packages package/new/passwall
 
 ## openclash
 rm -rf feeds/luci/applications/luci-app-openclash
-git clone --depth 1 https://github.com/vernesong/OpenClash package/new/OpenClash && mv -n package/new/OpenClash/luci-app-openclash package/new/; rm -rf package/new/OpenClash
-# bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
+# git clone --depth 1 https://github.com/vernesong/OpenClash package/new/OpenClash && mv -n package/new/OpenClash/luci-app-openclash package/new/; rm -rf package/new/OpenClash
+bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## ShellClash
 # bash $GITHUB_WORKSPACE/scripts/ShellClash.sh
