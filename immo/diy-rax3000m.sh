@@ -132,8 +132,8 @@ rm -rf feeds/packages/net/v2ray-plugin
 rm -rf feeds/packages/net/xray-core
 rm -rf feeds/packages/net/xray-plugin
 
-# git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/new/openwrt-passwall && mv -n package/new/openwrt-passwall/luci-app-passwall package/new/; rm -rf package/new/openwrt-passwall
-# git clone https://github.com/xiaorouji/openwrt-passwall-packages package/new/passwall
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/new/openwrt-passwall && mv -n package/new/openwrt-passwall/luci-app-passwall package/new/; rm -rf package/new/openwrt-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall-packages package/new/passwall
 
 ## openclash
 rm -rf feeds/luci/applications/luci-app-openclash
