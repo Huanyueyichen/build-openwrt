@@ -76,7 +76,9 @@ rm -rf package/new/sbwml-alist
 ## aria2
 rm -rf feeds/luci/applications/luci-app-aria2
 rm -rf feeds/packages/net/aria2
+rm -rf feeds/packages/net/ariang
 mv package/new/openwrt-packages/aria2 package/new/aria2
+mv package/new/openwrt-packages/ariang package/new/ariang
 mv package/new/openwrt-packages/luci-app-aria2 package/new/luci-app-aria2
 
 ## Add luci-app-wolplus
