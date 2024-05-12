@@ -52,12 +52,6 @@ cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/
 # mv -n package/new/ddnsgo/luci-app-ddns-go package/new/
 # rm -rf package/new/ddnsgo
 # sed -i 's/PKG_BUILD_FLAGS:=no-mips16/PKG_USE_MIPS16:=0/g' package/new/ddns-go/Makefile
-git clone -b openwrt-21.02 https://github.com/immortalwrt/packages package/new/immortalwrt-packages
-mv package/new/immortalwrt-packages/net/ddns-go package/new/ddns-go
-rm -rf package/new/immortalwrt-packages
-git clone -b openwrt-21.02 https://github.com/immortalwrt/luci package/new/immortalwrt-luci
-mv package/new/immortalwrt-luci/applications/luci-app-ddns-go package/new/luci-app-ddns-go
-rm -rf package/new/immortalwrt-luci
 sed -i 's/chown ddns-go/chmod 777/g' package/new/ddns-go/files/ddns-go.init
 
 ## Add luci-app-socat
