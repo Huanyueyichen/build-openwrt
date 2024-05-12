@@ -23,6 +23,7 @@ env:
   PPPOE_PASSWD: ${{ secrets.PPPOE_PASSWD }}
   REPO_URL: https://github.com/padavanonly/immortalwrt
   REPO_BRANCH: master
+  FEEDS_CONF: immo/feeds.conf.default
   CONFIG_FILE: immo/r4a.config
   DIY_SH: immo/diy-r4a.sh
   UPLOAD_RELEASE: true
@@ -86,6 +87,10 @@ jobs:
         # 设置pppoe拨号账户密码
         sed -i "s/username='username'/username='${{ env.PPPOE_USERNAME }}'/g" openwrt/package/base-files/files/bin/config_generate
         sed -i "s/password='password'/password='${{ env.PPPOE_PASSWD }}'/g" openwrt/package/base-files/files/bin/config_generate
+
+    - name: Load custom feeds
+      run: |
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
