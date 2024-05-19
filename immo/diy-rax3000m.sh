@@ -28,26 +28,25 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-
 rm -rf feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
-# mv package/new/immortalwrt-packages/lang/golang feeds/packages/lang/golang
-
-# rm -rf package/new/immortalwrt-packages
-# git clone -b openwrt-23.05 https://github.com/immortalwrt/luci package/new/immortalwrt-luci
-# mv package/new/immortalwrt-luci/applications/luci-app-alist package/new/luci-app-alist
-# rm -rf package/new/immortalwrt-luci
-# git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
-
 ## Add luci-app-wechatpush
 # git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
 
 ## Add luci-app-socat
-# svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat package/new/luci-app-socat
+rm -rf feeds/packages/net/socat
+git clone https://github.com/immortalwrt/packages package/new/immortalwrt-packages
+mv package/new/immortalwrt-packages/net/socat package/new/socat
+rm -rf package/new/immortalwrt-packages
 rm -rf feeds/luci/applications/luci-app-socat
-git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/socat && mv -n package/new/socat/luci-app-socat package/new/; rm -rf package/new/socat
+git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/chenmozhijin-socat
+mv -n package/new/chenmozhijin-socat/luci-app-socat package/new/
+rm -rf package/new/chenmozhijin-socat
 
 ## Add luci-app-ddns-go
 rm -rf feeds/luci/applications/luci-app-ddns-go
 rm -rf feeds/packages/net/ddns-go
-git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/*ddns-go package/new/; rm -rf package/new/ddnsgo
+git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo
+mv -n package/new/ddnsgo/*ddns-go package/new/
+rm -rf package/new/ddnsgo
 
 ## Add luci-app-mosdns
 # rm -rf feeds/packages/net/v2ray-geodata
@@ -69,9 +68,6 @@ git clone https://github.com/sbwml/luci-app-alist package/new/sbwml-alist
 mv package/new/sbwml-alist/luci-app-alist package/new/luci-app-alist
 mv package/new/sbwml-alist/alist package/new/alist
 rm -rf package/new/sbwml-alist
-# mv package/new/openwrt-packages/golang feeds/packages/lang/golang
-# mv package/new/openwrt-packages/alist package/new/alist
-# mv package/new/openwrt-packages/luci-app-alist package/new/luci-app-alist
 
 ## aria2
 # rm -rf feeds/luci/applications/luci-app-aria2
@@ -132,13 +128,16 @@ rm -rf feeds/packages/net/v2ray-plugin
 rm -rf feeds/packages/net/xray-core
 rm -rf feeds/packages/net/xray-plugin
 
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/new/openwrt-passwall && mv -n package/new/openwrt-passwall/luci-app-passwall package/new/; rm -rf package/new/openwrt-passwall
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/new/openwrt-passwall
+mv -n package/new/openwrt-passwall/luci-app-passwall package/new/
+rm -rf package/new/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall-packages package/new/passwall
-rm -rf package/new/passwall/shadowsocks-rust
 
 ## openclash
 rm -rf feeds/luci/applications/luci-app-openclash
-git clone --depth 1 https://github.com/vernesong/OpenClash package/new/OpenClash && mv -n package/new/OpenClash/luci-app-openclash package/new/; rm -rf package/new/OpenClash
+git clone --depth 1 https://github.com/vernesong/OpenClash package/new/OpenClash
+mv -n package/new/OpenClash/luci-app-openclash package/new/
+rm -rf package/new/OpenClash
 # bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## ShellClash
