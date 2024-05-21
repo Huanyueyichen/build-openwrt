@@ -21,7 +21,7 @@ env:
   REPO_BRANCH: main
   #FEEDS_CONF: main/feeds.conf.default
   CONFIG_FILE: main/r2c-main.config
-  DIY_SH: main/diy-rockchip.sh
+  DIY_SH: main/diy-rockchip-main.sh
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
