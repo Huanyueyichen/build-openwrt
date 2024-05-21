@@ -141,8 +141,8 @@ mv package/new/openwrt-packages/luci-lib-fs package/new/luci-lib-fs
 mv package/new/openwrt-packages/luci-app-ramfree package/new/luci-app-ramfree
 
 ## Add luci-app-adbyby-plus
-mv package/new/openwrt-packages/luci-app-adbyby-plus package/new/luci-app-adbyby-plus
-mv package/new/openwrt-packages/adbyby package/new/adbyby
+# mv package/new/openwrt-packages/luci-app-adbyby-plus package/new/luci-app-adbyby-plus
+# mv package/new/openwrt-packages/adbyby package/new/adbyby
 
 ## Add automount
 mv package/new/openwrt-packages/automount package/new/automount
