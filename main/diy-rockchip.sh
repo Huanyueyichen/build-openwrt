@@ -22,15 +22,6 @@ cp -f $GITHUB_WORKSPACE/patches/start-rk3328-pwm-fan.sh target/linux/rockchip/ar
 chmod +x target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3328-pwmfan
 chmod +x target/linux/rockchip/armv8/base-files/usr/bin/start-rk3328-pwm-fan.sh
 
-## 添加rtl8821cu驱动
-# svn export https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl8821cu package/kernel/rtl8821cu
-
-## 添加rtw88-usb驱动
-# svn export https://github.com/coolsnowwolf/lede/trunk/package/kernel/rtw88-usb package/kernel/rtw88-usb
-
-# Boost 通用即插即用
-# rm -rf feeds/packages/net/miniupnpd
-# svn export https://github.com/immortalwrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
 
 # rm -rf package/new
 mkdir -p package/new
@@ -49,7 +40,12 @@ rm -rf package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 ## Add luci-app-alist
-# git clone https://github.com/sbwml/luci-app-alist package/new/luci-app-alist
+rm -rf feeds/packages/net/alist
+rm -rf feeds/luci/applications/luci-app-alist
+git clone https://github.com/sbwml/luci-app-alist package/new/sbwml-alist
+mv package/new/sbwml-alist/luci-app-alist package/new/luci-app-alist
+mv package/new/sbwml-alist/alist package/new/alist
+rm -rf package/new/sbwml-alist
 
 ## Add luci-app-wechatpush
 git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
@@ -97,7 +93,7 @@ mv package/new/openwrt-packages/luci-app-guest-wifi package/new/luci-app-guest-w
 # mv package/new/openwrt-packages/luci-app-poweroff package/new/luci-app-poweroff
 
 ## Add luci-app-irqbalance
-#　sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
+sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
 # mv package/new/openwrt-packages/luci-app-irqbalance package/new/luci-app-irqbalance
 
 ## Add luci-app-AdguardHome
