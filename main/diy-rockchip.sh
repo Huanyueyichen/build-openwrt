@@ -52,12 +52,16 @@ git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/lu
 
 ## Add luci-app-socat
 # svn export https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat package/new/luci-app-socat
-git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/socat && mv -n package/new/socat/luci-app-socat package/new/; rm -rf package/new/socat
+git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/socat
+mv -n package/new/socat/luci-app-socat package/new/
+rm -rf package/new/socat
 
 ## Add luci-app-ddns-go
 # svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go package/new/luci-app-ddns-go
 # svn export https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddns-go package/new/ddns-go
-git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo && mv -n package/new/ddnsgo/*ddns-go package/new/; rm -rf package/new/ddnsgo
+git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo
+mv -n package/new/ddnsgo/*ddns-go package/new/
+rm -rf package/new/ddnsgo
 
 ## Add luci-app-mosdns
 rm -rf feeds/packages/net/v2ray-geodata
@@ -154,7 +158,9 @@ rm -rf package/new/openwrt-packages
 # git clone https://github.com/kenzok8/small package/new/small
 
 ## passwall
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/new/openwrt-passwall && mv -n package/new/openwrt-passwall/luci-app-passwall package/new/; rm -rf package/new/openwrt-passwall
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/new/openwrt-passwall
+mv -n package/new/openwrt-passwall/luci-app-passwall package/new/
+rm -rf package/new/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall-packages package/new/passwall
 
 ## openclash
