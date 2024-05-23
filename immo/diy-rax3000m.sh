@@ -64,10 +64,16 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/net/alist
-git clone https://github.com/sbwml/luci-app-alist package/new/sbwml-alist
-mv package/new/sbwml-alist/luci-app-alist package/new/luci-app-alist
-mv package/new/sbwml-alist/alist package/new/alist
-rm -rf package/new/sbwml-alist
+git clone https://github.com/immortalwrt/packages package/new/immortalwrt-packages
+mv package/new/immortalwrt-packages/net/alist package/new/alist
+rm -rf package/new/immortalwrt-packages
+git clone https://github.com/immortalwrt/luci package/new/immortalwrt-luci
+mv package/new/immortalwrt-luci/applications/luci-app-alist package/new/luci-app-alist
+rm -rf package/new/immortalwrt-luci
+# git clone https://github.com/sbwml/luci-app-alist package/new/sbwml-alist
+# mv package/new/sbwml-alist/luci-app-alist package/new/luci-app-alist
+# mv package/new/sbwml-alist/alist package/new/alist
+# rm -rf package/new/sbwml-alist
 
 ## aria2
 # rm -rf feeds/luci/applications/luci-app-aria2
