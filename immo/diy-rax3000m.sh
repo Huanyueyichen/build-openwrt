@@ -78,8 +78,8 @@ rm -rf package/new/sbwml-alist
 # mv package/new/openwrt-packages/luci-app-aria2 package/new/luci-app-aria2
 
 ## aliyundrive-webdav
-mv package/new/openwrt-packages/luci-app-aliyundrive-webdav package/new/luci-app-aliyundrive-webdav
-mv package/new/openwrt-packages/aliyundrive-webdav package/new/aliyundrive-webdav
+# mv package/new/openwrt-packages/luci-app-aliyundrive-webdav package/new/luci-app-aliyundrive-webdav
+# mv package/new/openwrt-packages/aliyundrive-webdav package/new/aliyundrive-webdav
 
 ## Add luci-app-wolplus
 mv package/new/openwrt-packages/luci-app-wolplus package/new/luci-app-wolplus
