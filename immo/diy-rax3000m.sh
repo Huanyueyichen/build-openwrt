@@ -91,6 +91,7 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 # mv package/new/openwrt-packages/luci-app-irqbalance package/new/luci-app-irqbalance
 
 ## Add luci-app-AdguardHome
+rm -rf feeds/packages/net/adguardhome
 mv package/new/openwrt-packages/adguardhome package/new/adguardhome
 mv package/new/openwrt-packages/luci-app-adguardhome package/new/luci-app-adguardhome
 sed -i '1,2d' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
