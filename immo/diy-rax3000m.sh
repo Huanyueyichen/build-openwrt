@@ -96,7 +96,10 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 
 ## Add luci-app-AdguardHome
 rm -rf feeds/packages/net/adguardhome
-mv package/new/openwrt-packages/adguardhome package/new/adguardhome
+# mv package/new/openwrt-packages/adguardhome package/new/adguardhome
+git clone https://github.com/immortalwrt/packages package/new/immortalwrt-packages
+mv package/new/immortalwrt-packages/adguardhome package/new/adguardhome
+rm -rf package/new/immortalwrt-packages
 mv package/new/openwrt-packages/luci-app-adguardhome package/new/luci-app-adguardhome
 sed -i '1,2d' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
 # sed -i 's/6h/1h/g' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
