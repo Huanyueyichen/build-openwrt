@@ -129,7 +129,6 @@ CONFIG_MTK_WSC_V2_SUPPORT=y
 CONFIG_OPENSSL_WITH_NPN=y
 # CONFIG_PACKAGE_TURBOACC_INCLUDE_FLOW_OFFLOADING is not set
 CONFIG_PACKAGE_TURBOACC_INCLUDE_NO_FASTPATH=y
-CONFIG_PACKAGE_adguardhome=y
 CONFIG_PACKAGE_alist=y
 CONFIG_PACKAGE_aria2=y
 CONFIG_PACKAGE_ariang=y
@@ -244,6 +243,7 @@ CONFIG_PACKAGE_libyaml=y
 CONFIG_PACKAGE_lua-cjson=y
 CONFIG_PACKAGE_luci-app-accesscontrol=y
 CONFIG_PACKAGE_luci-app-adguardhome=y
+# CONFIG_PACKAGE_luci-app-adguardhome_INCLUDE_binary is not set
 CONFIG_PACKAGE_luci-app-alist=y
 CONFIG_PACKAGE_luci-app-argon-config=y
 CONFIG_PACKAGE_luci-app-aria2=y
