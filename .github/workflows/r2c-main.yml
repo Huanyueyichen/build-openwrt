@@ -22,6 +22,8 @@ env:
   #FEEDS_CONF: main/feeds.conf.default
   CONFIG_FILE: main/r2c-main.config
   DIY_SH: main/diy-rockchip-main.sh
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
