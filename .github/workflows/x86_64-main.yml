@@ -26,6 +26,8 @@ env:
   #FEEDS_CONF: main/feeds.conf.default
   CONFIG_FILE: main/x86_64.config
   DIY_SH: main/diy-x86.sh
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
