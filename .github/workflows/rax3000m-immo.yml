@@ -23,7 +23,7 @@ env:
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   #FEEDS_CONF: immo/feeds.conf.default
-  CONFIG_FILE: immo/rax3000m.config
+  CONFIG_FILE: immo/rax3000m.config.bak
   DIY_SH: immo/diy-rax3000m.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
