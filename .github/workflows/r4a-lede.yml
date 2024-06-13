@@ -25,6 +25,8 @@ env:
   REPO_BRANCH: master
   CONFIG_FILE: lede/r4a.config
   DIY_SH: lede/diy-r4a.sh
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
