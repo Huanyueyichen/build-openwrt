@@ -22,6 +22,8 @@ env:
   FEEDS_CONF: lede/feeds.conf.default
   CONFIG_FILE: lede/r2c.config
   DIY_SH: lede/diy-rockchip.sh
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
