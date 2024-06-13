@@ -25,6 +25,8 @@ env:
   REPO_BRANCH: openwrt-21.02
   CONFIG_FILE: immo/r4a.config
   DIY_SH: immo/diy-r4a.sh
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
