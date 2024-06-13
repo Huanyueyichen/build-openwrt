@@ -25,6 +25,8 @@ env:
   REPO_BRANCH: openwrt-23.05
   CONFIG_FILE: main/r4a.config
   DIY_SH: main/diy-r4a.sh
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
