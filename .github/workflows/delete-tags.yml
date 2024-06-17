@@ -12,7 +12,7 @@ jobs:
     steps:
 
     - name: Delete tags
-      uses: fabriziocacicia/delete-tags-without-release-action@v0.1.0
+      uses: Huanyueyichen/delete-tags-without-release-action@v0.2.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
