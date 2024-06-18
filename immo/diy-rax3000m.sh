@@ -108,6 +108,12 @@ cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/links.txt package/new/luci-app-adgu
 # sed -i "/  upstream_dns_file: ""/i\  - 2400:3200::1" package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 # sed -i "/  upstream_dns_file: ""/i\  - 114.114.114.114" package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 
+## Add luci-app-smartdns
+rm -rf feeds/packages/net/smartdns
+mv package/new/openwrt-packages/smartdns package/new/smartdns
+rm -rf feeds/luci/applications/luci-app-smartdns
+mv package/new/openwrt-packages/luci-app-smartdns package/new/luci-app-smartdns
+
 rm -rf package/new/openwrt-packages
 
 ## passwall
