@@ -3,8 +3,6 @@ name: delete-tags
 on:
   repository_dispatch:
   workflow_dispatch:
-  watch:
-     types: started
 
 jobs:
   build:
