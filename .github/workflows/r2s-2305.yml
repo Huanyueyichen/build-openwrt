@@ -15,8 +15,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: 0 17 ? * 0,4
-  watch:
-     types: started
 
 env:
   PPPOE_USERNAME: ${{ secrets.PPPOE_USERNAME }}
