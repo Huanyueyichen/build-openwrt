@@ -102,7 +102,7 @@ sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqba
 
 ## Add luci-app-AdguardHome
 rm -rf feeds/packages/net/adguardhome
-mv package/new/openwrt-packages/adguardhome package/new/adguardhome
+# mv package/new/openwrt-packages/adguardhome package/new/adguardhome
 mv package/new/openwrt-packages/luci-app-adguardhome package/new/luci-app-adguardhome
 rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/AdGuardHome_template.yaml package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
