@@ -108,8 +108,10 @@ sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqba
 mv package/new/openwrt-packages/luci-app-adguardhome package/new/luci-app-adguardhome
 rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/AdGuardHome_template.yaml package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
-rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
-cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/links.txt package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
+# rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
+# cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/links.txt package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
+rm -rf package/new/luci-app-adguardhome/Makefile
+cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/Makefile package/new/luci-app-adguardhome/Makefile
 # sed -i '1,2d' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
 # sed -i 's/6h/1h/g' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 # sed -i 's/4194304/8388608/g' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
