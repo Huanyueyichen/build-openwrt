@@ -24,7 +24,6 @@ cp -f $GITHUB_WORKSPACE/patches/start-rk3328-pwm-fan.sh target/linux/rockchip/ar
 chmod +x target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3328-pwmfan
 chmod +x target/linux/rockchip/armv8/base-files/usr/bin/start-rk3328-pwm-fan.sh
 
-
 # rm -rf package/new
 mkdir -p package/new
 
@@ -70,6 +69,10 @@ rm -rf feeds/packages/net/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/luci-app-mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
 
+## adguardhome
+git clone -b patch-1 https://github.com/kiddin9/openwrt-adguardhome package/new/openwrt-adguardhome
+mv package/new/openwrt-adguardhome/*adguardhome package/new/
+rm -rf package/new/openwrt-adguardhome
 
 
 ## clone kiddin9/openwrt-packages仓库
@@ -105,18 +108,13 @@ sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqba
 ## Add luci-app-AdguardHome
 # rm -rf feeds/packages/net/adguardhome
 # mv package/new/openwrt-packages/adguardhome package/new/adguardhome
-mv package/new/openwrt-packages/luci-app-adguardhome package/new/luci-app-adguardhome
-rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
-cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/AdGuardHome_template.yaml package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
+# mv package/new/openwrt-packages/luci-app-adguardhome package/new/luci-app-adguardhome
+# rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
+# cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/AdGuardHome_template.yaml package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 # rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
 # cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/links.txt package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
-rm -rf package/new/luci-app-adguardhome/Makefile
-cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/Makefile package/new/luci-app-adguardhome/Makefile
-# sed -i '1,2d' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
-# sed -i 's/6h/1h/g' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
-# sed -i 's/4194304/8388608/g' package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
-# sed -i "/  upstream_dns_file: ""/i\  - 2400:3200::1" package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
-# sed -i "/  upstream_dns_file: ""/i\  - 114.114.114.114" package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
+# rm -rf package/new/luci-app-adguardhome/Makefile
+# cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/Makefile package/new/luci-app-adguardhome/Makefile
 
 ## Add luci-app-qbittorrent
 mv package/new/openwrt-packages/qBittorrent-Enhanced-Edition package/new/qBittorrent-Enhanced-Edition
