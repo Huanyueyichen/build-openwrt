@@ -159,7 +159,7 @@ rm -rf package/new/OpenClash
 # bash $GITHUB_WORKSPACE/scripts/ShellClash.sh
 
 ## zsh
-# bash $GITHUB_WORKSPACE/scripts/zsh.sh
+bash $GITHUB_WORKSPACE/scripts/zsh.sh
 
 ## turboacc
 # bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
