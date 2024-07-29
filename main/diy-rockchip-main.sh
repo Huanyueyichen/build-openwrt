@@ -72,6 +72,8 @@ git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
 ## adguardhome
 git clone https://github.com/kiddin9/openwrt-adguardhome package/new/openwrt-adguardhome
 mv package/new/openwrt-adguardhome/*adguardhome package/new/
+rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
+cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/AdGuardHome_template.yaml package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 rm -rf package/new/openwrt-adguardhome
 
 
@@ -104,17 +106,6 @@ mv package/new/openwrt-packages/luci-app-guest-wifi package/new/luci-app-guest-w
 ## Add luci-app-irqbalance
 sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
 # mv package/new/openwrt-packages/luci-app-irqbalance package/new/luci-app-irqbalance
-
-## Add luci-app-AdguardHome
-# rm -rf feeds/packages/net/adguardhome
-# mv package/new/openwrt-packages/adguardhome package/new/adguardhome
-# mv package/new/openwrt-packages/luci-app-adguardhome package/new/luci-app-adguardhome
-# rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
-# cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/AdGuardHome_template.yaml package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
-# rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
-# cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/links.txt package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
-# rm -rf package/new/luci-app-adguardhome/Makefile
-# cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/Makefile package/new/luci-app-adguardhome/Makefile
 
 ## Add luci-app-qbittorrent
 mv package/new/openwrt-packages/qBittorrent-Enhanced-Edition package/new/qBittorrent-Enhanced-Edition
