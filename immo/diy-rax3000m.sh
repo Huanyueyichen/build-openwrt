@@ -49,9 +49,9 @@ mv -n package/new/ddnsgo/*ddns-go package/new/
 rm -rf package/new/ddnsgo
 
 ## Add luci-app-mosdns
-rm -rf feeds/packages/net/v2ray-geodata
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/luci-app-mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
+# rm -rf feeds/packages/net/v2ray-geodata
+# git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/luci-app-mosdns
+# git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
 
 
 ## clone kiddin9/openwrt-packages仓库
@@ -113,6 +113,13 @@ cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/links.txt package/new/luci-app-adgu
 # mv package/new/openwrt-packages/smartdns package/new/smartdns
 # rm -rf feeds/luci/applications/luci-app-smartdns
 # mv package/new/openwrt-packages/luci-app-smartdns package/new/luci-app-smartdns
+
+## Add luci-app-mosdns
+rm -rf feeds/packages/net/v2ray-geodata
+mv package/new/openwrt-packages/mosdns package/new/mosdns
+mv package/new/openwrt-packages/luci-app-mosdns package/new/luci-app-mosdns
+
+
 
 rm -rf package/new/openwrt-packages
 
