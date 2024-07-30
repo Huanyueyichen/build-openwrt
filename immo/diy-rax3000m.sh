@@ -109,10 +109,10 @@ cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/links.txt package/new/luci-app-adgu
 # cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/Makefile package/new/luci-app-adguardhome/Makefile
 
 ## Add luci-app-smartdns
-rm -rf feeds/packages/net/smartdns
-mv package/new/openwrt-packages/smartdns package/new/smartdns
-rm -rf feeds/luci/applications/luci-app-smartdns
-mv package/new/openwrt-packages/luci-app-smartdns package/new/luci-app-smartdns
+# rm -rf feeds/packages/net/smartdns
+# mv package/new/openwrt-packages/smartdns package/new/smartdns
+# rm -rf feeds/luci/applications/luci-app-smartdns
+# mv package/new/openwrt-packages/luci-app-smartdns package/new/luci-app-smartdns
 
 rm -rf package/new/openwrt-packages
 
