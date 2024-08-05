@@ -150,6 +150,12 @@ mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
 ## Add autocore
 mv package/new/openwrt-packages/autocore package/new/autocore
 
+## Add luci-app-upnp
+rm -rf feeds/luci/applications/luci-app-upnp
+rm -rf feeds/packages/net/miniupnpd
+mv package/new/openwrt-packages/miniupnpd package/new/miniupnpd
+mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
+
 rm -rf package/new/openwrt-packages
 
 ## ssr passwall vssr bypass依赖
