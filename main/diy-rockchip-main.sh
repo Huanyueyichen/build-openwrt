@@ -70,7 +70,7 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/luci-app-mo
 git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
 
 ## adguardhome
-git clone https://github.com/kiddin9/openwrt-adguardhome package/new/openwrt-adguardhome
+git clone -b patch-1 https://github.com/kiddin9/openwrt-adguardhome package/new/openwrt-adguardhome
 mv package/new/openwrt-adguardhome/*adguardhome package/new/
 rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
 cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/AdGuardHome_template.yaml package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
