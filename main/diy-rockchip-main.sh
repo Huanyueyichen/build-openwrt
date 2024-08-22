@@ -68,11 +68,11 @@ rm -rf package/new/ddnsgo
 rm -rf feeds/packages/net/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/luci-app-mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
-rm -rf package/new/luci-app-mosdns/root/etc/mosdns/rule/cn-white.txt
+# rm -rf package/new/luci-app-mosdns/root/etc/mosdns/rule/cn-white.txt
 # wget https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt -o package/new/luci-app-mosdns/root/etc/mosdns/rule/reject-list.txt
-wget https://raw.githubusercontent.com/alecthw/chnlist/release/mosdns/whitelist.list -o package/new/luci-app-mosdns/root/etc/mosdns/rule/cn-white.txt
+# wget https://raw.githubusercontent.com/alecthw/chnlist/release/mosdns/whitelist.list -o package/new/luci-app-mosdns/root/etc/mosdns/rule/cn-white.txt
 # wget https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/Country.mmdb -o package/new/luci-app-mosdns/root/etc/mosdns/rule/Country.mmdb
-ls -1 package/new/luci-app-mosdns/root/etc/mosdns/rule/
+# ls -1 package/new/luci-app-mosdns/root/etc/mosdns/rule/
 
 ## adguardhome
 git clone -b patch-1 https://github.com/kiddin9/openwrt-adguardhome package/new/openwrt-adguardhome
