@@ -35,8 +35,8 @@ mkdir -p package/new
 # sed -i '/+luci-light/d;s/+luci-app-opkg/+luci-light/' ./feeds/luci/collections/luci/Makefile
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-light/Makefile
 ## 修改argon背景图片
-# rm -rf feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
-# cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+rm -rf feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 ## Add luci-app-wechatpush
 # git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
@@ -73,8 +73,8 @@ git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packag
 ########## 添加包
 
 ## alist编译环境
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+# rm -rf feeds/packages/lang/golang
+# git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/net/alist
 git clone https://github.com/sbwml/luci-app-alist package/new/sbwml-alist
@@ -134,6 +134,6 @@ bash $GITHUB_WORKSPACE/scripts/zsh.sh
 
 ## turboacc
 # bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+# curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 
 ls -1 package/new/
