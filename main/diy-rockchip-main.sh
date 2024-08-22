@@ -5,7 +5,7 @@
 
 ## 移除 SNAPSHOT 标签
 sed -i 's,SNAPSHOT,,g' include/version.mk
-sed -i 's,snapshots,,g' include/version.mk
+# sed -i 's,snapshots,,g' include/version.mk
 sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 sed -i 's,snapshots,,g' package/base-files/image-config.in
 
