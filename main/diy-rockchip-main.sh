@@ -154,6 +154,12 @@ mv package/new/openwrt-packages/automount package/new/automount
 mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/lua-neturl package/new/lua-neturl
 
+## Add luci-app-partexp
+mv package/new/openwrt-packages/luci-app-partexp package/new/luci-app-partexp
+
+## Add luci-app-diskman
+mv package/new/openwrt-packages/luci-app-diskman package/new/luci-app-diskman
+
 ## Add autocore
 mv package/new/openwrt-packages/autocore package/new/autocore
 
