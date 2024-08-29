@@ -100,6 +100,12 @@ sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqba
 mv package/new/openwrt-packages/automount package/new/automount
 mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
 
+## Add luci-app-partexp
+mv package/new/openwrt-packages/luci-app-partexp package/new/luci-app-partexp
+
+## Add luci-app-diskman
+mv package/new/openwrt-packages/luci-app-diskman package/new/luci-app-diskman
+
 ## Add luci-app-smartdns
 # rm -rf feeds/packages/net/smartdns
 # mv package/new/openwrt-packages/smartdns package/new/smartdns
