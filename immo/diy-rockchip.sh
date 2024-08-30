@@ -98,7 +98,7 @@ sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqba
 
 ## Add automount
 mv package/new/openwrt-packages/automount package/new/automount
-mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
+# mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
 
 ## Add luci-app-partexp
 mv package/new/openwrt-packages/luci-app-partexp package/new/luci-app-partexp
