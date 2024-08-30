@@ -151,7 +151,7 @@ mv package/new/openwrt-packages/luci-app-ramfree package/new/luci-app-ramfree
 
 ## Add automount
 mv package/new/openwrt-packages/automount package/new/automount
-mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
+# mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/lua-neturl package/new/lua-neturl
 
 ## Add luci-app-partexp
