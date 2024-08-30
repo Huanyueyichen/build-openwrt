@@ -140,11 +140,10 @@ jobs:
         rm -rf sha256sums
         rm -rf profiles.json
         rm -rf version.buildinfo
-        #rm -rf immortalwrt-mediatek-mt7981-cmcc_rax3000m.manifest
-        #rm -rf immortalwrt-mediatek-mt7981-cmcc_rax3000m-initramfs-kernel.bin
-        #rm -rf immortalwrt-mediatek-mt7981-cmcc_rax3000m-squashfs-factory.bin
+        rm -rf immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2c-rootfs.tar.gz
+        rm -rf immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2c.manifest
         mv config.buildinfo r2c.buildinfo
-        #mv immortalwrt-mediatek-mt7981-cmcc_rax3000m-squashfs-sysupgrade.bin immortalwrt-2102-cmcc_rax3000m-nand-squashfs-sysupgrade.bin
+        #mv immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
