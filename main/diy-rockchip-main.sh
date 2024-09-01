@@ -50,7 +50,7 @@ rm -rf package/new/sbwml-alist
 
 ## Add luci-app-mihomo
 git clone https://github.com/morytyann/OpenWrt-mihomo package/new/OpenWrt-mihomo
-mv -n package/new/ddnsgo/*mihomo package/new/
+mv -n package/new/OpenWrt-mihomo/*mihomo package/new/
 rm -rf package/new/OpenWrt-mihomo
 
 ## Add luci-app-wechatpush
