@@ -5,9 +5,7 @@
 
 ## 移除 SNAPSHOT 标签
 sed -i 's,SNAPSHOT,,g' include/version.mk
-# sed -i 's,snapshots,,g' include/version.mk
 sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
-# sed -i 's,snapshots,,g' package/base-files/image-config.in
 
 ## 修改openwrt登陆地址,把下面的192.168.11.1修改成你想要的就可以了
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
@@ -23,8 +21,6 @@ chmod +x target/linux/rockchip/armv8/base-files/usr/bin/start-rk3328-pwm-fan.sh
 # rm -rf package/new
 mkdir -p package/new
 
-## set default-setting
-# cp -rf $GITHUB_WORKSPACE/patches/default-settings package/new/default-settings
 
 ## 下载主题luci-theme-argon
 # rm -rf feeds/luci/themes/luci-theme-argon
@@ -42,10 +38,6 @@ cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-s
 # git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
 
 ## Add luci-app-socat
-rm -rf feeds/packages/net/socat
-git clone https://github.com/immortalwrt/packages package/new/immortalwrt-packages
-mv package/new/immortalwrt-packages/net/socat package/new/socat
-rm -rf package/new/immortalwrt-packages
 rm -rf feeds/luci/applications/luci-app-socat
 git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/chenmozhijin-socat
 mv -n package/new/chenmozhijin-socat/luci-app-socat package/new/
@@ -137,14 +129,10 @@ rm -rf package/new/openwrt-packages
 ## openclash
 bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
-## ShellClash
-# bash $GITHUB_WORKSPACE/scripts/ShellClash.sh
-
 ## zsh
 bash $GITHUB_WORKSPACE/scripts/zsh.sh
 
 ## turboacc
-# bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+# curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 
 ls -1 package/new/
