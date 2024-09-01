@@ -48,6 +48,11 @@ mv package/new/sbwml-alist/luci-app-alist package/new/luci-app-alist
 mv package/new/sbwml-alist/alist package/new/alist
 rm -rf package/new/sbwml-alist
 
+## Add luci-app-mihomo
+git clone https://github.com/morytyann/OpenWrt-mihomo package/new/OpenWrt-mihomo
+mv -n package/new/ddnsgo/*mihomo package/new/
+rm -rf package/new/OpenWrt-mihomo
+
 ## Add luci-app-wechatpush
 git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
 
