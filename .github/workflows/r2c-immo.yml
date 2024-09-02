@@ -143,7 +143,7 @@ jobs:
         rm -rf immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2c-rootfs.tar.gz
         rm -rf immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2c.manifest
         mv config.buildinfo r2c.buildinfo
-        #mv immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz
+        mv immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz immortalwrt-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
