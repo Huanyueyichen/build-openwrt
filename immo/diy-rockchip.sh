@@ -110,10 +110,10 @@ sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqba
 # mv package/new/openwrt-packages/luci-app-smartdns package/new/luci-app-smartdns
 
 ## Add luci-app-upnp
-rm -rf feeds/luci/applications/luci-app-upnp
-rm -rf feeds/packages/net/miniupnpd
-mv package/new/openwrt-packages/miniupnpd package/new/miniupnpd
-mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
+# rm -rf feeds/luci/applications/luci-app-upnp
+# rm -rf feeds/packages/net/miniupnpd
+# mv package/new/openwrt-packages/miniupnpd package/new/miniupnpd
+# mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
 
 ## Add luci-app-mosdns
 rm -rf feeds/packages/net/v2ray-geodata
