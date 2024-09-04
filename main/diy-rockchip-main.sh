@@ -122,15 +122,10 @@ sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqba
 ## Add luci-app-qbittorrent
 mv package/new/openwrt-packages/qBittorrent-Enhanced-Edition package/new/qBittorrent-Enhanced-Edition
 mv package/new/openwrt-packages/luci-app-qbittorrent package/new/luci-app-qbittorrent
-# svn export https://github.com/immortalwrt/packages/trunk/net/qBittorrent-Enhanced-Edition package/new/qBittorrent-Enhanced-Edition
-# svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-qbittorrent package/new/luci-app-qbittorrent
 ## qbittorrent依赖
 mv package/new/openwrt-packages/qt6tools package/new/qt6tools
 mv package/new/openwrt-packages/qt6base package/new/qt6base
 mv package/new/openwrt-packages/libdouble-conversion package/new/libdouble-conversion
-# svn export https://github.com/immortalwrt/packages/trunk/utils/qt6tools package/new/qt6tools
-# svn export https://github.com/immortalwrt/packages/trunk/libs/qt6base package/new/qt6base
-# svn export https://github.com/immortalwrt/packages/trunk/libs/libdouble-conversion package/new/libdouble-conversion
 rm -rf feeds/packages/libs/libtorrent-rasterbar
 mv package/new/openwrt-packages/libtorrent-rasterbar package/new/libtorrent-rasterbar
 
@@ -157,7 +152,6 @@ mv package/new/openwrt-packages/luci-app-ramfree package/new/luci-app-ramfree
 ## Add automount
 mv package/new/openwrt-packages/automount package/new/automount
 # mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/lua-neturl package/new/lua-neturl
 
 ## Add luci-app-partexp
 mv package/new/openwrt-packages/luci-app-partexp package/new/luci-app-partexp
@@ -173,6 +167,9 @@ rm -rf feeds/luci/applications/luci-app-upnp
 rm -rf feeds/packages/net/miniupnpd
 mv package/new/openwrt-packages/miniupnpd package/new/miniupnpd
 mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
+
+## Add luci-app-usb-printer
+mv package/new/openwrt-packages/luci-app-usb-printer package/new/luci-app-usb-printer
 
 rm -rf package/new/openwrt-packages
 
