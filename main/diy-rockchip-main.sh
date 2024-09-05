@@ -129,9 +129,8 @@ mv package/new/openwrt-packages/libdouble-conversion package/new/libdouble-conve
 rm -rf feeds/packages/libs/libtorrent-rasterbar
 mv package/new/openwrt-packages/libtorrent-rasterbar package/new/libtorrent-rasterbar
 
-## Add luci-app-fileassistant luci-app-filetransfer
+## Add luci-app-fileassistant
 mv package/new/openwrt-packages/luci-app-fileassistant package/new/luci-app-fileassistant
-mv package/new/openwrt-packages/luci-app-filetransfer package/new/luci-app-filetransfer
 mv package/new/openwrt-packages/luci-lib-fs package/new/luci-lib-fs
 
 ## Add luci-app-cpufreq
