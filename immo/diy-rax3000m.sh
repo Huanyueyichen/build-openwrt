@@ -50,9 +50,11 @@ rm -rf package/new/ddnsgo
 
 ## Add luci-app-mosdns
 rm -rf feeds/packages/net/v2ray-geodata
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/luci-app-mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
-
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/sbwml-mosdns
+mv -n package/new/sbwml-mosdns/*mosdns package/new/
+mv -n package/new/sbwml-mosdns/v2dat package/new/
+rm -rf package/new/sbwml-mosdns
 
 ## clone kiddin9/openwrt-packages仓库
 git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packages
