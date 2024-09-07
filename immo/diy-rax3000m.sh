@@ -49,12 +49,12 @@ mv -n package/new/ddnsgo/*ddns-go package/new/
 rm -rf package/new/ddnsgo
 
 ## Add luci-app-mosdns
-rm -rf feeds/packages/net/v2ray-geodata
-git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/sbwml-mosdns
-mv -n package/new/sbwml-mosdns/*mosdns package/new/
-mv -n package/new/sbwml-mosdns/v2dat package/new/
-rm -rf package/new/sbwml-mosdns
+# rm -rf feeds/packages/net/v2ray-geodata
+# git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
+# git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/sbwml-mosdns
+# mv -n package/new/sbwml-mosdns/*mosdns package/new/
+# mv -n package/new/sbwml-mosdns/v2dat package/new/
+# rm -rf package/new/sbwml-mosdns
 
 ## clone kiddin9/openwrt-packages仓库
 git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packages
@@ -63,7 +63,7 @@ git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packag
 
 ## alist编译环境
 # rm -rf feeds/packages/lang/golang
-# git clone https://github.com/sbwml/packages_lang_golang -b 21.x feeds/packages/lang/golang
+# git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/net/alist
 git clone https://github.com/sbwml/luci-app-alist package/new/sbwml-alist
