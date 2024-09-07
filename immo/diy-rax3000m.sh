@@ -56,20 +56,20 @@ rm -rf package/new/ddnsgo
 # mv -n package/new/sbwml-mosdns/v2dat package/new/
 # rm -rf package/new/sbwml-mosdns
 
-## clone kiddin9/openwrt-packages仓库
-git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packages
-
-########## 添加包
-
 ## alist编译环境
-# rm -rf feeds/packages/lang/golang
-# git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/net/alist
 git clone https://github.com/sbwml/luci-app-alist package/new/sbwml-alist
 mv package/new/sbwml-alist/luci-app-alist package/new/luci-app-alist
 mv package/new/sbwml-alist/alist package/new/alist
 rm -rf package/new/sbwml-alist
+
+## clone kiddin9/openwrt-packages仓库
+git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packages
+
+########## 添加包
 
 ## aria2
 # rm -rf feeds/luci/applications/luci-app-aria2
