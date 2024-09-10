@@ -50,6 +50,11 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddn
 mv -n package/new/ddnsgo/*ddns-go package/new/
 rm -rf package/new/ddnsgo
 
+## Add luci-app-mihomo
+git clone https://github.com/morytyann/OpenWrt-mihomo package/new/OpenWrt-mihomo
+mv -n package/new/OpenWrt-mihomo/*mihomo package/new/
+rm -rf package/new/OpenWrt-mihomo
+
 ## adguardhome
 git clone -b patch-1 https://github.com/kiddin9/openwrt-adguardhome package/new/openwrt-adguardhome
 mv package/new/openwrt-adguardhome/*adguardhome package/new/
