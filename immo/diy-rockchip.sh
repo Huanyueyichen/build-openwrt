@@ -51,9 +51,9 @@ mv -n package/new/ddnsgo/*ddns-go package/new/
 rm -rf package/new/ddnsgo
 
 ## Add luci-app-mihomo
-git clone https://github.com/morytyann/OpenWrt-mihomo package/new/OpenWrt-mihomo
-mv -n package/new/OpenWrt-mihomo/*mihomo package/new/
-rm -rf package/new/OpenWrt-mihomo
+# git clone https://github.com/morytyann/OpenWrt-mihomo package/new/OpenWrt-mihomo
+# mv -n package/new/OpenWrt-mihomo/*mihomo package/new/
+# rm -rf package/new/OpenWrt-mihomo
 
 ## adguardhome
 git clone -b patch-1 https://github.com/kiddin9/openwrt-adguardhome package/new/openwrt-adguardhome
@@ -115,10 +115,10 @@ sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqba
 # mv package/new/openwrt-packages/luci-app-smartdns package/new/luci-app-smartdns
 
 ## Add luci-app-upnp
-# rm -rf feeds/luci/applications/luci-app-upnp
-# rm -rf feeds/packages/net/miniupnpd
-# mv package/new/openwrt-packages/miniupnpd package/new/miniupnpd
-# mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
+rm -rf feeds/luci/applications/luci-app-upnp
+rm -rf feeds/packages/net/miniupnpd
+mv package/new/openwrt-packages/miniupnpd package/new/miniupnpd
+mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
 
 ## Add luci-app-mosdns
 rm -rf feeds/packages/net/v2ray-geodata
