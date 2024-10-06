@@ -93,13 +93,13 @@ mv package/new/openwrt-packages/luci-app-ramfree package/new/luci-app-ramfree
 
 ## Add automount
 mv package/new/openwrt-packages/automount package/new/automount
-# mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
+mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
 
 ## Add luci-app-partexp
-# mv package/new/openwrt-packages/luci-app-partexp package/new/luci-app-partexp
+mv package/new/openwrt-packages/luci-app-partexp package/new/luci-app-partexp
 
 ## Add luci-app-diskman
-# mv package/new/openwrt-packages/luci-app-diskman package/new/luci-app-diskman
+mv package/new/openwrt-packages/luci-app-diskman package/new/luci-app-diskman
 
 ## Add autocore
 mv package/new/openwrt-packages/autocore package/new/autocore
@@ -115,6 +115,7 @@ mv package/new/openwrt-packages/luci-app-mosdns package/new/luci-app-mosdns
 mv package/new/openwrt-packages/mosdns package/new/mosdns
 rm -rf feeds/packages/net/v2ray-geodata
 mv package/new/openwrt-packages/v2ray-geodata package/new/v2ray-geodata
+mv package/new/openwrt-packages/v2dat package/new/v2dat
 
 rm -rf package/new/openwrt-packages
 #################################
