@@ -91,10 +91,6 @@ mv package/new/openwrt-packages/libtorrent-rasterbar package/new/libtorrent-rast
 ## Add luci-app-ramfree
 mv package/new/openwrt-packages/luci-app-ramfree package/new/luci-app-ramfree
 
-## Add automount
-mv package/new/openwrt-packages/automount package/new/automount
-mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
-
 ## Add luci-app-partexp
 mv package/new/openwrt-packages/luci-app-partexp package/new/luci-app-partexp
 
@@ -119,6 +115,11 @@ mv package/new/openwrt-packages/v2dat package/new/v2dat
 
 rm -rf package/new/openwrt-packages
 #################################
+
+## Add automount
+git clone https://github.com/immortalwrt/immortalwrt package/new/immortalwrt
+mv package/new/immortalwrt/package/emortal/automount package/new/automount
+rm -rf package/new/immortalwrt
 
 ## openclash
 bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
