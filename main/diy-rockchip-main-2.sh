@@ -21,7 +21,7 @@ cp -f $GITHUB_WORKSPACE/patches/start-rk3328-pwm-fan.sh target/linux/rockchip/ar
 chmod +x target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3328-pwmfan
 chmod +x target/linux/rockchip/armv8/base-files/usr/bin/start-rk3328-pwm-fan.sh
 
-rm -rf package/new
+# rm -rf package/new
 mkdir -p package/new
 
 ## set default-setting
@@ -43,11 +43,6 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddn
 mv -n package/new/ddnsgo/*ddns-go package/new/
 rm -rf package/new/ddnsgo
 
-## Add luci-app-mosdns
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/luci-app-mosdns
-# rm -rf feeds/packages/net/v2ray-geodata
-# git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
-
 ## adguardhome
 git clone -b patch-1 https://github.com/kiddin9/openwrt-adguardhome package/new/openwrt-adguardhome
 mv package/new/openwrt-adguardhome/*adguardhome package/new/
@@ -64,28 +59,65 @@ git clone https://github.com/lyin888/luci-app-fileassistant package/new/luci-app
 ## Add luci-app-wolplus
 git clone https://github.com/animegasan/luci-app-wolplus package/new/luci-app-wolplus
 
+####################################
+## clone kiddin9/openwrt-packages仓库
+git clone https://github.com/kiddin9/kwrt-packages package/new/openwrt-packages
+
+## Add luci-app-accesscontrol
+mv package/new/openwrt-packages/luci-app-accesscontrol package/new/luci-app-accesscontrol
+
+## Add luci-app-autoreboot
+mv package/new/openwrt-packages/luci-app-autoreboot package/new/luci-app-autoreboot
+
+## Add luci-app-onliner
+mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
+
+## Add luci-app-wireguard
+# mv package/new/openwrt-packages/luci-app-wireguard package/new/luci-app-wireguard
+
+## Add luci-app-poweroff
+# mv package/new/openwrt-packages/luci-app-poweroff package/new/luci-app-poweroff
+
 ## Add luci-app-qbittorrent
-git clone https://github.com/immortalwrt/luci package/new/immortalwrt-luci
-mv package/new/immortalwrt-luci/applications/luci-app-qbittorrent package/new/luci-app-qbittorrent
-sed -i 's/..\/..\/luci.mk/\$(TOPDIR)\/feeds\/luci\/luci.mk/' package/new/luci-app-qbittorrent/Makefile
-mv package/new/immortalwrt-luci/applications/luci-app-usb-printer package/new/luci-app-usb-printer
-sed -i 's/..\/..\/luci.mk/\$(TOPDIR)\/feeds\/luci\/luci.mk/' package/new/luci-app-usb-printer/Makefile
-mv package/new/immortalwrt-luci/applications/luci-app-autoreboot package/new/luci-app-autoreboot
-sed -i 's/..\/..\/luci.mk/\$(TOPDIR)\/feeds\/luci\/luci.mk/' package/new/luci-app-autoreboot/Makefile
-rm -rf package/new/immortalwrt-luci
-git clone https://github.com/immortalwrt/packages package/new/immortalwrt-packages
-mv package/new/immortalwrt-packages/net/qBittorrent-Enhanced-Edition package/new/qBittorrent-Enhanced-Edition
-mv package/new/immortalwrt-packages/utils/qt6tools package/new/qt6tools
-mv package/new/immortalwrt-packages/libs/qt6base package/new/qt6base
-mv package/new/immortalwrt-packages/libs/libdouble-conversion package/new/libdouble-conversion
-mv package/new/immortalwrt-packages/libs/libtorrent-rasterbar package/new/libtorrent-rasterbar
-rm -rf package/new/immortalwrt-packages
+mv package/new/openwrt-packages/qBittorrent-Enhanced-Edition package/new/qBittorrent-Enhanced-Edition
+mv package/new/openwrt-packages/luci-app-qbittorrent package/new/luci-app-qbittorrent
+## qbittorrent依赖
+mv package/new/openwrt-packages/qt6tools package/new/qt6tools
+mv package/new/openwrt-packages/qt6base package/new/qt6base
+mv package/new/openwrt-packages/libdouble-conversion package/new/libdouble-conversion
+rm -rf feeds/packages/libs/libtorrent-rasterbar
+mv package/new/openwrt-packages/libtorrent-rasterbar package/new/libtorrent-rasterbar
+
+## Add luci-app-ramfree
+mv package/new/openwrt-packages/luci-app-ramfree package/new/luci-app-ramfree
+
+## Add automount
+mv package/new/openwrt-packages/automount package/new/automount
+# mv package/new/openwrt-packages/ntfs3-mount package/new/ntfs3-mount
+
+## Add luci-app-partexp
+# mv package/new/openwrt-packages/luci-app-partexp package/new/luci-app-partexp
+
+## Add luci-app-diskman
+# mv package/new/openwrt-packages/luci-app-diskman package/new/luci-app-diskman
 
 ## Add autocore
-git clone https://github.com/immortalwrt/immortalwrt package/new/immortalwrt
-mv package/new/immortalwrt/package/emortal/autocore package/new/autocore
-mv package/new/immortalwrt/package/emortal/automount package/new/automount
-rm -rf package/new/immortalwrt
+mv package/new/openwrt-packages/autocore package/new/autocore
+
+## Add luci-app-upnp
+rm -rf feeds/luci/applications/luci-app-upnp
+rm -rf feeds/packages/net/miniupnpd
+mv package/new/openwrt-packages/miniupnpd package/new/miniupnpd
+mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
+
+## Add luci-app-mosdns
+mv package/new/openwrt-packages/luci-app-mosdns package/new/luci-app-mosdns
+mv package/new/openwrt-packages/mosdns package/new/mosdns
+rm -rf feeds/packages/net/v2ray-geodata
+mv package/new/openwrt-packages/v2ray-geodata package/new/v2ray-geodata
+
+rm -rf package/new/openwrt-packages
+#################################
 
 ## openclash
 bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
