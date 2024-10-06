@@ -91,7 +91,7 @@ rm -rf package/new/openwrt-adguardhome
 
 
 ## clone kiddin9/openwrt-packages仓库
-git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packages
+git clone https://github.com/kiddin9/kwrt-packages package/new/openwrt-packages
 
 ########## 添加包
 
