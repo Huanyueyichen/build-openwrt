@@ -98,7 +98,7 @@ mv package/new/openwrt-packages/luci-app-partexp package/new/luci-app-partexp
 mv package/new/openwrt-packages/luci-app-diskman package/new/luci-app-diskman
 
 ## Add autocore
-mv package/new/openwrt-packages/autocore package/new/autocore
+# mv package/new/openwrt-packages/autocore package/new/autocore
 
 ## Add luci-app-upnp
 rm -rf feeds/luci/applications/luci-app-upnp
@@ -116,8 +116,9 @@ mv package/new/openwrt-packages/v2dat package/new/v2dat
 rm -rf package/new/openwrt-packages
 #################################
 
-## Add automount
+## Add autocore
 git clone https://github.com/immortalwrt/immortalwrt package/new/immortalwrt
+mv package/new/immortalwrt/package/emortal/autocore package/new/autocore
 mv package/new/immortalwrt/package/emortal/automount package/new/automount
 rm -rf package/new/immortalwrt
 
