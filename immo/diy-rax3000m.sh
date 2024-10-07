@@ -42,6 +42,7 @@ rm -rf package/new/openwrt-adguardhome
 
 ## Add luci-app-mosdns
 rm -rf feeds/packages/net/v2ray-geodata
+rm -rf feeds/packages/net/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/new/sbwml-mosdns
 mv -n package/new/sbwml-mosdns/*mosdns package/new/
