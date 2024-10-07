@@ -20,8 +20,8 @@ env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: main
   #FEEDS_CONF: main/feeds.conf.default
-  CONFIG_FILE: main/r2c-main-2.config
-  DIY_SH: main/diy-rockchip-main-2.sh
+  CONFIG_FILE: main/r2c-main.config
+  DIY_SH: main/diy-rockchip-main.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
