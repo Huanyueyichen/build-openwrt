@@ -3,15 +3,15 @@
 ## 默认开启wifi
 sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-## 修改openwrt登陆地址,把下面的192.168.12.1修改成你想要的就可以了
-sed -i 's/192.168.1.1/192.168.12.1/g' package/base-files/files/bin/config_generate
+## 修改openwrt登陆地址,把下面的192.168.11.1修改成你想要的就可以了
+sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
 # 移除 SNAPSHOT 标签
 sed -i 's,-SNAPSHOT,,g' include/version.mk
 sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 
 ## small_flash.patch
-# sed -i "s/kmod-mt7603 kmod-mt76x2 -uboot-envtools/kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/g" target/linux/ramips/image/mt7621.mk
+sed -i "s/kmod-mt7603 kmod-mt76x2 -uboot-envtools/kmod-mt7603 kmod-mt76x2 -uboot-envtools wpad-mini -wpad-basic-mbedtls -coremark -htop -bash -openssh-sftp-server/g" target/linux/ramips/image/mt7621.mk
 # cat target/linux/ramips/image/mt7621.mk
 
 # rm -rf package/new
@@ -38,14 +38,11 @@ git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/s
 mv -n package/new/socat/luci-app-socat package/new/
 rm -rf package/new/socat
 
-## Add luci-app-ddns-go
-git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo
-mv -n package/new/ddnsgo/*ddns-go package/new/
-rm -rf package/new/ddnsgo
-
+## Add luci-app-fileassistant
+git clone https://github.com/lyin888/luci-app-fileassistant package/new/luci-app-fileassistant
 
 ## clone kiddin9/openwrt-packages仓库
-git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packages
+git clone https://github.com/kiddin9/kwrt-packages package/new/openwrt-packages
 
 ########## 添加包
 
@@ -64,6 +61,9 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 ## Add luci-app-guest-wifi
 mv package/new/openwrt-packages/luci-app-guest-wifi package/new/luci-app-guest-wifi
 
+## Add luci-app-dynv6
+mv package/new/openwrt-packages/luci-app-dynv6 package/new/luci-app-dynv6
+
 ## Add luci-app-wireguard
 # mv package/new/openwrt-packages/luci-app-wireguard package/new/luci-app-wireguard
 
@@ -73,10 +73,6 @@ mv package/new/openwrt-packages/luci-app-guest-wifi package/new/luci-app-guest-w
 ## Add luci-app-irqbalance
 # sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
 # mv package/new/openwrt-packages/luci-app-irqbalance package/new/luci-app-irqbalance
-
-## Add luci-app-fileassistant
-# mv package/new/openwrt-packages/luci-app-fileassistant package/new/luci-app-fileassistant
-# mv package/new/openwrt-packages/luci-lib-fs package/new/luci-lib-fs
 
 ## Add luci-app-cpufreq
 # mv package/new/openwrt-packages/luci-app-cpufreq package/new/luci-app-cpufreq
@@ -120,3 +116,5 @@ rm -rf package/new/openwrt-packages
 ## luci-app-turboacc
 # bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
 curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+
+ls -1 package/new/
