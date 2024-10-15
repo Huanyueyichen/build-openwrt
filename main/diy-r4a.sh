@@ -41,6 +41,11 @@ rm -rf package/new/socat
 ## Add luci-app-fileassistant
 git clone https://github.com/lyin888/luci-app-fileassistant package/new/luci-app-fileassistant
 
+## Add luci-app-ddns-go
+git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo
+mv -n package/new/ddnsgo/*ddns-go package/new/
+rm -rf package/new/ddnsgo
+
 ## clone kiddin9/openwrt-packages仓库
 git clone https://github.com/kiddin9/kwrt-packages package/new/openwrt-packages
 
@@ -60,9 +65,6 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 
 ## Add luci-app-guest-wifi
 mv package/new/openwrt-packages/luci-app-guest-wifi package/new/luci-app-guest-wifi
-
-## Add luci-app-dynv6
-mv package/new/openwrt-packages/luci-app-dynv6 package/new/luci-app-dynv6
 
 ## Add luci-app-wireguard
 # mv package/new/openwrt-packages/luci-app-wireguard package/new/luci-app-wireguard
