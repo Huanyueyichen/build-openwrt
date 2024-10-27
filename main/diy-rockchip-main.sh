@@ -53,9 +53,6 @@ cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/links.txt package/new/luci-app-adgu
 # sed -i 's/+adguardhome/+PACKAGE_$(PKG_NAME)_INCLUDE_binary:adguardhome/g' package/new/luci-app-adguardhome/Makefile
 rm -rf package/new/openwrt-adguardhome
 
-## Add luci-app-fileassistant
-git clone https://github.com/lyin888/luci-app-fileassistant package/new/luci-app-fileassistant
-
 ## Add luci-app-wolplus
 git clone https://github.com/animegasan/luci-app-wolplus package/new/luci-app-wolplus
 
@@ -71,6 +68,9 @@ mv package/new/openwrt-packages/luci-app-autoreboot package/new/luci-app-autoreb
 
 ## Add luci-app-onliner
 mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
+
+## Add luci-app-fileassistant
+mv package/new/openwrt-packages/luci-app-fileassistant package/new/luci-app-fileassistant
 
 ## Add luci-app-wireguard
 # mv package/new/openwrt-packages/luci-app-wireguard package/new/luci-app-wireguard
