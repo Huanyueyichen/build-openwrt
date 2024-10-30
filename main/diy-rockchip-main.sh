@@ -113,6 +113,9 @@ rm -rf feeds/packages/net/v2ray-geodata
 mv package/new/openwrt-packages/v2ray-geodata package/new/v2ray-geodata
 mv package/new/openwrt-packages/v2dat package/new/v2dat
 
+## luci-app-homeproxy
+mv package/new/openwrt-packages/luci-app-homeproxy package/new/luci-app-homeproxy
+
 rm -rf package/new/openwrt-packages
 #################################
 
