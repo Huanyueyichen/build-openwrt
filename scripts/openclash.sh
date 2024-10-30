@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## Add luci-app-openclash
-git clone --depth 1 https://github.com/vernesong/OpenClash package/new/OpenClash && mv -n package/new/OpenClash/luci-app-openclash package/new/; rm -rf package/new/OpenClash
+git clone -b dev --depth 1 https://github.com/vernesong/OpenClash package/new/OpenClash && mv -n package/new/OpenClash/luci-app-openclash package/new/; rm -rf package/new/OpenClash
 
 mkdir -p package/new/luci-app-openclash/root/etc/openclash/core
 
