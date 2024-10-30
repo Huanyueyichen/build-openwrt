@@ -53,10 +53,6 @@ mv -n package/new/sbwml-mosdns/*mosdns package/new/
 mv -n package/new/sbwml-mosdns/v2dat package/new/
 rm -rf package/new/sbwml-mosdns
 
-## Add luci-app-fileassistant
-rm -rf feeds/luci/applications/luci-app-fileassistant
-git clone https://github.com/lyin888/luci-app-fileassistant package/new/luci-app-fileassistant
-
 ## Add luci-app-wolplus
 # git clone https://github.com/animegasan/luci-app-wolplus package/new/luci-app-wolplus
 
@@ -95,6 +91,10 @@ mv package/new/openwrt-packages/libtorrent-rasterbar package/new/libtorrent-rast
 
 ## Add luci-app-diskman
 # mv package/new/openwrt-packages/luci-app-diskman package/new/luci-app-diskman
+
+## Add luci-app-fileassistant
+rm -rf feeds/luci/applications/luci-app-fileassistant
+mv package/new/openwrt-packages/luci-app-fileassistant package/new/luci-app-fileassistant
 
 ## Add luci-app-wolplus
 mv package/new/openwrt-packages/luci-app-wolplus package/new/luci-app-wolplus
