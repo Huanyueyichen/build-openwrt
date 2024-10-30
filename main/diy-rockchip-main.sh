@@ -115,6 +115,7 @@ mv package/new/openwrt-packages/v2dat package/new/v2dat
 
 ## luci-app-homeproxy
 mv package/new/openwrt-packages/luci-app-homeproxy package/new/luci-app-homeproxy
+mv package/new/openwrt-packages/chinadns-ng package/new/chinadns-ng
 
 rm -rf package/new/openwrt-packages
 #################################
