@@ -104,8 +104,8 @@ rm -rf package/new/openwrt-packages
 
 ## openclash
 rm -rf feeds/luci/applications/luci-app-openclash
-# bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
-bash $GITHUB_WORKSPACE/scripts/openclash-dev.sh arm64
+bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
+# bash $GITHUB_WORKSPACE/scripts/openclash-dev.sh arm64
 
 
 ## zsh
