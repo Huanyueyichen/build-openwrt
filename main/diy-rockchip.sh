@@ -72,6 +72,9 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 ## Add luci-app-fileassistant
 mv package/new/openwrt-packages/luci-app-fileassistant package/new/luci-app-fileassistant
 
+## Add luci-app-wechatpush
+mv package/new/openwrt-packages/luci-app-wechatpush package/new/luci-app-wechatpush
+
 ## Add luci-app-wireguard
 # mv package/new/openwrt-packages/luci-app-wireguard package/new/luci-app-wireguard
 
