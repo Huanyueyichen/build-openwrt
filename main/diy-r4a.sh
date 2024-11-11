@@ -66,6 +66,9 @@ mv package/new/openwrt-packages/luci-app-fileassistant package/new/luci-app-file
 # mv package/new/openwrt-packages/miniupnpd package/new/miniupnpd
 # mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
 
+## Add luci-app-wechatpush
+mv package/new/openwrt-packages/luci-app-wechatpush package/new/luci-app-wechatpush
+
 
 rm -rf package/new/openwrt-packages
 #################################
