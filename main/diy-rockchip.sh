@@ -33,6 +33,9 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luc
 ## 调整 LuCI 依赖，去除 luci-app-opkg，替换主题 bootstrap 为 argon
 # sed -i '/+luci-light/d;s/+luci-app-opkg/+luci-light/' ./feeds/luci/collections/luci/Makefile
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-light/Makefile
+## 修改argon背景图片
+rm -rf package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+cp -f $GITHUB_WORKSPACE/bg1.jpg package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 ## golang编译环境
 # rm -rf feeds/packages/lang/golang
