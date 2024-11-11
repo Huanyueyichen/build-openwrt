@@ -35,8 +35,8 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luc
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/' ./feeds/luci/collections/luci-light/Makefile
 
 ## golang编译环境
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+# rm -rf feeds/packages/lang/golang
+# git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 ## Add luci-app-ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddnsgo
@@ -117,20 +117,17 @@ mv package/new/openwrt-packages/v2dat package/new/v2dat
 mv package/new/openwrt-packages/luci-app-homeproxy package/new/luci-app-homeproxy
 mv package/new/openwrt-packages/chinadns-ng package/new/chinadns-ng
 
+## Add autocore
+mv package/new/openwrt-packages/autocore package/new/autocore
+mv package/new/openwrt-packages/automount package/new/automount
+
 rm -rf package/new/openwrt-packages
 #################################
-
-## Add autocore
-git clone https://github.com/immortalwrt/immortalwrt package/new/immortalwrt
-mv package/new/immortalwrt/package/emortal/autocore package/new/autocore
-mv package/new/immortalwrt/package/emortal/automount package/new/automount
-rm -rf package/new/immortalwrt
 
 ## openclash
 bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## turboacc
-# bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
 curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 
 ls -1 package/new/
