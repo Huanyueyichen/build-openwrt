@@ -61,10 +61,10 @@ mv package/new/openwrt-packages/luci-app-fileassistant package/new/luci-app-file
 # mv package/new/openwrt-packages/luci-app-ramfree package/new/luci-app-ramfree
 
 ## Add luci-app-upnp
-# rm -rf feeds/luci/applications/luci-app-upnp
-# rm -rf feeds/packages/net/miniupnpd
-# mv package/new/openwrt-packages/miniupnpd package/new/miniupnpd
-# mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
+rm -rf feeds/luci/applications/luci-app-upnp
+rm -rf feeds/packages/net/miniupnpd
+mv package/new/openwrt-packages/miniupnpd package/new/miniupnpd
+mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
 
 ## Add luci-app-wechatpush
 mv package/new/openwrt-packages/luci-app-wechatpush package/new/luci-app-wechatpush
