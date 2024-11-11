@@ -128,6 +128,6 @@ rm -rf package/new/openwrt-packages
 bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## turboacc
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
 
 ls -1 package/new/
