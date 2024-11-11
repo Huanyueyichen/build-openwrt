@@ -117,6 +117,6 @@ rm -rf package/new/openwrt-packages
 
 ## luci-app-turboacc
 # bash $GITHUB_WORKSPACE/scripts/turboacc_5_15.sh
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
 
 ls -1 package/new/
