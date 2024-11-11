@@ -167,12 +167,9 @@ jobs:
         files: ${{ env.FIRMWARE }}/*
 
     - name: Telegram notification
-      if:  env.TELEGRAM_CHAT_ID && env.TELEGRAM_BOT_TOKEN
+      if: steps.compile.outputs.status == 'success'
       run: |
-        if [[ "${{steps.compile.outputs.status}}" == 'success' ]]; then
-          curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 build-openwrt 编译的 nanopi-r2c_源码 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
-        else
-          curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 build-openwrt 编译的 nanopi-r2c_源码 固件编译出问题了！😭" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=亲爱的✨主人✨：您使用 build-openwrt 编译的 r2c_main 固件顺利编译完成了！💐" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@v2
