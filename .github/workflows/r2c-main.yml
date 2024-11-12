@@ -14,7 +14,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 0 21 ? * 2
+    - cron: 0 17 ? * 2
 
 env:
   PPPOE_USERNAME: ${{ secrets.PPPOE_USERNAME }}
