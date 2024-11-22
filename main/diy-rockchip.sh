@@ -57,7 +57,7 @@ cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/links.txt package/new/luci-app-adgu
 rm -rf package/new/openwrt-adguardhome
 
 ## Add luci-app-wolplus
-git clone https://github.com/animegasan/luci-app-wolplus package/new/luci-app-wolplus
+# git clone https://github.com/animegasan/luci-app-wolplus package/new/luci-app-wolplus
 
 ####################################
 ## clone kiddin9/openwrt-packages仓库
