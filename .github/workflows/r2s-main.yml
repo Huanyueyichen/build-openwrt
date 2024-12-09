@@ -13,8 +13,8 @@ name: r2s-main
 on:
   repository_dispatch:
   workflow_dispatch:
-  # schedule:
-    # - cron: 0 17 ? * 0,4
+  schedule:
+    - cron: 0 17 ? * 2
 
 env:
   PPPOE_USERNAME: ${{ secrets.PPPOE_USERNAME }}
