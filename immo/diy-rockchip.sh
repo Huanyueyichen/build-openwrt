@@ -38,10 +38,10 @@ cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-s
 # git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
 
 ## Add luci-app-socat
-rm -rf feeds/luci/applications/luci-app-socat
-git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/chenmozhijin-socat
-mv -n package/new/chenmozhijin-socat/luci-app-socat package/new/
-rm -rf package/new/chenmozhijin-socat
+# rm -rf feeds/luci/applications/luci-app-socat
+# git clone --depth 1 https://github.com/chenmozhijin/luci-app-socat package/new/chenmozhijin-socat
+# mv -n package/new/chenmozhijin-socat/luci-app-socat package/new/
+# rm -rf package/new/chenmozhijin-socat
 
 ## Add luci-app-ddns-go
 rm -rf feeds/luci/applications/luci-app-ddns-go
@@ -65,7 +65,7 @@ cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/links.txt package/new/luci-app-adgu
 rm -rf package/new/openwrt-adguardhome
 
 ## clone kiddin9/openwrt-packages仓库
-git clone https://github.com/kiddin9/openwrt-packages package/new/openwrt-packages
+git clone https://github.com/kiddin9/kwrt-packages package/new/openwrt-packages
 
 ########## 添加包
 
@@ -91,7 +91,7 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 
 ## Add luci-app-fileassistant luci-app-filetransfer
 mv package/new/openwrt-packages/luci-app-fileassistant package/new/luci-app-fileassistant
-mv package/new/openwrt-packages/luci-app-filetransfer package/new/luci-app-filetransfer
+# mv package/new/openwrt-packages/luci-app-filetransfer package/new/luci-app-filetransfer
 mv package/new/openwrt-packages/luci-lib-fs package/new/luci-lib-fs
 
 ## Add luci-app-irqbalance
@@ -132,7 +132,8 @@ rm -rf package/new/openwrt-packages
 
 
 ## openclash
-# bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
+rm -rf feeds/luci/applications/luci-app-openclash
+bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## zsh
 bash $GITHUB_WORKSPACE/scripts/zsh.sh
