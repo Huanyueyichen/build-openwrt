@@ -81,7 +81,7 @@ git clone https://github.com/kiddin9/kwrt-packages package/new/openwrt-packages
 
 
 ## Add luci-app-wolplus
-mv package/new/openwrt-packages/luci-app-wolplus package/new/luci-app-wolplus
+# mv package/new/openwrt-packages/luci-app-wolplus package/new/luci-app-wolplus
 
 ## Add luci-app-onliner
 mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
@@ -90,12 +90,12 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 # mv package/new/openwrt-packages/luci-app-poweroff package/new/luci-app-poweroff
 
 ## Add luci-app-fileassistant luci-app-filetransfer
-mv package/new/openwrt-packages/luci-app-fileassistant package/new/luci-app-fileassistant
+# mv package/new/openwrt-packages/luci-app-fileassistant package/new/luci-app-fileassistant
 # mv package/new/openwrt-packages/luci-app-filetransfer package/new/luci-app-filetransfer
-mv package/new/openwrt-packages/luci-lib-fs package/new/luci-lib-fs
+# mv package/new/openwrt-packages/luci-lib-fs package/new/luci-lib-fs
 
 ## Add luci-app-irqbalance
-sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
+# sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
 # mv package/new/openwrt-packages/luci-app-irqbalance package/new/luci-app-irqbalance
 
 ## Add automount
@@ -139,6 +139,6 @@ bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 bash $GITHUB_WORKSPACE/scripts/zsh.sh
 
 ## turboacc
-# curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 
 ls -1 package/new/
