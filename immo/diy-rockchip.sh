@@ -35,7 +35,8 @@ rm -rf feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 ## Add luci-app-wechatpush
-# git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
+rm -rf feeds/luci/applications/luci-app-wechatpush
+git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/new/luci-app-wechatpush
 
 ## Add luci-app-socat
 # rm -rf feeds/luci/applications/luci-app-socat
