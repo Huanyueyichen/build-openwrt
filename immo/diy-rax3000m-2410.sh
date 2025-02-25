@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## rockchip机型,默认内核5.15，修改内核为6.1
+## 默认内核5.15，修改内核为6.1
 # sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/rockchip/Makefile
 
 ## 移除 SNAPSHOT 标签
