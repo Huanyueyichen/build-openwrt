@@ -12,8 +12,8 @@ name: r2c-immo
 on:
   repository_dispatch:
   workflow_dispatch:
-  # schedule:
-    # - cron: 0 17 ? * 1,5
+  schedule:
+    - cron: 0 17 ? * 2
 
 env:
   PPPOE_USERNAME: ${{ secrets.PPPOE_USERNAME }}
@@ -143,7 +143,7 @@ jobs:
         rm -rf immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2c-rootfs.tar.gz
         rm -rf immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2c.manifest
         mv config.buildinfo r2c.buildinfo
-        mv immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz immortalwrt-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz
+        mv immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz immortalwrt-2410_nanopi-r2c-squashfs-sysupgrade.img.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
