@@ -13,8 +13,8 @@ name: r4a-main
 on:
   repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: 0 17 ? * 1
+  #schedule:
+    #- cron: 0 17 ? * 1
 
 env:
   PPPOE_USERNAME: ${{ secrets.PPPOE_USERNAME }}
