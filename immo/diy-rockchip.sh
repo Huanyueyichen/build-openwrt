@@ -109,11 +109,9 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 ## Add luci-app-diskman
 # mv package/new/openwrt-packages/luci-app-diskman package/new/luci-app-diskman
 
-## Add luci-app-smartdns
-# rm -rf feeds/packages/net/smartdns
-# mv package/new/openwrt-packages/smartdns package/new/smartdns
-# rm -rf feeds/luci/applications/luci-app-smartdns
-# mv package/new/openwrt-packages/luci-app-smartdns package/new/luci-app-smartdns
+## Add luci-app-nikki
+mv package/new/openwrt-packages/nikki package/new/nikki
+mv package/new/openwrt-packages/luci-app-nikki package/new/nikki
 
 ## Add luci-app-upnp
 rm -rf feeds/luci/applications/luci-app-upnp
@@ -122,8 +120,8 @@ mv package/new/openwrt-packages/miniupnpd package/new/miniupnpd
 mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
 
 ## Add luci-app-mosdns
-# rm -rf feeds/packages/net/v2ray-geodata
-# mv package/new/openwrt-packages/v2ray-geodata package/new/v2ray-geodata
+rm -rf feeds/packages/net/v2ray-geodata
+git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
 mv package/new/openwrt-packages/v2dat package/new/v2dat
 mv package/new/openwrt-packages/mosdns package/new/mosdns
 mv package/new/openwrt-packages/luci-app-mosdns package/new/luci-app-mosdns
