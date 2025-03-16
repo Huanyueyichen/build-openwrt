@@ -111,7 +111,7 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 
 ## Add luci-app-nikki
 mv package/new/openwrt-packages/nikki package/new/nikki
-mv package/new/openwrt-packages/luci-app-nikki package/new/nikki
+mv package/new/openwrt-packages/luci-app-nikki package/new/luci-app-nikki
 
 ## Add luci-app-upnp
 rm -rf feeds/luci/applications/luci-app-upnp
