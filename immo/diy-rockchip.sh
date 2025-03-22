@@ -109,10 +109,6 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 ## Add luci-app-diskman
 # mv package/new/openwrt-packages/luci-app-diskman package/new/luci-app-diskman
 
-## Add luci-app-nikki
-mv package/new/openwrt-packages/nikki package/new/nikki
-mv package/new/openwrt-packages/luci-app-nikki package/new/luci-app-nikki
-
 ## Add luci-app-upnp
 rm -rf feeds/luci/applications/luci-app-upnp
 rm -rf feeds/packages/net/miniupnpd
@@ -129,6 +125,11 @@ mv package/new/openwrt-packages/luci-app-mosdns package/new/luci-app-mosdns
 
 rm -rf package/new/openwrt-packages
 
+## Add luci-app-nikki
+git clone https://github.com/nikkinikki-org/OpenWrt-nikki package/new/OpenWrt-nikki
+mv package/new/OpenWrt-nikki/nikki package/new/nikki
+mv package/new/OpenWrt-nikki/luci-app-nikki package/new/luci-app-nikki
+rm -rf package/new/OpenWrt-nikki
 
 ## openclash
 rm -rf feeds/luci/applications/luci-app-openclash
