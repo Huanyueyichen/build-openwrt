@@ -90,10 +90,10 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 ## Add luci-app-poweroff
 # mv package/new/openwrt-packages/luci-app-poweroff package/new/luci-app-poweroff
 
-## Add luci-app-fileassistant luci-app-filetransfer
-# mv package/new/openwrt-packages/luci-app-fileassistant package/new/luci-app-fileassistant
-# mv package/new/openwrt-packages/luci-app-filetransfer package/new/luci-app-filetransfer
-# mv package/new/openwrt-packages/luci-lib-fs package/new/luci-lib-fs
+## Add luci-app-filebrowser
+rm -rf feeds/luci/applications/luci-app-filebrowser
+mv package/new/openwrt-packages/luci-app-filebrowser package/new/luci-app-filebrowser
+mv package/new/openwrt-packages/filebrowser package/new/filebrowser
 
 ## Add luci-app-irqbalance
 # sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
