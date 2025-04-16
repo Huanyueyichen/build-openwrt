@@ -92,7 +92,9 @@ mv package/new/openwrt-packages/luci-app-onliner package/new/luci-app-onliner
 
 ## Add luci-app-filebrowser
 rm -rf feeds/luci/applications/luci-app-filebrowser
-mv package/new/openwrt-packages/luci-app-filebrowser package/new/luci-app-filebrowser
+git clone https://github.com/kenzok8/openwrt-packages package/new/kenzok8
+mv package/new/kenzok8/luci-app-filebrowser package/new/luci-app-filebrowser
+rm -rf package/new/kenzok8
 mv package/new/openwrt-packages/filebrowser package/new/filebrowser
 
 ## Add luci-app-irqbalance
