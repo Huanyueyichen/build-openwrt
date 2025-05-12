@@ -57,13 +57,13 @@ rm -rf package/new/ddnsgo
 # rm -rf package/new/OpenWrt-mihomo
 
 ## adguardhome
-# git clone -b patch-1 https://github.com/kiddin9/openwrt-adguardhome package/new/openwrt-adguardhome
-# mv package/new/openwrt-adguardhome/*adguardhome package/new/
-# rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
-# cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/AdGuardHome_template.yaml package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
-# rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
-# cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/links.txt package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
-# rm -rf package/new/openwrt-adguardhome
+git clone -b patch-1 https://github.com/kiddin9/openwrt-adguardhome package/new/openwrt-adguardhome
+mv package/new/openwrt-adguardhome/*adguardhome package/new/
+rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
+cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/AdGuardHome_template.yaml package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/AdGuardHome_template.yaml
+rm -rf package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
+cp -rf $GITHUB_WORKSPACE/patches/AdGuardHome/links.txt package/new/luci-app-adguardhome/root/usr/share/AdGuardHome/links.txt
+rm -rf package/new/openwrt-adguardhome
 
 ## clone kiddin9/openwrt-packages仓库
 git clone https://github.com/kiddin9/kwrt-packages package/new/openwrt-packages
@@ -81,7 +81,7 @@ git clone https://github.com/kiddin9/kwrt-packages package/new/openwrt-packages
 # rm -rf package/new/sbwml-alist
 
 ## adguardhome
-mv package/new/openwrt-packages/luci-app-adguardhome package/new/luci-app-adguardhome
+# mv package/new/openwrt-packages/luci-app-adguardhome package/new/luci-app-adguardhome
 
 ## Add luci-app-wolplus
 # mv package/new/openwrt-packages/luci-app-wolplus package/new/luci-app-wolplus
