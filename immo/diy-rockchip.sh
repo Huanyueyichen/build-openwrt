@@ -123,9 +123,9 @@ mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
 ## Add luci-app-mosdns
 # rm -rf feeds/packages/net/v2ray-geodata
 # git clone https://github.com/sbwml/v2ray-geodata package/new/v2ray-geodata
-mv package/new/openwrt-packages/v2dat package/new/v2dat
-mv package/new/openwrt-packages/mosdns package/new/mosdns
-mv package/new/openwrt-packages/luci-app-mosdns package/new/luci-app-mosdns
+# mv package/new/openwrt-packages/v2dat package/new/v2dat
+# mv package/new/openwrt-packages/mosdns package/new/mosdns
+# mv package/new/openwrt-packages/luci-app-mosdns package/new/luci-app-mosdns
 
 
 rm -rf package/new/openwrt-packages
