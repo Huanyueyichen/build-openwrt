@@ -51,11 +51,6 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/new/ddn
 mv -n package/new/ddnsgo/*ddns-go package/new/
 rm -rf package/new/ddnsgo
 
-## Add luci-app-mihomo
-# git clone https://github.com/morytyann/OpenWrt-mihomo package/new/OpenWrt-mihomo
-# mv -n package/new/OpenWrt-mihomo/*mihomo package/new/
-# rm -rf package/new/OpenWrt-mihomo
-
 ## adguardhome
 # git clone -b patch-1 https://github.com/kiddin9/openwrt-adguardhome package/new/openwrt-adguardhome
 # mv package/new/openwrt-adguardhome/*adguardhome package/new/
@@ -71,8 +66,8 @@ git clone https://github.com/kiddin9/kwrt-packages package/new/openwrt-packages
 ########## 添加包
 
 ## alist编译环境
-# rm -rf feeds/packages/lang/golang
-# git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
 # rm -rf feeds/luci/applications/luci-app-alist
 # rm -rf feeds/packages/net/alist
 # git clone https://github.com/sbwml/luci-app-alist package/new/sbwml-alist
