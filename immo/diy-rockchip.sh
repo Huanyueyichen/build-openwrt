@@ -125,14 +125,11 @@ mv package/new/openwrt-packages/luci-app-upnp package/new/luci-app-upnp
 
 rm -rf package/new/openwrt-packages
 
-## Add luci-app-nikki
-git clone https://github.com/nikkinikki-org/OpenWrt-nikki package/new/OpenWrt-nikki
-mv package/new/OpenWrt-nikki/nikki package/new/nikki
-mv package/new/OpenWrt-nikki/luci-app-nikki package/new/luci-app-nikki
-rm -rf package/new/OpenWrt-nikki
+## luci-app-nikki
+bash $GITHUB_WORKSPACE/scripts/nikki.sh
 
-## openclash
-rm -rf feeds/luci/applications/luci-app-openclash
+## luci-app-openclash
+# rm -rf feeds/luci/applications/luci-app-openclash
 # bash $GITHUB_WORKSPACE/scripts/openclash.sh arm64
 
 ## zsh
